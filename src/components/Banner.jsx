@@ -34,7 +34,7 @@ list-style:none;
 `
 
 const Auth=styled.a`
-@import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css'); font-family: 'Noto Sans KR', sans-serif;
+
 color:${props=>props.backgroundcolor};
 background-color:${props=>props.color};
 width:85px;
@@ -42,6 +42,8 @@ border-radius:7px;
 text-align:center;
 line-height:85px;
 font-family: 'Noto Sans KR';
+font-weight:bold;
+font-size:15px;
 `
 
 function Banner() {

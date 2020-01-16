@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import main_imgae from '../assets/imgs/mainImgae.png'
+import Axios from 'axios'
+
+
+
+
 const Wrapper = styled.div`
 width:100%;
 height:1080px;
@@ -43,7 +48,7 @@ const Sub=styled.div`
   letter-spacing: -0.5px;
   text-align: center;
   color: #e0e0e0;
-    margin-top:2%;
+    margin-top:1%;
     opacity:0.7;
 `
 
@@ -61,9 +66,9 @@ width: 173px;
   height: 40px;
   text-align:center;
     justify-content:center;
-    padding:14px;
+    padding:13px;
     box-sizing:border-box;
-    font-weight:bold;
+    font-weight:normal;
 `
 const Submits=styled.div`
 display:flex;
@@ -73,12 +78,48 @@ margin-top:2%;
 `
 
 export default class MainPage extends Component {
+
+    componentDidMount(){
+      var Request = function() {  
+        this.getParameter = function(name) {  
+            var rtnval = '';  
+            var nowAddress = unescape(window.location.href);  
+            var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,  
+                    nowAddress.length)).split('&');  
+            for (var i = 0; i < parameters.length; i++) {  
+                var varName = parameters[i].split('=')[0];  
+                if (varName.toUpperCase() == name.toUpperCase()) {  
+                    rtnval = parameters[i].split('=')[1];  
+                    break;  
+                }  
+            }  
+            return rtnval;  
+        }  
+    }  
+    var request = new Request();  
+    //   FB.getLoginStatus(function(response) {
+    //     statusChangeCallback(response);
+    // });
+    console.log(request.getParameter('#access_token'))
+    const data={
+      code:'4/P7q7W91a-oMsCeLvIaQm6bTrgtp7',
+      client_id:'766345989670-6r3jipv1h6675tdagol1hjl1t8rtd00g.apps.googleusercontent.com',
+      client_secret:'FzARBZE2R8RMpRKTvqxtAvtb',
+      grant_type:'authorization_code',
+      redirect_uri:'http://localhost:3000/',
+    }
+      Axios.post('https://www.googleapis.com/oauth2/v4/token',data,{
+      headers:{  
+      'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>console.log(res)).catch(err=>console.dir(err))
+    
+    }
+
     render() {
         return (
             <Wrapper>
                 <Lines>
             <Line>
-                <Title size='56px' color='#ffffff' >IT Agency{'\u00A0'}</Title>   <Title size='43px' color='#ffffff'>는 </Title> <Title size='60px' color='#ef4f80' >320</Title> <Title size='42px' color='#ffffff'>명의 파트너와 함께 합니다</Title>
+                <Title size='56px' color='#ffffff' >IT Agency{'\u00A0'}</Title>   <Title size='43px' color='#ffffff'>는 </Title> <Title className='counter' size='60px' color='#ef4f80' >{this.props.user}</Title> <Title size='42px' color='#ffffff'>명의 파트너와 함께 합니다</Title>
             </Line>
             <Line>
             <Title size='49px' color='#ffffff'>당신만의{'\u00A0'}</Title> <Title size='57px' color='#ef4f80'>아이디어</Title> <Title size='49px' color='#ffffff'>를 실현해 보세요</Title>
@@ -87,8 +128,13 @@ export default class MainPage extends Component {
             <Sub>웹 개발, 어플리케이션 개발, 웹 디자인, 일반 소프트웨어 개발, 게임, 쇼핑몰·커머스 등</Sub>
 
             <Submits>
-            <Submit href='www.naver.com' color='#212121' backgroundcolor='#ffffff'>프로젝트 등록</Submit>
-            <Submit color='#ef4f80' backgroundcolor='#212121'>파트너신청</Submit>
+            <Submit href='www.naver.com'color='#ef4f80'  backgroundcolor='#ffffff' style={{marginRight:"21px"}}>프로젝트 등록</Submit>
+            <Submit color='#212121' backgroundcolor='#ffffff'>파트너신청</Submit>
+            <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/&state=&response_type=token">facebook</a>
+            <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/analytics.readonly&
+access_type=offline&
+include_granted_scopes=true&state=state_parameter_passthrough_value&
+redirect_uri=http://localhost:3000/&response_type=code&client_id=766345989670-6r3jipv1h6675tdagol1hjl1t8rtd00g.apps.googleusercontent.com">Google</a>
             </Submits>
             </Wrapper>
         )

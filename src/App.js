@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <GlobalStyle/>
       <Banner/>
-      <MainPage></MainPage>
+      <MainPage user='320'/>
     </div>
   );
 }
