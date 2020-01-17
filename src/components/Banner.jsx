@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../assets/imgs/Logo_white.png'
+
 const Wrapper = styled.div`
 position:fixed;
 display:flex;
@@ -44,12 +45,14 @@ line-height:85px;
 font-family: 'Noto Sans KR';
 font-weight:bold;
 font-size:15px;
+text-decoration:none;
+
 `
 
 function Banner() {
     return (
         <Wrapper>
-            <Logo src={logo} alt="logo_img" />
+            <Logo src={logo} alt="logo_img" onClick={()=>window.location.href='/'} />
 
             <Link_ul>
                 <Link_li><a >상담하기</a></Link_li>
@@ -60,8 +63,8 @@ function Banner() {
             </Link_ul>
 
 
-            <Auth color='#212121' backgroundcolor='#ffffff'>로그인</Auth>
-            <Auth color='#ef4f80' backgroundcolor='#212121' style={{marginRight:'3.6%'}}>회원가입 </Auth>
+            <Auth color='#212121' backgroundcolor='#ffffff' href='/Login'> 로그인</Auth>
+            <Auth color='#ef4f80' backgroundcolor='#212121' style={{marginRight:'3.6%'}} href='/Register'>회원가입 </Auth>
 
 
         </Wrapper>

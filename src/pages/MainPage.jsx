@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import main_imgae from '../assets/imgs/mainImgae.png'
 import Axios from 'axios'
+import api from '../apis/BaseUrl'
+import Request from '../apis/Request'
 
 
 
@@ -80,27 +82,10 @@ margin-top:2%;
 export default class MainPage extends Component {
 
     componentDidMount(){
-      var Request = function() {  
-        this.getParameter = function(name) {  
-            var rtnval = '';  
-            var nowAddress = unescape(window.location.href);  
-            var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,  
-                    nowAddress.length)).split('&');  
-            for (var i = 0; i < parameters.length; i++) {  
-                var varName = parameters[i].split('=')[0];  
-                if (varName.toUpperCase() == name.toUpperCase()) {  
-                    rtnval = parameters[i].split('=')[1];  
-                    break;  
-                }  
-            }  
-            return rtnval;  
-        }  
-    }  
-    var request = new Request();  
-    //   FB.getLoginStatus(function(response) {
-    //     statusChangeCallback(response);
-    // });
-    console.log(request.getParameter('#access_token'))
+        
+    
+
+
     const data={
       code:'4/P7q7W91a-oMsCeLvIaQm6bTrgtp7',
       client_id:'766345989670-6r3jipv1h6675tdagol1hjl1t8rtd00g.apps.googleusercontent.com',
@@ -130,11 +115,11 @@ export default class MainPage extends Component {
             <Submits>
             <Submit href='www.naver.com'color='#ef4f80'  backgroundcolor='#ffffff' style={{marginRight:"21px"}}>프로젝트 등록</Submit>
             <Submit color='#212121' backgroundcolor='#ffffff'>파트너신청</Submit>
-            <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/&state=&response_type=token">facebook</a>
+            {/* <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/&state=&response_type=token">facebook</a>
             <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/analytics.readonly&
 access_type=offline&
 include_granted_scopes=true&state=state_parameter_passthrough_value&
-redirect_uri=http://localhost:3000/&response_type=code&client_id=766345989670-6r3jipv1h6675tdagol1hjl1t8rtd00g.apps.googleusercontent.com">Google</a>
+redirect_uri=http://localhost:3000/&response_type=code&client_id=766345989670-6r3jipv1h6675tdagol1hjl1t8rtd00g.apps.googleusercontent.com">Google</a> */}
             </Submits>
             </Wrapper>
         )
