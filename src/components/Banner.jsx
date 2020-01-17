@@ -63,8 +63,8 @@ function Banner() {
             </Link_ul>
 
 
-            <Auth color='#212121' backgroundcolor='#ffffff' href='/Login'> 로그인</Auth>
-            <Auth color='#ef4f80' backgroundcolor='#212121' style={{marginRight:'3.6%'}} href='/Register'>회원가입 </Auth>
+            <Auth color='#212121' backgroundcolor='#ffffff' href='/login'> 로그인</Auth>
+            <Auth color='#ef4f80' backgroundcolor='#212121' style={{marginRight:'3.6%'}} href='/register'>회원가입 </Auth>
 
 
         </Wrapper>

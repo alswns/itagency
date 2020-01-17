@@ -18,7 +18,7 @@ function App() {
     <div className="App" >
       <GlobalStyle/>
       
-      <Router basename={window.location.pathname || ''}>
+      <Router >
       <Banner/>
       
       <Route path='/'  exact='exact'>
@@ -30,7 +30,7 @@ function App() {
       <Route path='/login' exact='exact'>
         <LoginPage/>
       </Route>
-      <Route path='/Register' exact='exact'>
+      <Route path='/register' exact='exact'>
         <RegisterPage/>
       </Route>
 
