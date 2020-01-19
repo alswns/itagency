@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47.4" height="35.794" viewBox="0 0 47.4 35.794">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff}.cls-1{stroke:#212121}.cls-3{fill:#212121}.cls-4{fill:#ef4f80}.cls-5{fill:#f3f3f3}.cls-6{stroke:none}.cls-7{fill:none}
+        </style>
+    </defs>
+    <g id="그룹_161" data-name="그룹 161">
+        <g id="그룹_160" data-name="그룹 160" transform="translate(5.417)">
+            <g id="사각형_46" class="cls-1" data-name="사각형 46" transform="rotate(-90 11.793 11.793)">
+                <rect width="23.586" height="35.369" class="cls-6" rx="5"/>
+                <rect width="22.586" height="34.369" x=".5" y=".5" class="cls-7" rx="4.5"/>
+            </g>
+        </g>
+        <g id="패스_355" data-name="패스 355" transform="translate(7.521 24.21)">
+            <path id="패스_364" d="M39.019 11.084H-6.715L-1.479.5h34.455z" class="cls-2" data-name="패스 364"/>
+            <path id="패스_365" d="M-1.168 1l-4.742 9.584h44.068L32.686 1H-1.168m-.621-1h35.055l6.614 11.584h-47.4z" class="cls-3" data-name="패스 365"/>
+        </g>
+        <g id="그룹_68" data-name="그룹 68" transform="translate(17.984 4.131)">
+            <path id="Icon_awesome-lightbulb" d="M0 3.83a4.994 4.994 0 0 0 1.367 3.418 8.375 8.375 0 0 1 1.638 2.7v.023h5.032v-.023a8.375 8.375 0 0 1 1.638-2.7 4.994 4.994 0 0 0 1.37-3.418 5.636 5.636 0 0 0-5.532-5.524A5.619 5.619 0 0 0 0 3.83z" class="cls-4" data-name="Icon awesome-lightbulb" transform="translate(0 1.694)"/>
+            <g id="Icon_awesome-lightbulb-2" data-name="Icon awesome-lightbulb" transform="translate(-10.785 -47.91)">
+                <path id="패스_366" d="M17.274 62.873h-1.95a.49.49 0 0 1-.4-.3l-.54-1.018a1.014 1.014 0 0 1-.111-.467v-1.017h4.055v1.019a1.014 1.014 0 0 1-.111.466l-.54 1.018a.49.49 0 0 1-.403.299z" class="cls-5" data-name="패스 366"/>
+                <path id="패스_367" d="M14.772 60.571v.518a.513.513 0 0 0 .053.233l.54 1.018a.267.267 0 0 0 .021.034h1.825a.265.265 0 0 0 .021-.034l.54-1.018a.513.513 0 0 0 .052-.232v-.518h-3.052m-1-1h5.056v1.518a1.5 1.5 0 0 1-.169.7l-.54 1.017a.977.977 0 0 1-.842.566h-1.95a.977.977 0 0 1-.842-.566l-.54-1.017a1.506 1.506 0 0 1-.169-.7z" class="cls-3" data-name="패스 367"/>
+            </g>
+            <circle id="타원_85" cx="1.657" cy="1.657" r="1.657" class="cls-2" data-name="타원 85" transform="translate(3.82 4.699)"/>
+        </g>
+    </g>
+</svg>

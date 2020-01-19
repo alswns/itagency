@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45.03" height="36.25" viewBox="0 0 45.03 36.25">
+    <defs>
+        <style>
+            .cls-1,.cls-5{fill:none}.cls-2{fill:#212121}.cls-3,.cls-4{fill:#fff}.cls-3,.cls-5{stroke:#fff}.cls-3{stroke-width:2px}.cls-4{stroke:#212121}.cls-5{stroke-width:1.5px}.cls-6{stroke:none}
+        </style>
+    </defs>
+    <g id="그룹_159" data-name="그룹 159" transform="translate(0 2)">
+        <g id="그룹_157" data-name="그룹 157">
+            <g id="패스_250" data-name="패스 250" transform="translate(0 13.428)">
+                <path id="패스_360" d="M0 13.236C0 4.988 8.037-.61 14.261-.61S28 5.8 28 13.236v7.333H0z" class="cls-1" data-name="패스 360"/>
+                <path id="패스_361" d="M27 19.569v-6.333a11.061 11.061 0 0 0-1.17-4.864 14.647 14.647 0 0 0-3.055-4.125A13.006 13.006 0 0 0 14.261.39a12.232 12.232 0 0 0-4.482.932 15.375 15.375 0 0 0-4.325 2.652A12.267 12.267 0 0 0 1 13.236v6.333h26m1 1.006v-.006H0v-7.333C0 4.988 8.037-.61 14.261-.61S28 5.8 28 13.236z" class="cls-2" data-name="패스 361"/>
+            </g>
+            <g id="타원_87" class="cls-3" data-name="타원 87" transform="translate(7.193)">
+                <ellipse cx="7.018" cy="7.5" class="cls-6" rx="7.018" ry="7.5"/>
+                <ellipse cx="7.018" cy="7.5" class="cls-1" rx="8.018" ry="8.5"/>
+            </g>
+            <g id="타원_86" class="cls-4" data-name="타원 86" transform="translate(7.193)">
+                <ellipse cx="7.018" cy="7.5" class="cls-6" rx="7.018" ry="7.5"/>
+                <ellipse cx="7.018" cy="7.5" class="cls-1" rx="6.518" ry="7"/>
+            </g>
+        </g>
+        <g id="그룹_158" data-name="그룹 158" transform="translate(17.03)">
+            <g id="패스_250-2" data-name="패스 250" transform="translate(0 13.428)">
+                <path id="패스_362" d="M0 13.236C0 4.988 8.037-.61 14.261-.61S28 5.8 28 13.236v7.333H0z" class="cls-1" data-name="패스 362"/>
+                <path id="패스_363" d="M27 19.569v-6.333a11.061 11.061 0 0 0-1.17-4.864 14.647 14.647 0 0 0-3.055-4.125A13.006 13.006 0 0 0 14.261.39a12.232 12.232 0 0 0-4.482.932 15.375 15.375 0 0 0-4.325 2.652A12.267 12.267 0 0 0 1 13.236v6.333h26m1 1.006v-.006H0v-7.333C0 4.988 8.037-.61 14.261-.61S28 5.8 28 13.236z" class="cls-2" data-name="패스 363"/>
+            </g>
+            <g id="타원_87-2" class="cls-3" data-name="타원 87" transform="translate(7.193)">
+                <ellipse cx="7.018" cy="7.5" class="cls-6" rx="7.018" ry="7.5"/>
+                <ellipse cx="7.018" cy="7.5" class="cls-1" rx="8.018" ry="8.5"/>
+            </g>
+            <g id="타원_86-2" class="cls-4" data-name="타원 86" transform="translate(7.193)">
+                <ellipse cx="7.018" cy="7.5" class="cls-6" rx="7.018" ry="7.5"/>
+                <ellipse cx="7.018" cy="7.5" class="cls-1" rx="6.518" ry="7"/>
+            </g>
+        </g>
+        <path id="선_37" d="M0 0h8.97" class="cls-5" data-name="선 37" transform="translate(18.031 33.5)"/>
+    </g>
+</svg>

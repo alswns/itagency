@@ -5,6 +5,9 @@ import MainPost from '../components/main/MainPost'
 import api from '../apis/BaseUrl'
 import SecondFooter from '../components/main/SecondFooter'
 import ThirdFooter from '../components/main/ThirdFooter'
+import Example from '../components/main/Example'
+import Progess from '../components/main/Progess'
+import Kategorie from '../components/main/Kategorie'
 
 
 
@@ -33,7 +36,11 @@ export default class MainPage extends Component {
             <Footer/> 
             <LiveProject projects={this.state.projects}/>
             <SecondFooter/>
+            <Example/>
+            <Progess/>
+            <Kategorie/>
             <ThirdFooter/>
+
             </>
 
         )
