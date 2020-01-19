@@ -52,9 +52,9 @@ const Submit=styled.a`
 text-decoration:none;
 display:flex;
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-  font-family: 'NIXGONM-Vb'; 
+  font-family: NIXGONM-Vb; 
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 700;
     border-radius:7px;
     color:${props=>props.backgroundcolor};
 background-color:${props=>props.color};

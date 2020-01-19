@@ -42,7 +42,7 @@ const Su=styled.span`
 margin-top:23px;
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
  font-family: NIXGONB-Vb;
-  font-size: 20px;
+  font-size: 25px;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.25;
@@ -60,7 +60,7 @@ const Sub=styled.div`
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 
   font-family: NIXGONM-Vb;
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;

@@ -19,7 +19,7 @@ font-family: NIXGONB-Vb;
 const Sub=styled.div`
 margin-top:2.8%;
 font-family: NIXGONM-Vb;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -28,13 +28,13 @@ font-family: NIXGONM-Vb;
   text-align: center;
   color: #6f6f6f;
 
-  margin-bottom:3.9%;
+  margin-bottom:1%;
   
 `
 const Regi = styled.span`
 font-family: NIXGONM-Vb;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.07;
@@ -42,10 +42,10 @@ font-family: NIXGONM-Vb;
   text-align: left;
   color: #f3f3f3;
   background-color:#9f4fef;
-  padding:10px 15px;
+  padding:14px 19px;
   border-radius:18px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    margin-left:77.3%;
+    margin-left:80.3%;
     
 `
 const Wrapper = styled.div`

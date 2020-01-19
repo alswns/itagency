@@ -22,7 +22,7 @@ justify-content:center;
 `
 const ProjectItems=styled.div`
     display: flex;
-  
+    display: flexbox;
     overflow: auto;
     overflow-y:hidden;
     width:1450px;

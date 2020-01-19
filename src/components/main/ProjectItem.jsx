@@ -159,7 +159,7 @@ const Texts=styled.span`
 position:absolute;
 font-family: NIXGONM-Vb;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.08;
