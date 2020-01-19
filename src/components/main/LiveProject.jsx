@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ProjectContainer from './ProjectContainer'
+import Today from './Today'
 const Bold = styled.div`
 margin-top:81px;
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -45,19 +46,21 @@ font-family: NIXGONM-Vb;
   border-radius:18px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     margin-left:77.3%;
-    margin-bottom:36px;
+    
 `
 const Wrapper = styled.div`
 width: 100%;
 height: 1080px;
 `
-export default function LiveProject() {
+export default function LiveProject(props) {
+  console.log(props.projects+props.projects+props.projects)
     return (
         <Wrapper>
             <Bold>실시간 프로젝트</Bold>
             <Sub>가장 최근에 아이티에이전트에 등록된 프로젝트가 올라옵니다.</Sub>
             <Regi>프로젝트 보러가기</Regi>
-            <ProjectContainer/>
+            <ProjectContainer projects={props.projects}/>
+            <Today></Today>
         </Wrapper>
     )
 }
