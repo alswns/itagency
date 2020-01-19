@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import logo from '../assets/imgs/Logo_white.png'
 
 const Wrapper = styled.div`
-position:fixed;
+position:absolute;
 display:flex;
 background:rgba(0,0,0,0);
 top:20px;

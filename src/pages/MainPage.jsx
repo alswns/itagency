@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import main_imgae from '../assets/imgs/mainImgae.png'
 import Axios from 'axios'
-import api from '../apis/BaseUrl'
-import Request from '../apis/Request'
+import Footer from '../components/Footer'
+import LiveProject from '../components/LiveProject'
 
 
 
@@ -16,7 +16,7 @@ background-image:linear-gradient(
             rgba(0, 0, 0, 0.7) ,
             rgba(0, 0, 0, 0.7) 
           ), url(${main_imgae});
-background-size:cover ;
+background-size:auto ;
 background-repeat:no-repeat;
 `
 const Title=styled.span`
@@ -101,6 +101,8 @@ export default class MainPage extends Component {
 
     render() {
         return (
+          <>
+          
             <Wrapper>
                 <Lines>
             <Line>
@@ -121,7 +123,12 @@ access_type=offline&
 include_granted_scopes=true&state=state_parameter_passthrough_value&
 redirect_uri=http://localhost:3000/&response_type=code&client_id=766345989670-6r3jipv1h6675tdagol1hjl1t8rtd00g.apps.googleusercontent.com">Google</a> */}
             </Submits>
+
             </Wrapper>
+            <Footer/> 
+            <LiveProject/>
+            </>
+
         )
     }
 }
