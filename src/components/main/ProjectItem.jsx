@@ -4,25 +4,24 @@ import mac from '../../assets/imgs/mac.png'
 import progress0 from '../../assets/imgs/progress0.png'
 import progress1 from '../../assets/imgs/progress1.png'
 import progress2 from '../../assets/imgs/progress2.png'
+import back from '../../assets/imgs/back.svg'
 const Wrapper= styled.div`
-width:250px;
-height:400px;
-border-radius:10px;
+width:268px;
+height:418px;
+border-radius: 10px;
 position: relative;
 margin-right:28px;
 background:url(${mac});
+@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 `
 const Black=styled.div`
-position:absolute;
-border-radius:10px;
-border-bottom-right-radius:23px;
-left:9px;
-top:7px;
-width:241px;
-height:400px;
-background-color:black;
-opacity:0.7;
-z-index:0;
+width:268px;
+height:418px;
+background:url(${back});
+z-index:100;
+border-radius: 10px;
+
 `
 const Kind=styled.span`
 position:absolute;
@@ -35,7 +34,7 @@ z-index:999;
 background:none;
 font-family: NIXGONM-Vb;
   font-size: 13px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.69;
@@ -62,11 +61,11 @@ font-family: NIXGONM-Vb;
 const Nickname=styled.span`
 position: absolute;
 left:20px;
-top:140px;
- width: 110px;
-  height: 14px;
+top:130px;
+  height: 12px;
   font-family: NIXGONM-Vb;
-  font-size: 13px;
+  font-weight:600;
+  font-size: 16px;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.69;
@@ -89,7 +88,7 @@ const Text=styled.span`
 position:absolute;
 font-family: NIXGONM-Vb;
   font-size: 13px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.69;
@@ -159,7 +158,7 @@ z-index:1;
 const Texts=styled.span`
 position:absolute;
 font-family: NIXGONM-Vb;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -193,6 +192,7 @@ export default function ProjectItem(props) {
     return (
         <Wrapper>
           <Black/>
+        
             <Kind>{props.field}</Kind>
             <Bold>{props.project_name}</Bold>
             <Nickname><Red>{props.client_name}</Red> 클라이언트님</Nickname>

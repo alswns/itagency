@@ -34,7 +34,7 @@ const Sub=styled.span`
 margin-top:10px;
 font-family: NIXGONM-Vb;
   font-size: 10px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;

@@ -25,7 +25,7 @@ const ProjectItems=styled.div`
   
     overflow: auto;
     overflow-y:hidden;
-    width:1370px;
+    width:1450px;
     -ms-overflow-style: none; 
   &::-webkit-scrollbar { 
     display: none !important; 
@@ -61,7 +61,7 @@ export default function ProjectContainer(props) {
         return (
             
             <>
-            <Wrapper translate={(page - 1) * (sliderWidth+278)}>
+            <Wrapper translate={(page - 1) * (sliderWidth+295)}>
               <Img src={arrow} alt="" onClick={onClickLeft}/>
               <ProjectItems >
                 <div className='slider'>

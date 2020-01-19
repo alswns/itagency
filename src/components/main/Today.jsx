@@ -57,16 +57,17 @@ margin-top:8px;
 margin-bottom:5px;
 `
 const Sub=styled.div`
+@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
   font-family: NIXGONM-Vb;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.08;
   letter-spacing: normal;
   text-align: center;
   color: #212121;
-    opacity:0.8;
 `
 export default function Today() {
     return (

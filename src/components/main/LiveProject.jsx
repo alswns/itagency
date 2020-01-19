@@ -20,7 +20,7 @@ const Sub=styled.div`
 margin-top:2.8%;
 font-family: NIXGONM-Vb;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.33;
