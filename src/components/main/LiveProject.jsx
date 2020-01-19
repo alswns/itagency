@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ProjectContainer from './ProjectContainer'
 const Bold = styled.div`
 margin-top:81px;
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -56,6 +57,7 @@ export default function LiveProject() {
             <Bold>실시간 프로젝트</Bold>
             <Sub>가장 최근에 아이티에이전트에 등록된 프로젝트가 올라옵니다.</Sub>
             <Regi>프로젝트 보러가기</Regi>
+            <ProjectContainer/>
         </Wrapper>
     )
 }

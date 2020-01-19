@@ -25,7 +25,6 @@ justify-content: space-between;
 
   font-family: 'NIXGONM-Vb';
   font-size: 18px;
-  font-weight: normal;
   color: #ffffff;
 }
 `
