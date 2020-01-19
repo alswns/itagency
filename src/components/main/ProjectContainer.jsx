@@ -25,7 +25,7 @@ const ProjectItems=styled.div`
   
     overflow: auto;
     overflow-y:hidden;
-    width:73%;
+    width:1370px;
     -ms-overflow-style: none; 
   &::-webkit-scrollbar { 
     display: none !important; 
@@ -53,7 +53,7 @@ export default function ProjectContainer(props) {
         }
     }
     const onClickRight = () => {
-        if (page < props.projects.length) {
+        if (page < props.projects.length-4) {
             setPage(page + 1);
         }
       }
