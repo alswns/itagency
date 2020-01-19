@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="200" viewBox="0 0 1920 200">
+    <defs>
+        <style>
+            .cls-1{opacity:.75;fill:url(#linear-gradient)}
+        </style>
+        <linearGradient id="linear-gradient" x1=".408" x2=".769" y1="-.579" y2="2.91" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ffd739"/>
+            <stop offset="1" stop-color="#70ffb7"/>
+        </linearGradient>
+    </defs>
+    <path id="office-336368_1920" d="M0 0h1920v200H0z" class="cls-1"/>
+</svg>

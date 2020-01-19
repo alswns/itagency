@@ -14,7 +14,7 @@ background:url(${foot});
 const Image=styled.div`
 position:absolute;
 width:100%;
-background-image: linear-gradient(135deg, #ffd739 31%, #70ffb7 97%);
+background-color: #ff8253;
 opacity: 75%;
 height:200px;
 `
@@ -62,14 +62,14 @@ width:100%;
 height:45px;
 justify-content:center;
 `
-export default function SecondFooter() {
+export default function ThirdFooter() {
     return (
         <Wrapper>
           <Image></Image>
-          <Text>전문분야로만 돈을 벌 수 있는 개발자가 되고 싶은가요?</Text>
+          <Text>저렴하고 빠르게 서비스를 만들고 싶으신가요?</Text>
           <Wrap>
           <Sing>
-            <Sub>파트너 신청하기</Sub>
+            <Sub>프로젝트 상담하기</Sub>
           </Sing>
           </Wrap>
         </Wrapper>

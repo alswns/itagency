@@ -3,6 +3,8 @@ import Footer from '../components/main/Footer'
 import LiveProject from '../components/main/LiveProject'
 import MainPost from '../components/main/MainPost'
 import api from '../apis/BaseUrl'
+import SecondFooter from '../components/main/SecondFooter'
+import ThirdFooter from '../components/main/ThirdFooter'
 
 
 
@@ -30,7 +32,8 @@ export default class MainPage extends Component {
             <MainPost user='320'/>
             <Footer/> 
             <LiveProject projects={this.state.projects}/>
-            
+            <SecondFooter/>
+            <ThirdFooter/>
             </>
 
         )

@@ -50,7 +50,7 @@ font-family: NIXGONM-Vb;
 `
 const Wrapper = styled.div`
 width: 100%;
-height: 1080px;
+
 `
 export default function LiveProject(props) {
   console.log(props.projects+props.projects+props.projects)
