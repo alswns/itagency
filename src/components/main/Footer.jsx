@@ -41,9 +41,9 @@ export default function Footer(props) {
                 <Container>
                     <Tree  src={tree} alt=""/>
                     <Icons>
-                    <Icon title='22,069개' text='등록된 프로젝트' img={upload} style={{marginLeft:'0px'}}/>
-                    <Icon  title='100,000원' text='누적 프로젝트 금액' img={money}/>
-                    <Icon title='5건' text='진행중인 프로젝트 수' img={ing}/>
+                    <Icon title={props.project+'개'} text='등록된 프로젝트' img={upload} style={{marginLeft:'0px'}}/>
+                    <Icon  title={props.amount+'원'} text='누적 프로젝트 금액' img={money}/>
+                    <Icon title={props.ing+'개'} text='진행중인 프로젝트 수' img={ing}/>
                     </Icons>
 
                     <Tree src={treeBan} alt=""/>

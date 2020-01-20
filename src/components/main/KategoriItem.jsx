@@ -1,14 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import marketing from '../../assets/imgs/marketing.png'
-import system from '../../assets/imgs/system.png'
 const Wrapper=styled.div`
 
 width: 238px;
   height: 238px;
   
   border-radius: 10px;
-  background:url(${marketing});
+  background:url(${props=>props.background});
   position:relative;
 `
 const Img=styled.div`
@@ -48,14 +46,14 @@ top:53px;
 text-align:center;
 width:100%;
 `
-export default function KategoriItem() {
+export default function KategoriItem(props) {
     return (
-        <Wrapper>
+        <Wrapper background={props.background}>
             <Img></Img>
             <Wrap>
-            <Logo src={system}></Logo>
+            <Logo src={props.img}></Logo>
             </Wrap>
-            <Kind>시스템 개발</Kind>
+            <Kind>{props.text}</Kind>
             </Wrapper>
     )
 }

@@ -53,14 +53,13 @@ width: 100%;
 
 `
 export default function LiveProject(props) {
-  console.log(props.projects+props.projects+props.projects)
     return (
         <Wrapper>
             <Bold>실시간 프로젝트</Bold>
             <Sub>가장 최근에 아이티에이전트에 등록된 프로젝트가 올라옵니다.</Sub>
             <Regi>프로젝트 보러가기</Regi>
             <ProjectContainer projects={props.projects}/>
-            <Today></Today>
+            <Today today_registered_project={props.today_registered_project}  today_finished_project={props.today_finished_project}></Today>
         </Wrapper>
     )
 }

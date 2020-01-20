@@ -70,21 +70,22 @@ const Sub = styled.div`
   text-align: center;
   color: #212121;
 `
-export default function Today() {
+export default function Today(props) {
+  // today_registered_project={props.today_registered_project}  today_finished_project={props.today_finished_project}
   return (
     <Wrapper>
       <Text>TODAY</Text>
       <InformationContainer>
         <Information>
           <Su>
-            12개
+            {props.today_registered_project}개
             </Su>
           <Img src={bar} alt="" />
           <Sub>등록된 프로젝트 수</Sub>
         </Information>
         <Information>
           <Su>
-            5개
+          {props.today_registered_project}개
             </Su>
           <Img src={bar} alt="" />
           <Sub>진행중</Sub>
@@ -92,7 +93,7 @@ export default function Today() {
         </Information>
         <Information>
           <Su>
-            2개
+          {props.today_finished_project}개
             </Su>
           <Img src={bar} alt="" />
           <Sub>완료된 프로젝트 수</Sub>

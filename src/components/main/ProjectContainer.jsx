@@ -66,7 +66,6 @@ export default function ProjectContainer(props) {
               <ProjectItems >
                 <div className='slider'>
             {(props.projects||[]).map(res =>{
-                console.log(res)
             return <div><ProjectItem project_name={res.project_name} client_name={res.client_name} cost={res.cost} day={res.days} 
             field={res.field} num_of_applicants={res.num_of_applicants} progress={res.progress}/></div>
             })}

@@ -5,7 +5,6 @@ import tree from '../../assets/imgs/월계수.svg'
 const Wrapper=styled.div`
 box-sizing:border-box;
 height:28px;
-width:90px;
 display:flex;
 flex-direction:column;
 height:100%;
