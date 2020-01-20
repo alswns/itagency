@@ -63,11 +63,17 @@ const Sub=styled.div`
 `
 const Wrap=styled.div`
 display:flex;
-width:62.4%;
 margin:0 auto;
 `
 const Wrapper=styled.div`
 margin-bottom: 161px;
+`
+const Wraps=styled.div`
+margin: 0 auto;
+display:flex;
+flex-direction:column;
+justify-content:center;
+text-align:center;
 `
 export default function Kategorie() {
     return (
@@ -75,17 +81,9 @@ export default function Kategorie() {
             <Title>프로젝트 카테고리</Title>
         <Img src={bar}></Img>
         <Sub>어떤 프로젝트에 관심이 있으신가요?</Sub>
+<Wraps>
         <Wrap>
-        {/* import document from '../../assets/imgs/icons/document.png'
-import joystick from '../../assets/imgs/icons/joystick.png'
-import market from '../../assets/imgs/icons/market.png'
-import programming from '../../assets/imgs/icons/programming.png'
-import sns from '../../assets/imgs/icons/sns.png'
-import system from '../../assets/imgs/icons/system.png'
-import ui from '../../assets/imgs/icons/ui.png'
-import video from '../../assets/imgs/icons/video-camera.png'
-import vr from '../../assets/imgs/icons/vr.png'
-import web from '../../assets/imgs/icons/web.png' */}
+        
         <div><KategoriItem text='시스템 개발'img={system} background={시스템개발}  ></KategoriItem></div>
         <div><KategoriItem text='SW 개발'img={programming} background={sw개발}></KategoriItem></div>
         <div><KategoriItem text='Web/쇼핑몰 개발'img={web} background={web개발}></KategoriItem></div>
@@ -99,6 +97,7 @@ import web from '../../assets/imgs/icons/web.png' */}
         <div><KategoriItem text='마케팅 서비스' img={market} background={marketing}></KategoriItem></div>
        <div> <KategoriItem text='사업 기획 및 제안서' img={document} background={사업}></KategoriItem></div>
         </Wrap>
+        </Wraps>
         </Wrapper>
     )
 }
