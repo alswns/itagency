@@ -85,7 +85,7 @@ export default function Today(props) {
         </Information>
         <Information>
           <Su>
-          {props.today_registered_project}개
+          {props.ing}개
             </Su>
           <Img src={bar} alt="" />
           <Sub>진행중</Sub>

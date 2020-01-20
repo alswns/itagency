@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
 import api from '../apis/BaseUrl'
 import Requests from '../apis/Request'
+import styled from 'styled-components'
+import main_imgae from '../assets/imgs/mainImgae.png'
+import Login from '../components/Login/Login'
+import Last from '../components/main/Last'
+
+const Wrapper=styled.div`
+width:100%;
+`
+const Banner=styled.div`
+width:100%;
+height:95px;
+background-image:url(${main_imgae});
+`
 
 export default class LoginPage extends Component {
     
@@ -59,14 +72,17 @@ export default class LoginPage extends Component {
     }
     render() {
         return (
-            <div style={{marginTop:'300px'}}>
-                id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
+            <Wrapper>
+                <Banner/>
+              <Login/>
+                {/* id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
                 password:<input type="text" name='password' value={this.state.password} onChange={this.change}/>
                 <button onClick={this.login}>로그인</button>
                 {/* "https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/&state=&response_type=token" */}
                 <br/>
-                <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/Login&state=&response_type=token">facebook</a>
-            </div>
+                {/* <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/Login&state=&response_type=token">facebook</a>  */}
+                <Last/>
+            </Wrapper>
         )
     }
 }

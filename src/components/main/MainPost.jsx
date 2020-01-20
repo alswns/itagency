@@ -75,7 +75,7 @@ margin-top:2%;
 export default class MainPost extends Component {
     render() {
         return (
-            <Wrapper>
+            <Wrapper >
                 <Lines>
             <Line>
                 <Title size='56px' color='#ffffff' >IT Agency{'\u00A0'}</Title>   <Title size='43px' color='#ffffff'>는 </Title> <Title className='counter' size='60px' color='#ef4f80' >{this.props.user}</Title> <Title size='42px' color='#ffffff'>명의 파트너와 함께 합니다</Title>

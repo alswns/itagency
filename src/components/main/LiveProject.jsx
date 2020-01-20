@@ -59,7 +59,7 @@ export default function LiveProject(props) {
             <Sub>가장 최근에 아이티에이전트에 등록된 프로젝트가 올라옵니다.</Sub>
             <Regi>프로젝트 보러가기</Regi>
             <ProjectContainer projects={props.projects}/>
-            <Today today_registered_project={props.today_registered_project}  today_finished_project={props.today_finished_project}></Today>
+            <Today today_registered_project={props.today_registered_project}  ing={props.ing} today_finished_project={props.today_finished_project}></Today>
         </Wrapper>
     )
 }

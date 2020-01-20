@@ -38,6 +38,7 @@ export default class MainPage extends Component {
             })
         })
         api.get('/info/project/status').then(res=>{
+            console.log(res.data)
             this.setState({
                 datas:res.data,
                 amount:res.data.amount,
@@ -56,7 +57,7 @@ export default class MainPage extends Component {
           
             <MainPost user='320'/>
             <Footer  amount={numberWithCommas(this.state.amount)} project={numberWithCommas(this.state.project)} ing={numberWithCommas(this.state.ing)} /> 
-            <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project}  today_finished_project={this.state.today_finished_project} />
+            <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project} ing={numberWithCommas(this.state.ing)} today_finished_project={this.state.today_finished_project} />
             <SecondFooter/>
             <Example/>
             <Progess/>

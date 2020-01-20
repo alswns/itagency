@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../assets/imgs/Logo_white.png'
+import main_imgae from '../assets/imgs/mainImgae.png'
+
+
 
 const Wrapper = styled.div`
 position:absolute;
 display:flex;
 background:rgba(0,0,0,0);
-top:20px;
+padding-top:20px;
+top:0px;
 right:0px;
 left:0px;
 `
@@ -25,7 +28,7 @@ justify-content: space-between;
 
   font-family: 'NIXGONM-Vb';
   font-size: 18px;
-  color: #ffffff;
+  color: ${props=>props.color};
 }
 `
 const Link_li = styled.li`
@@ -48,12 +51,12 @@ text-decoration:none;
 
 `
 
-function Banner() {
+function Banner(props) {
     return (
-        <Wrapper>
-            <Logo src={logo} alt="logo_img" onClick={()=>window.location.href='/'} />
+        <Wrapper back={props.back}>
+            <Logo src={props.img} alt="logo_img" onClick={()=>window.location.href='/'} />
 
-            <Link_ul>
+            <Link_ul color={props.color}>
                 <Link_li><a >상담하기</a></Link_li>
                 <Link_li><a>프로젝트</a></Link_li>
                 <Link_li><a>이용후기</a></Link_li>
