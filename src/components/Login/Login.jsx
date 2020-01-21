@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import '../../input.css'
 import back from '../../assets/imgs/arrow_back.svg'
+import { Facebook } from '../../apis/Oauth'
 
 
 const Title = styled.div`
@@ -69,22 +70,22 @@ const Commons = styled.div`
 function Click(a) {
 
 
-    let comm = document.getElementById('comm')
-    let part = document.getElementById('part')
-    if (comm == undefined)
-        return
-    if (a == 0) {
-        part.style.color = '#212121'
-        comm.style.color = '#6f6f6f'
-        document.getElementById('left').style.opacity = 0;
-        document.getElementById('right').style.opacity = 1;
-    }
-    else {
-        comm.style.color = '#212121'
-        part.style.color = '#6f6f6f'
-        document.getElementById('left').style.opacity = 1;
-        document.getElementById('right').style.opacity = 0;
-    }
+  let comm = document.getElementById('comm')
+  let part = document.getElementById('part')
+  if (comm == undefined)
+    return
+  if (a == 0) {
+    part.style.color = '#212121'
+    comm.style.color = '#6f6f6f'
+    document.getElementById('left').style.opacity = 0;
+    document.getElementById('right').style.opacity = 1;
+  }
+  else {
+    comm.style.color = '#212121'
+    part.style.color = '#6f6f6f'
+    document.getElementById('left').style.opacity = 1;
+    document.getElementById('right').style.opacity = 0;
+  }
 }
 const LoginContainer = styled.div`
 display:flex;
@@ -96,6 +97,7 @@ width:100%;
 height:0px;
 margin-top:10px;
 border: 1.5px solid black;
+transition:0.1s;
 `
 
 
@@ -105,6 +107,7 @@ height:0px;
 margin-top:10px;
 opacity:0;
 border: 1.5px solid black;
+transition:0.2s;
 `
 
 const Group = styled.div`
@@ -128,7 +131,10 @@ const Input = styled.input`
   text-align: left;
   padding-left:15px;
   box-sizing:border-box;
-  
+  &:focus{
+    outline:1.5px solid #212121;
+    
+  }
 `
 const Inputs = styled.div`
 display:flex;
@@ -189,20 +195,20 @@ display:flex;
 text-align:center;
 justify-content:center;
 `
-const OauthContainer=styled.div`
+const OauthContainer = styled.div`
 margin-top:109px;
 display:flex;
 flex-direction:column;
 `
-const Oauth=styled.div`
+const Oauth = styled.div`
 cursor: pointer;
 margin-top:15px;
 width: 381px;
   height: 50px;
   border-radius: 5px;
-  background-color: ${props=>props.back};
+  background-color: ${props => props.back};
 `
-const OauthText=styled.div`
+const OauthText = styled.div`
 justify-content:center;
 display:flex;
 height:100%;
@@ -217,7 +223,7 @@ font-family: NIXGONM-Vb;
   text-align: center;
   color: #ffffff;
 `
-const Copy=styled.div`
+const Copy = styled.div`
 margin-bottom:155px;
 margin-top:123px;
  font-family: NotoSansCJKkr;
@@ -231,10 +237,10 @@ margin-top:123px;
   color: #212121;
 
 `
-const Pink=styled.span`
+const Pink = styled.span`
 color:#ef4f80;
 `
-const Img=styled.img`
+const Img = styled.img`
 width:25px;
 height:25px;
 margin-left:60px;
@@ -243,53 +249,108 @@ margin-bottom:110px;
 cursor: pointer;
 `
 
+const Wrap = styled.div`
+width: 450px;
+  height: 50px;
+  position:relative;
+`
+const Inner = styled.span`
+display:flex;
+top:18px;
+left:15px;
+position:absolute;
+font-family: NIXGONM-Vb;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6f6f6f;
+  transition:0.2s;
+`
+
+const onFocus=(int)=>{
+  let inner=document.getElementsByClassName('text')
+  for(let i in inner){
+    if(i==int){
+      console.log(i)
+      inner[i].style.top='5px';
+      inner[i].style.fontSize='10px';
+    }
+  }
+}
+const onBlur=(int)=>{
+  let inner=document.getElementsByClassName('text')
+  for(let i in inner){
+    if(i==int){
+      console.log(i)
+      inner[i].style.top='18px';
+      inner[i].style.fontSize='16px';
+    }
+  }
+}
 
 export default function Login(props) {
-    return (
-        <Wrapper>
-          <Img src={back} onClick={()=>{ window.location.href='/'}}></Img>
-            <Title><Pink>저렴</Pink>하게, <Pink>확실</Pink>하게, <Pink>안전</Pink>하게</Title>
-            <Text>당신만의 아이디어를 <Pink>아이티에이전시</Pink>와 실현해보세요!</Text>
-            <It>ITAGENCY 로그인</It>
-            <Aswemble>
-                <Container>
-                    <LoginContainer>
-                        <Group >
-                            <Common id='comm' onClick={() => Click(1)}  >일반 회원 로그인</Common>
-                            <Line id='left' />
-                        </Group>
-                        <Group  style={{ marginLeft: '3%' }}>
+  return (
+    <Wrapper>
+      <Img src={back} onClick={() => { window.location.href = '/' }}></Img>
+      <Title><Pink>저렴</Pink>하게, <Pink>확실</Pink>하게, <Pink>안전</Pink>하게</Title>
+      <Text>당신만의 아이디어를 <Pink>아이티에이전시</Pink>와 실현해보세요!</Text>
+      <It>ITAGENCY 로그인</It>
+      <Aswemble>
+        <Container>
+          <LoginContainer>
+            <Group >
+              <Common id='comm' onClick={() => Click(1)}  >일반 회원 로그인</Common>
+              <Line id='left' />
+            </Group>
+            <Group style={{ marginLeft: '3%' }}>
 
-                            <Commons id='part' onClick={() => Click(0)} >파트너 로그인</Commons>
-                            <Lines id='right' />
-                        </Group>
+              <Commons id='part' onClick={() => Click(0)} >파트너 로그인</Commons>
+              <Lines id='right' />
+            </Group>
 
-                    </LoginContainer>
-                    <Inputs>
-                        <Input placeholder='이메일 주소' placeholder='이메일 주소' onChange={props.changeId} value={props.id}></Input>
-                        <Input type='password' style={{ marginTop: '15px' }} placeholder='비밀번호' onChange={props.changePw} value={props.pw} ></Input>
-                    </Inputs>
-                    <div style={{marginTop:'10px'}}>
-                    <Check type='checkbox' id='check'></Check>
-                    <Remember for='check'>내정보 기억하기</Remember>
-                    
-                    <Remember style={{ marginLeft: "180px" }}>아이디</Remember>
-                    <Remember>|</Remember>
-                    <Remember>비밀번호 찾기</Remember>
-                    </div>
-                    <Button color='#212121'> <ButtonText color='#ffffff' onClick={props.login}>로그인</ButtonText></Button>
-                    <Button color='#ffffff'><ButtonText color='#212121' onClick={()=>{ window.location.href='/register'}}>회원가입</ButtonText> </Button>
-                </Container>
+          </LoginContainer>
+          <Inputs>
+            <Wrap>
+              <label>
+                <Input onChange={props.changeId} value={props.id} onBlur={()=>onBlur(0)}onFocus={()=>onFocus(0)}></Input>
+                <Inner className='text'>이메일 주소</Inner>
+                </label>
+            </Wrap>
 
-                <MidlLine></MidlLine>
-            <OauthContainer>
-            <Oauth back='#3b5998'><OauthText>Facebook으로 로그인</OauthText></Oauth>
-            <Oauth back='#f44336'><OauthText>Google으로 로그인</OauthText></Oauth>
-            <Oauth back='#2db400'><OauthText>NAVER으로 로그인</OauthText></Oauth>
-            </OauthContainer>
+            <Wrap style={{ marginTop: '15px' }}>
+              <label>
+                
+                <Input type='password' onChange={props.changePw} value={props.pw} onBlur={()=>onBlur(1)}onFocus={()=>onFocus(1)} ></Input>
+                <Inner className='text'>비밀번호</Inner>
+              </label>
 
-            </Aswemble>
-            <Copy>Copyright ⓒ 2019 ITAGENCY Inc. All rights reserved</Copy>
-        </Wrapper>
-    )
+            </Wrap>
+          </Inputs>
+          <div style={{ marginTop: '10px' }}>
+            <Check type='checkbox' id='check'></Check>
+            <Remember for='check'>내정보 기억하기</Remember>
+
+            <Remember style={{ marginLeft: "180px" }}>아이디</Remember>
+            <Remember>|</Remember>
+            <Remember>비밀번호 찾기</Remember>
+          </div>
+          <Button color='#212121'> <ButtonText color='#ffffff' onClick={props.login}>로그인</ButtonText></Button>
+          <Button color='#ffffff'><ButtonText color='#212121' onClick={() => { window.location.href = '/register' }}>회원가입</ButtonText> </Button>
+        </Container>
+
+        <MidlLine></MidlLine>
+        <OauthContainer>
+          <Oauth back='#3b5998' onClick={Facebook}><OauthText>Facebook으로 로그인</OauthText></Oauth>
+          <Oauth back='#f44336'><OauthText>Google으로 로그인</OauthText></Oauth>
+          <Oauth back='#2db400'><OauthText>NAVER으로 로그인</OauthText></Oauth>
+        </OauthContainer>
+
+      </Aswemble>
+      <Copy>Copyright ⓒ 2019 ITAGENCY Inc. All rights reserved</Copy>
+    </Wrapper>
+  )
 }

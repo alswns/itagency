@@ -6,6 +6,7 @@ import rocket from '../../assets/imgs/rocket.svg'
 import CircleIcon from './CircleIcon'
 import Selection from './Selection'
 import {checkPasswordPattern,samePw, checkPw, testCheck} from '../../apis/CheckForm'
+import { Facebook } from '../../apis/Oauth'
 const Title = styled.div`
 width:100%;
   font-family: NIXGONM-Vb;
@@ -349,7 +350,7 @@ export default function Regist(props) {
                         <div>
                         <Ment>간편가입</Ment>
                         <OauthContainer>
-            <Oauth back='#3b5998'><OauthText>Facebook으로 로그인</OauthText></Oauth>
+            <Oauth back='#3b5998' onClick={Facebook}><OauthText>Facebook으로 로그인</OauthText></Oauth>
             <Oauth back='#f44336'><OauthText>Google으로 로그인</OauthText></Oauth>
             <Oauth back='#2db400'><OauthText>NAVER으로 로그인</OauthText></Oauth>
             </OauthContainer>

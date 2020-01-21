@@ -125,11 +125,7 @@ export default class RegisterPage extends Component {
                 name={this.state.name} email={this.state.email} 
                 phone={this.state.phone} area={this.state.area}/>
 
-                {/* id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
-                password:<input type="text" name='password' value={this.state.password} onChange={this.change}/> <br/>
-                name:<input type="text" value={this.state.name} onChange={this.change} name='name'/> <br/>
-                email:<input type="text" value={this.state.email}   onChange={this.change} name='email'/> 
-                <button onClick={this.regi}>회원가입</button> */}
+                
 
 
                 <Last/>
