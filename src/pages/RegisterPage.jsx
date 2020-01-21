@@ -95,7 +95,7 @@ export default class RegisterPage extends Component {
     sameEmail=()=>{
         
         if(checkEmailPattern(this.state.email)){
-        api.post('/check/email',{"email":this.state.email})
+        api.post('/client/check/email',{"email":this.state.email})
         .then(res=>{
             alert('사용 할 수 있는 이메일입니다.')
             let input=document.getElementsByName('email')[0]
