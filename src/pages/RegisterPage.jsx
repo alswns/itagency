@@ -64,11 +64,12 @@ export default class RegisterPage extends Component {
             }
         })
         .catch(err=>{
-            if (err.response.status===409){
-                alert('이미 있는 아이디 입니다')
-            }else if(err.response.status===407){
-                alert('잘못된 형식입니다')
-            }
+            console.dir(err)
+            // if (err.response.status===409){
+            //     alert('이미 있는 아이디 입니다')
+            // }else if(err.response.status===407){
+            //     alert('잘못된 형식입니다')
+            // }
         })
     }
     }

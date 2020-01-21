@@ -169,12 +169,13 @@ flex-direction:column;
   color: ${props => props.color};
 `
 const Group=styled.div`
+margin:0 auto;
 margin-top:65px;
 display:flex;
 position:relative;
 justify-content:space-between;
 width:1050px;
-margin-left:31.6%;
+
 `
 const LongLine=styled.div`
     height:550px;
@@ -326,7 +327,7 @@ export default function Regist(props) {
                     </Form>
                     <LongLine/>
 
-                    
+
                     <Buttons>
                         <Ment>이미 계정이 있으신가요?</Ment>
                         <LoginButton><ButtonText color='#ef4f80'>로그인</ButtonText></LoginButton>

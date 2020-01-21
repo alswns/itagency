@@ -188,7 +188,6 @@ const Aswemble = styled.div`
 display:flex;
 text-align:center;
 justify-content:center;
-margin-right:5%;
 `
 const OauthContainer=styled.div`
 margin-top:109px;
