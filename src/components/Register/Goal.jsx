@@ -8,7 +8,10 @@ const Wrapper=styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   position:relative;
-  margin-left:${props=>props.mar}
+  margin-left:${props=>props.mar};
+  box-sizing:border-box;
+cursor:pointer;
+  
 `
 const Title=styled.span`
 width: 62px;
@@ -40,10 +43,11 @@ width: 90px;
   letter-spacing: -0.22px;
   text-align: center;
   color: #6f6f6f;`
+  
 export default function Goal(props) {
     
     return (
-        <Wrapper mar={props.mar} clicked={props.click}>
+        <Wrapper a={props.a} mar={props.mar} clicked={props.click} onClick={props.onClick} className={props.className}>
             <Title>{props.title}</Title>
             <Text>{props.text} </Text>
         </Wrapper>

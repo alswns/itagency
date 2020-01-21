@@ -4,6 +4,8 @@ import styled from  'styled-components'
 import Goal from './Goal'
 import rocket from '../../assets/imgs/rocket.svg'
 import CircleIcon from './CircleIcon'
+import Selection from './Selection'
+import {checkPasswordPattern,samePw, checkPw, testCheck} from '../../apis/CheckForm'
 const Title = styled.div`
 width:100%;
   font-family: NIXGONM-Vb;
@@ -30,6 +32,7 @@ font-family: NIXGONM-Vb;
 `
 const Wrapper = styled.div`
 margin : 0 auto;
+margin-bottom:76px;
 `
 const It = styled.div`
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -60,7 +63,7 @@ display:flex;
 margin-top:15px;
 `
 const Sub=styled.span`
- width: 51px;
+ width: 52px;
  margin-right:5.2%;
 font-family: NIXGONM-Vb;
   font-size: 14px;
@@ -92,6 +95,7 @@ width: 310px;
   padding-left:14px;
 `
 const Submit=styled.div`
+cursor:pointer;
  width: 89px;
   height: 40px;
   background-color:${props=>props.back};
@@ -237,7 +241,11 @@ width: 386px;
   text-align: center;
   color: #212121;
 `
-export default function Regist() {
+
+
+
+export default function Regist(props) {
+    const [check,changeCheck]=React.useState(false)
     return (
         <Wrapper>
             
@@ -249,13 +257,14 @@ export default function Regist() {
                 <Form>
             <Container >
                 <Sub>이용목적</Sub>
-            <Goal title='클라이언트' text='프로젝트를 진행하는개인 또는 기업'></Goal>
-            <Goal mar='0.5%' title='파트너' text='프로젝트를 의뢰할개인 또는 기업' ></Goal>
+            <Goal a={true} title='클라이언트' text='프로젝트를 진행하는개인 또는 기업' className='goal' onClick={()=>{changeCheck(false);props.Change(0)}}></Goal>
+            <Goal mar='0.5%' title='파트너' text='프로젝트를 의뢰할개인 또는 기업' className='goal' onClick={()=>{changeCheck(true);props.Change(1)}}></Goal>
             </Container>
             <Container>
-                <Sub>이름</Sub>
-                <Input></Input>
+                <Sub >이름</Sub>
+                <Input value={props.name} onChange={props.change} name='name'></Input>
             </Container>
+            {check&&<>
             <Container>
                 <Sub>연락처</Sub>
                 <Small placeholder='연락처주소입력( - 없이 입력)'></Small>
@@ -270,43 +279,54 @@ export default function Regist() {
                 <SubmintSpan color='white'>확인</SubmintSpan>
             </Submit>
             </Container>
+            </>}
             <Container>
                 <Sub>아이디</Sub>
-                <Input placeholder='영문 또는 숫자 4자 이상 입력'></Input>
+                <Input value={props.id} onChange={props.change} name='id' placeholder='영문 또는 숫자 4자 이상 입력'></Input>
             </Container>
             <Container>
                 <Sub>비밀번호</Sub>
-                <Input placeholder='영문 숫자 조합, 8자 이상 20자 이하 입력'></Input>
+                <Input type='password' onBlur={()=>checkPw(props.pw,props.checkpw,props.checkChange)} value={props.pw} onChange={props.change} name='password' placeholder='영문 숫자 조합, 8자 이상 20자 이하 입력'></Input>
+            </Container>
+            <Container>
+                <Sub/>
+                {checkPasswordPattern(props.pw)}
             </Container>
             <Container>
                 <Sub></Sub>
-                <Input placeholder='비밀번호 재입력'></Input>
+                <Input type='password' onBlur={()=>checkPw(props.pw,props.checkpw,props.checkChange)} value={props.checkpw} onChange={props.change} name='checkpw' placeholder='비밀번호 재입력'></Input>
+            </Container>
+            <Container>
+                <Sub/>
+                {samePw(props.pw,props.checkpw)}
             </Container>
             <Container>
                 <Sub>이메일</Sub>
-                <Small placeholder='이메일 입력'></Small>
-                <Submit back='#212121'>
-                <SubmintSpan color='white'>중복체크</SubmintSpan>
+                <Small value={props.email} name='email' onChange={props.change} placeholder='이메일 입력'></Small>
+                <Submit  back='#212121'>
+                <SubmintSpan color='white' onClick={props.sameEmail}>중복체크</SubmintSpan>
             </Submit>
             </Container>
             <Container>
                 <Sub>지역</Sub>
-                
+                <Selection/>
             </Container>
             <Container>
                 <Sub></Sub>
             <Line/>
             </Container>
             <Container style={{justifyContent:'center'}}>
-            <input type='checkbox' id='check'></input>
+            <input type='checkbox' id='check' onClick={(e)=>testCheck(e,props.checkChange)}></input>
                     <Remember for='check'><Pink>이용약관</Pink> 및 <Pink>개인정보취급방침</Pink>에 동의 합니다.</Remember>
                     </Container>
                     <Container>
                     <Sub></Sub>
-                    <Button color='#212121'><ButtonText color='#ffffff'>회원가입</ButtonText></Button>
+                    <Button color='#212121' onClick={props.regi}><ButtonText color='#ffffff'>회원가입</ButtonText></Button>
                     </Container>
                     </Form>
                     <LongLine/>
+
+                    
                     <Buttons>
                         <Ment>이미 계정이 있으신가요?</Ment>
                         <LoginButton><ButtonText color='#ef4f80'>로그인</ButtonText></LoginButton>
