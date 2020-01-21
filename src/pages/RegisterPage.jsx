@@ -26,6 +26,7 @@ export default class RegisterPage extends Component {
             area:'',
             phone:'',
             checkpw:'',
+            phone:'',
             emailCheck:false,
             pwCheck:false,
             admitCheck:false,
@@ -56,7 +57,8 @@ export default class RegisterPage extends Component {
             name:this.state.name,
             email:this.state.email,
             password:this.state.password,
-            "location": area
+            "location": area,
+            phone:this.state.phone
         }).then(res=>{
             if (res.status===201){
                 alert('회원가입 성공')
@@ -116,7 +118,7 @@ export default class RegisterPage extends Component {
         return (
             <Wrapper>
                 <Banner/>
-                <Regist sameEmail={this.sameEmail} regi={this.regi}
+                <Regist phone={this.state.phone} sameEmail={this.sameEmail} regi={this.regi}
                 Change={this.colorChange} checkpw={this.state.checkpw} 
                 change={this.change} id={this.state.id} 
                 pw={this.state.password} checkChange={this.checkChange}

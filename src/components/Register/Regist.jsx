@@ -74,6 +74,10 @@ font-family: NIXGONM-Vb;
   letter-spacing: normal;
   text-align: left;
   color: #6f6f6f;
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+  display:flex;
 `
 const Input = styled.input`
  width: 409px;
@@ -272,7 +276,7 @@ export default function Regist(props) {
             {check&&<>
             <Container>
                 <Sub>연락처</Sub>
-                <Small placeholder='연락처주소입력( - 없이 입력)'></Small>
+                <Small value={props.phone} name='phone' onChange={props.change} placeholder='연락처주소입력( - 없이 입력)'></Small>
                 <Submit back='white'>
                 <SubmintSpan color='#212121'>인증번호 요청</SubmintSpan>
             </Submit>
@@ -283,6 +287,13 @@ export default function Regist(props) {
                 <Submit back='#212121'>
                 <SubmintSpan color='white'>확인</SubmintSpan>
             </Submit>
+            </Container>
+            </>}
+            {!check&&<>
+                <Container>
+                <Sub>연락처</Sub>
+                <Input value={props.phone} name='phone' onChange={props.change} placeholder='연락처주소입력( - 없이 입력)'></Input>
+
             </Container>
             </>}
             <Container>
