@@ -147,6 +147,8 @@ margin-top:15px;
   text-align:center;
 `
 const Buttons=styled.div`
+margin-right:5%;
+margin-left:-2%;
 justify-content:space-between;
 align-items:center;
 text-align:center;
@@ -173,14 +175,15 @@ margin:0 auto;
 margin-top:65px;
 display:flex;
 position:relative;
-justify-content:space-between;
-width:1050px;
+justify-content:center;
+width:100%;
 
 `
 const LongLine=styled.div`
     height:550px;
   border: solid 1px #6f6f6f;
     opacity:0.5;
+    margin: 0 5%;
 `
 const Ment=styled.div`
 font-family: NIXGONM-Vb;
@@ -227,7 +230,8 @@ font-family: NIXGONM-Vb;
   text-align: center;
   color: #ffffff;
 `
-const Form=styled.div``
+const Form=styled.div`
+`
 const Explane=styled.div`
 white-space:pre;
 width: 386px;
