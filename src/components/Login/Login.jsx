@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import '../../input.css'
-
+import back from '../../assets/imgs/arrow_back.svg'
 
 
 const Title = styled.div`
@@ -30,7 +30,6 @@ font-family: NIXGONM-Vb;
 `
 const Wrapper = styled.div`
 margin : 0 auto;
-margin-top:110px;
 `
 const It = styled.div`
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -137,14 +136,12 @@ flex-direction:column;
 margin-top:30px;
 `
 const Check = styled.input`
-  border-radius: 3px;
-  border: solid 1px #ef4f80;
-  background-color: #ffffff;
+  
 `
 const Container = styled.div`
 
 `
-const Remember = styled.span`
+const Remember = styled.label`
 margin-left:10px;
 font-family: NIXGONM-Vb;
   font-size: 15px;
@@ -157,6 +154,7 @@ font-family: NIXGONM-Vb;
   color: #6f6f6f;
 `
 const Button = styled.div`
+cursor: pointer;
 margin-top:15px;
  width: 450px;
   height: 50px;
@@ -198,6 +196,7 @@ display:flex;
 flex-direction:column;
 `
 const Oauth=styled.div`
+cursor: pointer;
 margin-top:15px;
 width: 381px;
   height: 50px;
@@ -236,9 +235,20 @@ margin-top:123px;
 const Pink=styled.span`
 color:#ef4f80;
 `
-export default function Login() {
+const Img=styled.img`
+width:25px;
+height:25px;
+margin-left:60px;
+margin-top:80px;
+margin-bottom:110px;
+cursor: pointer;
+`
+
+
+export default function Login(props) {
     return (
         <Wrapper>
+          <Img src={back} onClick={()=>{ window.location.href='/'}}></Img>
             <Title><Pink>저렴</Pink>하게, <Pink>확실</Pink>하게, <Pink>안전</Pink>하게</Title>
             <Text>당신만의 아이디어를 <Pink>아이티에이전시</Pink>와 실현해보세요!</Text>
             <It>ITAGENCY 로그인</It>
@@ -257,16 +267,19 @@ export default function Login() {
 
                     </LoginContainer>
                     <Inputs>
-                        <Input placeholder='이메일 주소'></Input>
-                        <Input  style={{ marginTop: '15px' }} placeholder='비밀번호'></Input>
+                        <Input placeholder='이메일 주소' placeholder='이메일 주소' onChange={props.changeId} value={props.id}></Input>
+                        <Input type='password' style={{ marginTop: '15px' }} placeholder='비밀번호' onChange={props.changePw} value={props.pw} ></Input>
                     </Inputs>
-                    <Check type='checkbox'></Check>
-                    <Remember>내정보 기억하기</Remember>
+                    <div style={{marginTop:'10px'}}>
+                    <Check type='checkbox' id='check'></Check>
+                    <Remember for='check'>내정보 기억하기</Remember>
+                    
                     <Remember style={{ marginLeft: "180px" }}>아이디</Remember>
                     <Remember>|</Remember>
                     <Remember>비밀번호 찾기</Remember>
-                    <Button color='#212121'> <ButtonText color='#ffffff'>로그인</ButtonText></Button>
-                    <Button color='#ffffff'><ButtonText color='#212121'>회원가입</ButtonText> </Button>
+                    </div>
+                    <Button color='#212121'> <ButtonText color='#ffffff' onClick={props.login}>로그인</ButtonText></Button>
+                    <Button color='#ffffff'><ButtonText color='#212121' onClick={()=>{ window.location.href='/register'}}>회원가입</ButtonText> </Button>
                 </Container>
 
                 <MidlLine></MidlLine>

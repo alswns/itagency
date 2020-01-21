@@ -44,10 +44,19 @@ export default class LoginPage extends Component {
   }
     }
 
-    change = (event) => {
-        const data = {}
-        data[event.target.name] = event.target.value
-        this.setState(data)
+    changeId = (event) => {
+        
+        this.setState({
+            id: event.target.value
+        })
+    }
+    changePw = (event) => {
+        
+        this.setState({
+            password: event.target.value
+        })
+        console.log(this.state.password)
+
     }
     login=()=>{
         api.post('/client/auth',{
@@ -74,7 +83,7 @@ export default class LoginPage extends Component {
         return (
             <Wrapper>
                 <Banner/>
-              <Login/>
+              <Login id={this.state.id} pw={this.state.password} changeId={this.changeId} changePw={this.changePw} login={this.login}/>
                 {/* id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
                 password:<input type="text" name='password' value={this.state.password} onChange={this.change}/>
                 <button onClick={this.login}>로그인</button>

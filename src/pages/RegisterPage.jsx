@@ -1,5 +1,18 @@
 import React, { Component } from 'react'
 import api from '../apis/BaseUrl'
+import styled from 'styled-components'
+import main_imgae from '../assets/imgs/mainImgae.png'
+import Regist from '../components/Register/Regist'
+import Last from '../components/main/Last'
+
+const Wrapper=styled.div`
+width:100%;
+`
+const Banner=styled.div`
+width:100%;
+height:95px;
+background-image:url(${main_imgae});
+`
 
 export default class RegisterPage extends Component {
     constructor(props) {
@@ -39,13 +52,20 @@ export default class RegisterPage extends Component {
     }
     render() {
         return (
-            <div style={{marginTop:'300px'}}>
-                id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
+            <Wrapper>
+                <Banner/>
+                <Regist/>
+
+                {/* id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
                 password:<input type="text" name='password' value={this.state.password} onChange={this.change}/> <br/>
                 name:<input type="text" value={this.state.name} onChange={this.change} name='name'/> <br/>
                 email:<input type="text" value={this.state.email}   onChange={this.change} name='email'/> 
-                <button onClick={this.regi}>회원가입</button>
-            </div>
+                <button onClick={this.regi}>회원가입</button> */}
+
+
+                <Last/>
+                </Wrapper>
+
         )
     }
 }
