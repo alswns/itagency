@@ -7,6 +7,8 @@ width: 100%;
   background-color: #212121;
   display:flex;
   flex-direction:column;
+  padding-left:11.4%;;
+  box-sizing:border-box;
 `
 const Logo=styled.img`
 margin-top:35px;

@@ -331,7 +331,7 @@ export default function Login(props) {
             </Wrap>
           </Inputs>
           <div style={{ marginTop: '10px' }}>
-            <Check type='checkbox' id='check'></Check>
+            <Check type='checkbox' className='red' id='check'></Check>
             <Remember for='check'>내정보 기억하기</Remember>
 
             <Remember style={{ marginLeft: "180px" }}>아이디</Remember>

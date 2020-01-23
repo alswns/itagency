@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.927" height="45.228" viewBox="0 0 60.927 45.228">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff}.cls-1,.cls-4{stroke:#212121}.cls-3,.cls-4,.cls-7{fill:none}.cls-3{stroke:#ef4f80;stroke-linecap:round}.cls-5{fill:#ef4f80}.cls-6{stroke:none}
+        </style>
+    </defs>
+    <g id="그룹_63" data-name="그룹 63" transform="rotate(-90 22.505 22.505)">
+        <g id="사각형_43" class="cls-1" data-name="사각형 43" transform="translate(-.219)">
+            <rect width="39" height="54" class="cls-6" rx="5"/>
+            <rect width="38" height="53" x=".5" y=".5" class="cls-7" rx="4.5"/>
+        </g>
+        <path id="사각형_44" d="M0 0h18v15H0z" class="cls-2" data-name="사각형 44" transform="translate(21.781 40)"/>
+        <path id="선_20" d="M0 0h25" class="cls-3" data-name="선 20" transform="rotate(90 13.125 18.875)"/>
+        <path id="선_21" d="M0 0h25" class="cls-3" data-name="선 21" transform="rotate(90 9.75 15.5)"/>
+        <path id="선_22" d="M0 0h19" class="cls-3" data-name="선 22" transform="rotate(90 6.375 12.125)"/>
+        <g id="그룹_61" data-name="그룹 61" transform="rotate(90 3.281 12)">
+            <g id="사각형_41" class="cls-4" data-name="사각형 41">
+                <path d="M0 0h5v5H0z" class="cls-6" transform="translate(7.781 7)"/>
+                <path d="M.5.5h4v4h-4z" class="cls-7" transform="translate(7.781 7)"/>
+            </g>
+            <g id="사각형_41-2" class="cls-4" data-name="사각형 41">
+                <path d="M0 0h5v5H0z" class="cls-6" transform="translate(16.781 7)"/>
+                <path d="M.5.5h4v4h-4z" class="cls-7" transform="translate(16.781 7)"/>
+            </g>
+            <g id="사각형_41-3" class="cls-4" data-name="사각형 41">
+                <path d="M0 0h5v5H0z" class="cls-6" transform="translate(16.781)"/>
+                <path d="M.5.5h4v4h-4z" class="cls-7" transform="translate(16.781)"/>
+            </g>
+            <path id="선_18" d="M6 0H0" class="cls-4" data-name="선 18" transform="translate(2.75 9.5)"/>
+            <path id="선_18-2" d="M6 0H0" class="cls-4" data-name="선 18" transform="translate(11.75 9.5)"/>
+            <path id="선_18-3" d="M6 0H0" class="cls-4" data-name="선 18" transform="translate(11.75 2.5)"/>
+            <path id="선_19" d="M0 0v5.198" class="cls-4" data-name="선 19" transform="translate(10.75 2.302)"/>
+            <path id="사각형_40" d="M0 0h5v5H0z" class="cls-5" data-name="사각형 40" transform="translate(-.219 7)"/>
+            <g id="사각형_42" class="cls-1" data-name="사각형 42">
+                <path d="M0 0h5v5H0z" class="cls-6" transform="translate(7.781)"/>
+                <path d="M.5.5h4v4h-4z" class="cls-7" transform="translate(7.781)"/>
+            </g>
+        </g>
+        <path id="Icon_awesome-pen" d="M17.122 2.84L22.6 8.316 6.669 24.245-.583 25.7 1.2 18.763zm8.206-.24L22.757.027a2.222 2.222 0 0 0-3.149.337L17.975 2l5.592 5.346L25.2 5.71a2.147 2.147 0 0 0 .128-3.11z" class="cls-5" data-name="Icon awesome-pen" transform="rotate(90 4.769 39.763)"/>
+    </g>
+</svg>

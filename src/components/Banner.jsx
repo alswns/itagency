@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import main_imgae from '../assets/imgs/mainImgae.png'
-
+import {Link} from 'react-router-dom'
+import { BannerDesign } from '../apis/Style'
 
 
 const Wrapper = styled.div`
 position:absolute;
 display:flex;
 background:rgba(0,0,0,0);
-padding-top:20px;
 top:0px;
 right:0px;
 left:0px;
+background-color: ${props=>props.back};
 `
 const Logo = styled.img`
 width:136px;
@@ -21,11 +21,11 @@ margin-left:3.8%;
 const Link_ul = styled.ul`
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 display:flex;
-margin:20px auto;
+margin:0px auto;
 width:50%;
+height:85px;
 justify-content: space-between;
 & a{
-
   font-family: 'NIXGONM-Vb';
   font-size: 18px;
   color: ${props=>props.color};
@@ -33,7 +33,12 @@ justify-content: space-between;
 `
 const Link_li = styled.li`
 list-style:none;
-
+width:163px;
+height:100%;
+text-align:center;
+justify-content:center;
+align-items:center;
+display:flex;
 `
 
 const Auth=styled.a`
@@ -50,18 +55,25 @@ font-size:15px;
 text-decoration:none;
 
 `
-
+const Middle=styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+margin-left:68px;
+`
 function Banner(props) {
+    
     return (
         <Wrapper back={props.back}>
+            <Middle>
             <Logo src={props.img} alt="logo_img" onClick={()=>window.location.href='/'} />
-
+            </Middle>
             <Link_ul color={props.color}>
-                <Link_li><a >상담하기</a></Link_li>
-                <Link_li><a>프로젝트</a></Link_li>
-                <Link_li><a>이용후기</a></Link_li>
-                <Link_li><a>포트폴리오</a></Link_li>
-                <Link_li><a>서비스 전체보기</a></Link_li>
+                <Link_li className='banner_li' id='상담하기'  ><Link to='/counsel' style={{ textDecoration: 'none' }} >상담하기</Link></Link_li>
+                <Link_li className='banner_li' id='프로젝트' ><Link to='/project' style={{ textDecoration: 'none' }}>프로젝트</Link></Link_li>
+                <Link_li className='banner_li' id='이용후기' ><Link style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
+                <Link_li className='banner_li' id='포트폴리오' ><Link style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
+                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }}>서비스 전체보기</Link></Link_li>
             </Link_ul>
 
 

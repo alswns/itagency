@@ -54,6 +54,7 @@ const Sub =styled.div`
   text-align: center;
   color: #000000;
   justify-content:center;
+  cursor:pointer;
 `
 const Wrap=styled.div`
 position:absolute;
@@ -69,7 +70,7 @@ export default function ThirdFooter() {
           <Text>저렴하고 빠르게 서비스를 만들고 싶으신가요?</Text>
           <Wrap>
           <Sing>
-            <Sub>프로젝트 상담하기</Sub>
+            <Sub onClick={()=>window.location.href='/counsel'}>프로젝트 상담하기</Sub>
           </Sing>
           </Wrap>
         </Wrapper>
