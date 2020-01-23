@@ -10,7 +10,7 @@ const Wrapper = styled.div `
 width:100%;
 `
 const Img = styled.img `
-width:70%;
+width:1341px;
 margin: 0 auto;
 margin-top:30px;
 margin-bottom:25px;
@@ -23,7 +23,7 @@ display:flex;
 `
 const IngList = styled.div `
 display:flex;
-width:70%;
+width:1341px;
 height: 90px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
@@ -101,7 +101,6 @@ export default function Top() {
                     </Sub>
                 </Ment>
                 <Search placeholder='검색어를 입력하세요'></Search>
-
             </IngList>
         </Wrapper>
     )

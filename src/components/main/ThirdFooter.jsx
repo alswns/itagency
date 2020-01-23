@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import foot from '../../assets/imgs/office.png'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div `
 position:relative;
 width:100%;
 height:200px;
@@ -11,14 +11,14 @@ height:200px;
 object-fit: contain;
 background:url(${foot});
 `
-const Image=styled.div`
+const Image = styled.div `
 position:absolute;
 width:100%;
 background-color: #ff8253;
 opacity: 75%;
 height:200px;
 `
-const Text=styled.div`
+const Text = styled.div `
 text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   font-family: NIXGONM-Vb;
   font-size: 25px;
@@ -33,7 +33,7 @@ text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 width:100%;
 top:50px;
 `
-const Sing=styled.div`
+const Sing = styled.div `
 width:250px;
 height:45px;
 margin: 0 auto;
@@ -41,7 +41,7 @@ margin: 0 auto;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
 `
-const Sub =styled.div`
+const Sub = styled.div `
   width: 100%;
   height: 16px;
   font-family: NIXGONB-Vb;
@@ -56,7 +56,7 @@ const Sub =styled.div`
   justify-content:center;
   cursor:pointer;
 `
-const Wrap=styled.div`
+const Wrap = styled.div `
 position:absolute;
 top:121px;
 width:100%;
@@ -66,13 +66,13 @@ justify-content:center;
 export default function ThirdFooter() {
     return (
         <Wrapper>
-          <Image></Image>
-          <Text>저렴하고 빠르게 서비스를 만들고 싶으신가요?</Text>
-          <Wrap>
-          <Sing>
-            <Sub onClick={()=>window.location.href='/counsel'}>프로젝트 상담하기</Sub>
-          </Sing>
-          </Wrap>
+            <Image></Image>
+            <Text>저렴하고 빠르게 서비스를 만들고 싶으신가요?</Text>
+            <Wrap>
+                <Sing>
+                    <Sub onClick={() => window.location.href = '/counsel'}>프로젝트 상담하기</Sub>
+                </Sing>
+            </Wrap>
         </Wrapper>
     )
 }

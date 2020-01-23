@@ -182,7 +182,7 @@ function cat1_change(key) {
 export default function Selection() {
     return (
         <>
-            <Area className='시' style={{ marginRight: "10px" }} onChange={cat1_change}>
+            <Area className='시'  onChange={cat1_change}>
                 <option value="" disabled selected>특별시·광역시·도</option>
                 <option value='1'>서울</option>
 
