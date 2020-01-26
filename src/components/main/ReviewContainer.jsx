@@ -21,7 +21,7 @@ justify-content:space-between;
 export default class ReviewContainer extends Component {
     check=1
     state={
-        review:undefined,
+        review:[],
         page:0
     }
     componentDidMount(){

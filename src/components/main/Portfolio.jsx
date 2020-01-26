@@ -14,7 +14,7 @@ const Title = styled.div`
  margin-top:250px;
   font-family: NIXGONB-Vb;
   font-size: 35px;
-  font-weight: normal;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
@@ -34,7 +34,7 @@ margin-bottom:15px;
 const Sub = styled.div`
  font-family: NIXGONM-Vb;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.33;

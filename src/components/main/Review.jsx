@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import bar from '../../assets/imgs/bar.png'
+import star from '../../assets/imgs/star.svg'
 
 import hands from '../../assets/imgs/hands.svg'
-import star from '../../assets/imgs/star.svg'
 import Logo_gray from '../../assets/imgs/Logo_gray.png'
 import green from '../../assets/imgs/green.svg'
 import green1 from '../../assets/imgs/green1.svg'
@@ -180,6 +180,7 @@ export default function Review() {
                     <Logo src={Logo_gray}></Logo>
                     </MidLogo>
                     </Container>
+                    
                     <ReviewContainer/>
         </div>
     )

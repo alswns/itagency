@@ -71,7 +71,7 @@ function Banner(props) {
             <Link_ul color={props.color}>
                 <Link_li className='banner_li' id='상담하기'  ><Link to='/counsel' style={{ textDecoration: 'none' }} >상담하기</Link></Link_li>
                 <Link_li className='banner_li' id='프로젝트' ><Link to='/project' style={{ textDecoration: 'none' }}>프로젝트</Link></Link_li>
-                <Link_li className='banner_li' id='이용후기' ><Link style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
+                <Link_li className='banner_li' id='이용후기' ><Link to='/review' style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
                 <Link_li className='banner_li' id='포트폴리오' ><Link style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
                 <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }}>서비스 전체보기</Link></Link_li>
             </Link_ul>

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import tree from '../../assets/imgs/월계수.svg'
 
-const Wrapper=styled.div`
+const Wrapper=styled.span`
 box-sizing:border-box;
 height:28px;
 display:flex;
@@ -52,7 +52,7 @@ display:flex;
 border:0;
 z-index:999;
 `
-export default function Icons(props) {
+export default function Icon(props) {
     return (
         <Wrapper>
             <Img src={props.img||tree}></Img>

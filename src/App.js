@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import CounselPage from './pages/CounselPage';
 import ProjectPage from './pages/ProjectPage';
+import ReviewPage from './pages/ReviewPage';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -53,6 +54,10 @@ function App() {
                 <Route path='/project' exact='exact'>
                     <Banner color='white' back='#212121' img={Logo_white}/>
                     <ProjectPage/>
+                </Route>
+                <Route path='/review' exact='exact'>
+                    <Banner color='white' back='#212121' img={Logo_white}/>
+                    <ReviewPage/>
                 </Route>
 
             </Router>
