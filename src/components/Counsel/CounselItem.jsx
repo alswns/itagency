@@ -9,6 +9,7 @@ const Wrapper=styled.div`
   position:relative;
   box-sizing:border-box;
   margin-right:18px;
+  border:solid 1px #ffffff;
 `
 const Img=styled.img`
 
@@ -41,7 +42,7 @@ justify-content:center;
 `
 export default function CounselItem(props) {
     return (
-        <Wrapper>
+        <Wrapper onClick={props.onClick}>
             <MidDiv>
             <Img src={props.img}></Img>
             </MidDiv>

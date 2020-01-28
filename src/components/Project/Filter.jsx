@@ -63,7 +63,7 @@ const Label = styled.label `
   text-align: left;
   color: #212121;  
   margin-left:30px;
-margin-bottom
+
 `
 const Line = styled.div `
 width:100%;
@@ -133,7 +133,7 @@ const Align=styled.div`
 display:flex;
 flex-direction:column;
 `
-export default function Filter() {
+export default function Filter(props) {
     const [developer, setDeveloper] = React.useState(false)
     const [desinger, setdesinger] = React.useState(false)
     return (
@@ -236,12 +236,12 @@ export default function Filter() {
 
         </Wrapper>
                 <Align>
-            <Kind></Kind>
-            <ProjectItem/>
-            <ProjectItem/>
-            <ProjectItem/>
-            <ProjectItem/>
-            <ProjectItem/>
+            <Kind setArrange={props.setArrange}></Kind>
+{(props.project||[]).map(res=>{
+    return  <ProjectItem res={res}/>
+})
+}
+           
             </Align>
         </AllWrapper>
     )

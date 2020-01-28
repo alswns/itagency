@@ -38,11 +38,10 @@ display:block;
 width: 147px;
 margin-right:30px;
 font-family: NIXGONB-Vb;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.08;
   letter-spacing: normal;
   text-align: right;
   color: #6f6f6f;
@@ -71,12 +70,12 @@ flex-direction:column;
 `
 const Label = styled.label `
 margin-top:5px;
- font-family: NIXGONM-Vb;
-  font-size: 12px;
+font-family: NIXGONM-Vb;
+  font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.08;
+  line-height: 1.07;
   letter-spacing: normal;
   text-align: left;
   color: #6f6f6f;
@@ -87,6 +86,16 @@ width: 200px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
+  font-family: NIXGONM-Vb;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6f6f6f;
+  padding-left:10px;
 `
 const ItemContainer = styled.div `
 display:flex;
@@ -248,6 +257,7 @@ margin-bottom:20px;
 margin-top:20px;
 `
 const Regi = styled.div `
+cursor:pointer;
 width: 359px;
   height: 45px;
   border-radius: 5px;
@@ -309,8 +319,70 @@ const Title = styled.div `
   text-align: center;
   color: #212121;
 `
+const setColor=(event)=>{
+    let parent=event.currentTarget.parentNode
+    console.dir(parent)
+    for(let i of parent.childNodes){
+        i.style.border='solid 1px #ffffff'
+    }
+    event.currentTarget.style.border='solid 1px #ef4f80'
 
-export default function Counsel() {
+}
+const setKa=(event)=>{
+    let parent=event.target.parentNode.childNodes
+    let text=''
+    let su=0
+    for(let i of parent){
+        console.dir(i)
+        console.dir(i[i.value].text)
+        text=text+i[i.value].text
+        if(su==0){
+        text=text+'/'
+        su++
+        }
+
+    }
+    console.log(text)
+    return text
+}
+const radio=()=>{
+    let asd=document.getElementsByName('gender')
+    let label=document.getElementsByTagName('label')
+    let returnText=false
+    for (let i of asd){
+        if(i.checked==true){
+        returnText=i.value
+        }
+    }
+    
+    console.log(returnText)
+    return returnText
+}
+const getDay=(event)=>{
+    let mil=''
+    for(let i of event.target.parentNode.childNodes){
+        mil=mil+i.value+','
+    }
+    console.log(mil.slice(0,-1))
+    let data=new Date(mil.slice(0,-1))
+    console.log(data.getTime())
+return data.getTime()/1000
+}
+const test=()=>{
+    const nullfile=new File(['null'],'null.txt')
+    const file=document.getElementById('file')
+    console.dir(file.files[0])
+    // var formData=new FormData()
+    // formData.append('planning',file.files[0],file.files[0].name)
+    // console.log(formData.get('planning'))
+    if(file.files[0]==undefined){
+        console.log('asdsadsadsadsad')
+        return nullfile
+    }
+    return file.files[0]
+}
+export default function Counsel(props) {
+    
     return (
         <Wrapper>
             <Require>*항목은 필수 입력입니다</Require>
@@ -322,7 +394,7 @@ export default function Counsel() {
 
                         </Category>
                         <Side>
-                            <PojectName></PojectName>
+                            <PojectName onChange={(event)=>props.setKind('name',event.target.value)}></PojectName>
                             <Label>
                                 프로젝트 이름을 입력해 주세요.
                             </Label>
@@ -345,7 +417,7 @@ export default function Counsel() {
                                     <option value="2">디자인</option>
 
                                 </Cate>
-                                <Cate
+                                <Cate onChange={e=>(props.setKind('field',setKa(e)))}
                                     style={{
                                         marginLeft: '10px'
                                     }}
@@ -363,9 +435,9 @@ export default function Counsel() {
                         </Category>
 
                         <ItemContainer>
-                            <CounselItem img={first} text="아이디어만 있음"/>
-                            <CounselItem img={mid} text="대략적인 기획이 있음"/>
-                            <CounselItem img={last} text={"구체적인 상세한\n기획이 있음"}/>
+                            <CounselItem onClick={(event)=>{setColor(event);props.setKind('plan',0)}} img={first} text="아이디어만 있음"/>
+                            <CounselItem onClick={(event)=>{setColor(event);props.setKind('plan',1)}} img={mid} text="대략적인 기획이 있음"/>
+                            <CounselItem onClick={(event)=>{setColor(event);props.setKind('plan',2)}} img={last} text={"구체적인 상세한\n기획이 있음"}/>
                         </ItemContainer>
                     </Container>
 
@@ -378,7 +450,7 @@ export default function Counsel() {
                                 style={{
                                     display: 'flex'
                                 }}>
-                                <SmailInput/>
+                                <SmailInput onChange={(event)=>props.setKind('cost',event.target.value)} />
                                 <RightLabel>원</RightLabel>
                             </div>
                             <Label>
@@ -397,11 +469,11 @@ export default function Counsel() {
                                 style={{
                                     display: 'flex'
                                 }}>
-                                <SmailInput/>
-                                <RightLabel>원</RightLabel>
+                                <SmailInput onChange={(event)=>props.setKind('term',event.target.value)}/>
+                                <RightLabel>일</RightLabel>
                             </div>
                             <Label>
-                                프로젝트에 지출 가능한 예산을 입력해 주세요.
+                            프로젝트를 진행할 기간을 입력해 주세요.
                             </Label>
                         </Side>
                     </Container>
@@ -409,15 +481,14 @@ export default function Counsel() {
                         <Category>
                             <Pink>*</Pink>프로젝트 내용
                         </Category>
-                        <Projectcontent placeholder='구상하신 프로젝트에 대해 설명해 주세요.'></Projectcontent>
+                        <Projectcontent onChange={(event)=>props.setKind('description',event.target.value)} placeholder='구상하신 프로젝트에 대해 설명해 주세요.'></Projectcontent>
                     </Container>
 
                     <Container>
                         <Category>
                             기획문서
                         </Category>
-                        <input type="file" name="" id=""/>
-                        <AddFile type='file' name='' id=''></AddFile>
+                        <input type="file" name="" id="file" />
                     </Container>
                     <Container>
                         <Category>
@@ -431,7 +502,7 @@ export default function Counsel() {
                                 <Day width='84px' name='month' onClick={() => setDay(0)}>
                                     <option disabled="disabled" selected="selected">달</option>
                                 </Day>
-                                <Day width='84px' name='day'>
+                                <Day width='84px' name='day' onChange={(event)=>props.setKind('deadline',getDay(event))} >
                                     <option disabled="disabled" selected="selected">일</option>
                                 </Day>
                             </div>
@@ -445,11 +516,11 @@ export default function Counsel() {
                         <Category>
                             <Pink>*</Pink>사전 미팅
                         </Category >
-                        <Day width='250px'>
+                        <Day width='250px' onChange={(event)=>props.setKind('meeting',event.target.value)}>
                             <option disabled="disabled" selected="selected">선택</option>
-                            <option value='1'>카톡 및 전화</option>
-                            <option value='2'>오프라인</option>
-                            <option value='3'>미팅</option>
+                            <option value='0'>카톡 및 전화</option>
+                            <option value='1'>오프라인</option>
+                            <option value='2'>미팅</option>
                         </Day>
                     </Container>
                     <Container>
@@ -457,7 +528,7 @@ export default function Counsel() {
                             <Pink>*</Pink>연락처
                         </Category>
                         <Side>
-                            <Meet width='250px'/>
+                            <Meet width='250px'  onChange={(event)=>props.setKind('phone',event.target.value)}/>
                             <Label>
                                 하이픈( - )없이 입력해주세요.
                             </Label>
@@ -476,7 +547,7 @@ export default function Counsel() {
                                 <Day width='84px' name='month' onClick={() => setDay(1)}>
                                     <option disabled="disabled" selected="selected">달</option>
                                 </Day>
-                                <Day width='84px' name='day'>
+                                <Day width='84px' name='day' onChange={(event)=>props.setKind('start',getDay(event))}> 
                                     <option disabled="disabled" selected="selected">일</option>
                                 </Day>
                             </div>
@@ -514,7 +585,7 @@ export default function Counsel() {
                         </div>
                     </Container>
                     <Line style={{marginTop:'0px'}}/>
-                    <Regi>프로젝트 정보 작성 완료 및 등록</Regi>
+                    <Regi onClick={()=>{props.setKind('hope_partner',radio(),()=>props.setKind('planning',test(),()=>props.subMit()));}}>프로젝트 정보 작성 완료 및 등록</Regi>
                 </Paper>
 
                 <Explain>진행도 표시

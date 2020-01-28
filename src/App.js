@@ -13,6 +13,8 @@ import ProjectPage from './pages/ProjectPage';
 import ReviewPage from './pages/ReviewPage';
 import PortfoliPage from './pages/PortfoliPage';
 import Headroom from 'react-headroom';
+import Service from './components/Service';
+import MainBanner from './components/MainBanner';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -29,7 +31,6 @@ function App() {
             <Router >
 
                 <Route path='/' exact='exact'>
-                    <Banner color='white' img={Logo_white}/>
                     <MainPage user='320' back='main_image'/>
                 </Route>
                 <Route path='/main' exact='exact'>

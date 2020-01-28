@@ -89,6 +89,7 @@ font-family: NIXGONB-Vb;
   color: #212121;
 `
 const Container=styled.span`
+overflow:hidden;
 padding:15px 20px;
  border: solid 1px #e0e0e0;
   background-color: #ffffff;
@@ -155,28 +156,44 @@ left: 681px;
 position: absolute;
 width:180px;
 `
-export default function ProjectItem() {
+export default function ProjectItem(props) {
     return (
 
         <Wrapper>
 
-            <Kind> 개발 > 웹</Kind>
+            <Kind>{props.res.field}</Kind>
             <Img src={progress0}></Img>
-            <Title>소싱 의뢰 웹 플랫폼 구축</Title>
-            <Status>신청진행중</Status>
-            <Dday>D-12</Dday>
-            <Text>현존 프리랜서마켓 및 크몽에서 는 매우 비싼 금액을 가지고 앱을 만들어 주는 회사가 많음. 소비자는 원하는 앱과 웹 or 프로그램을 보다 더 저렴한 가격에 만들 수 있다. 개발자는 포트폴리오을 돈을 받고도 쌓을 수 있고 여기 이 칸에는프로젝트에 대한 설명이 들어간다. 2줄에서 끊고 ... </Text>
+            <Title>{props.res.project_name}</Title>
+            <Status>
+            {props.res.progress==0?'신청진행중':''}
+            {props.res.progress==1?'신청마감':''}
+
+
+            </Status>
+            <Dday>D-{parseInt( (props.res.register_deadline*1000-new Date())/86400553)}</Dday>
+            <Text>{props.res.description}</Text>
             <Line></Line>
-            <Container left='20px'>희망금액 8,000,000원</Container>
-            <Container left='206px'>진행기간 16일</Container>
-            <Container left='343px'>등록일 2020.01.21</Container>
-            <Container left='517px'>모집 마감일 2020.02.02</Container>
-            <Container left='721px'>지원수 4명</Container>
-            <Name><Up>dlwlrma</Up> 클라이언트님</Name>
+            <Container style={{width:'133px'}} left='20px'>희망금액 {props.res.cost}원</Container>
+            <Container left='206px'>진행기간 {props.res.days}일</Container>
+            <Container left='343px'>등록일  {new Date((props.res.register_time)*1000).toLocaleDateString()}</Container>
+            <Container left='517px'>모집 마감일 {new Date((props.res.register_deadline)*1000).toLocaleDateString()}</Container>
+            <Container left='721px'>지원수 {props.res.num_of_applicants}명</Container>
+            <Name><Up>{props.res.client_name}</Up> 클라이언트님</Name>
             <Lines></Lines>
-            <SeContainer top='75px'>지역 서울 </SeContainer>
-            <SeContainer top='120px'>사전미팅 온라인</SeContainer>
-            <SeContainer top='165px'>희망파트너 상관없음</SeContainer>
+            <SeContainer top='75px'>지역 {props.res.location} </SeContainer>
+            <SeContainer top='120px'>사전미팅 
+            {props.res.meeting==0?' 카톡 및 전화':''}
+            {props.res.meeting==1?' 오프라인':''}
+            {props.res.meeting==2?' 미팅':''}
+            
+            </SeContainer>
+            <SeContainer top='165px'>희망파트너 
+            {props.res.hope_partner==0?'    상관없음':''}
+            {props.res.hope_partner==1?'    개인':''}
+            {props.res.hope_partner==2?'    팀':''}
+            {props.res.hope_partner==3?'    법인 사업자':''}
+            {props.res.hope_partner==4?'    개인 사업자':''}
+            </SeContainer>
         </Wrapper>
     )
 }

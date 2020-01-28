@@ -2,13 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { BannerDesign } from '../apis/Style'
+import main_imgae from '../assets/imgs/mainImgae.png'
 import Service from './Service'
 
 
 const Wrapper = styled.div`
-position:fixed;
+position:absolute;
 display:flex;
-background:rgba(0,0,0,0);
+background:linear-gradient(
+            rgba(0, 0, 0, 0.7) ,
+            rgba(0, 0, 0, 0.7) 
+          ), url(${main_imgae});
 top:0px;
 right:0px;
 left:0px;
@@ -79,8 +83,8 @@ const SetMid = styled.div`
   color:${props => props.color};
 
 `
-function Banner(props) {
-    const [service,setService]=React.useState(false)
+function MainBanner(props) {
+
     return (
         <>
         <Wrapper back={props.back}>
@@ -92,7 +96,8 @@ function Banner(props) {
                 <Link_li className='banner_li' id='프로젝트' ><Link to='/project' style={{ textDecoration: 'none' }}>프로젝트</Link></Link_li>
                 <Link_li className='banner_li' id='이용후기' ><Link to='/review' style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
                 <Link_li className='banner_li' id='포트폴리오' ><Link to='/portfolio' style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
-                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }} onClick={props.setService}>{service||'서비스 전체보기'}{service&&'닫기'}</Link></Link_li>
+                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }} onClick={props.setService}>{props.service||'서비스 전체보기'}{props.service&&'닫기'}</Link></Link_li>
+
             </Link_ul>
 
             <SetMid color={props.color}>
@@ -103,9 +108,10 @@ function Banner(props) {
 
             </SetMid>
         </Wrapper>
-        {service&&<Service></Service>}
+        {props.service&&<Service></Service>}
+
             </>
     )
 }
 
-export default Banner
+export default MainBanner

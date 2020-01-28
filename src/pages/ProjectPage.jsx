@@ -4,20 +4,52 @@ import Last from '../components/main/Last'
 import styled from 'styled-components'
 import Top from '../components/Project/Top'
 import Filter from '../components/Project/Filter'
+import api from '../apis/BaseUrl'
 const Wrapper=styled.div`
 width:100%;
 background:#f3f3f3;
 `
 
 export default class ProjectPage extends Component {
+    constructor(props) {
+        super(props);
+        
+        this.state={
+            project:null,
+            arrange :3
+        }
+      }
+    
     componentDidMount(){
         setBanner('프로젝트')
+        api.post('/info/project/all',{arrange:this.state.arrange},{body:{arrange:this.state.arrange}}).then(res=>{console.dir(res)
+        this.setState({project:res.data.info})
+        }).catch(err=>console.dir(err))
+        console.log(this.state)
+        document.getElementById(''+this.state.arrange).style.color='#ef4f80'
     }
+    setArrange=(event)=>{
+        this.setState({arrange:parseInt( event.target.id)}, (event)=>{api.post('/info/project/all',{arrange:this.state.arrange},{body:{arrange:this.state.arrange}}).then(res=>{console.dir(res)
+            this.setState({project:res.data.info})
+            }).catch(err=>console.dir(err));
+            console.log(event)
+           
+
+        })
+            console.log(this.state)
+            const target=event.target.parentNode.children
+            for(let i of target){
+                i.style.color='#212121'
+                i.style.fontWeight='500'
+            }
+            event.target.style.color='#ef4f80'
+    }
+ 
     render() {
         return (
             <Wrapper>
                 <Top/>
-                <Filter/>
+                <Filter  setArrange={this.setArrange} project={this.state.project}/>
             <Last/>
             </Wrapper>
         )

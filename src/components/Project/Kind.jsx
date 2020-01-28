@@ -42,17 +42,17 @@ const Onclick=(event)=>{
         i.style.fontWeight='500'
     }
     event.target.style.color='#ef4f80'
-    event.target.style.fontWeight='700'
 }
-
-export default function Kind() {
+const setColor=(props)=>{}
+export default function Kind(props) {
     return (
         <Top>
+        {console.log(props.setArrange)}
                <Link_ul>
-                <Link_li onClick={Onclick}>최신등록순</Link_li>
-                <Link_li onClick={Onclick}>마감임박순</Link_li>
-                <Link_li onClick={Onclick}>예산규모순</Link_li>
-                <Link_li onClick={Onclick}>지원적은순</Link_li>
+                <Link_li id='0' onClick={props.setArrange}>최신등록순</Link_li>
+                <Link_li id='1' onClick={props.setArrange}>마감임박순</Link_li>
+                <Link_li id='2' onClick={props.setArrange}>예산규모순</Link_li>
+                <Link_li id='3' onClick={props.setArrange}>지원적은순</Link_li>
             </Link_ul>
         </Top>
     )

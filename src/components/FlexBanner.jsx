@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import Service from './Service'
 
 
 const Wrapper = styled.div`
@@ -78,6 +79,7 @@ margin-left:68px;
 function FlexBanner(props) {
     
     return (
+        <>
         <Wrapper back={props.back}>
             <Middle>
             <Logo src={props.img} alt="logo_img" onClick={()=>window.location.href='/'} />
@@ -87,7 +89,8 @@ function FlexBanner(props) {
                 <Link_li className='banner_li' id='프로젝트' ><Link to='/project' style={{ textDecoration: 'none' }}>프로젝트</Link></Link_li>
                 <Link_li className='banner_li' id='이용후기' ><Link to='/review' style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
                 <Link_li className='banner_li' id='포트폴리오' ><Link to='/portfolio'style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
-                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }}>서비스 전체보기</Link></Link_li>
+                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }} onClick={props.setService}>{props.service||'서비스 전체보기'}{props.service&&'닫기'}</Link></Link_li>
+
             </Link_ul>
 
 
@@ -99,6 +102,8 @@ function FlexBanner(props) {
 
             </SetMid>
         </Wrapper>
+        {props.service&&<Service></Service>}
+</>
     )
 }
 

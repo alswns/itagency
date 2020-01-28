@@ -14,6 +14,8 @@ import Last from '../components/main/Last'
 import FlexBanner from '../components/FlexBanner'
 import Logo_gray from '../assets/imgs/Logo_gray.png'
 import counterUp from'counterup2'
+import MainBanner from '../components/MainBanner'
+import Logo_white from '../assets/imgs/Logo_white.png'
 
 
 function numberWithCommas(x) {
@@ -30,7 +32,8 @@ export default class MainPage extends Component {
         project:undefined,
         ing:undefined,
         today_registered_project:undefined,
-        today_finished_project:undefined
+        today_finished_project:undefined,
+        service:false
     }
     componentDidMount(){
         api.get('/info/project').then(res=>{
@@ -64,10 +67,14 @@ componentDidUpdate(){
             } )  
         }
 }
+setService=()=>{
+    this.setState({service:!this.state.service})
+}
     render() {
         return (
           <>
-            <FlexBanner color='black' img={Logo_gray}/>
+            <MainBanner setService={this.setService} service={this.state.service} color='white' img={Logo_white}/>
+            <FlexBanner setService={this.setService} service={this.state.service} color='black' img={Logo_gray}/>
             <MainPost user='320'/>
             <Footer  amount={numberWithCommas(this.state.amount)} project={numberWithCommas(this.state.project)} ing={numberWithCommas(this.state.ing)} /> 
             <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project} ing={numberWithCommas(this.state.ing)} today_finished_project={this.state.today_finished_project} />
