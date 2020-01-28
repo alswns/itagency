@@ -14,6 +14,8 @@ margin-right:28px;
 background:url(${mac});
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 
+
+
 `
 const Black=styled.div`
 width:268px;

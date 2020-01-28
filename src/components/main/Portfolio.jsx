@@ -61,7 +61,7 @@ font-family: NIXGONM-Vb;
   padding:14px 19px;
   border-radius:18px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    margin-left:80.3%;
+    margin-left:75.3%;
     
 `
 const ImgContainers = styled.div`

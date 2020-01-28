@@ -4,6 +4,8 @@ import Icon from '../main/Icon'
 import upload from '../../assets/imgs/upload.svg'
 import bar from '../../assets/imgs/bar.png'
 import star from '../../assets/imgs/star.svg'
+import green from '../../assets/imgs/green.svg'
+import green1 from '../../assets/imgs/green1.svg'
 
 const Wrapper = styled.div`
 width:100%;
@@ -12,7 +14,14 @@ background-color: #ffc629;
 display:flex;
 position:relative;
 `
+const Leap=styled.img`
+justify-content:end;
+float:inline-end;
+position:absolute;
+bottom: 10px;
+z-index:30;
 
+`
 
 const WrapperItem = styled.div`
     display:flex;  
@@ -142,7 +151,9 @@ export default function FirstTopBanner() {
                         <div>아이티에이전시</div>
                     </Ment>
                     <span style={{ marginTop:'-10px' }}>
+                    
                     <Icon title={'15' + '개'} text='등록된 프로젝트' img={upload}  />
+
                     </span>
                     <Ment align='right' style={{marginTop:'30px'}}>
                         <Small>고객님 평균 만족도</Small>
@@ -150,7 +161,9 @@ export default function FirstTopBanner() {
                     </Ment>
                 </WrapperItem>
                 <Margin/>
+                    
                 <Circle>
+                <Leap style={{left:'-40px'}} src={green} alt=""/>
                         <Mid top='77px'>
                         <CircleIcone src={star}></CircleIcone>
                         </Mid>
@@ -164,6 +177,7 @@ export default function FirstTopBanner() {
                         <Mid top='153px'>
                         <CircleSub>4.5점</CircleSub>
                         </Mid>
+                    <Leap style={{right:'-40px'}} src={green1} alt=""/>
                     </Circle>
             </Wrapper>
         </>

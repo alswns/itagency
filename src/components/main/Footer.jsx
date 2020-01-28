@@ -30,7 +30,7 @@ const Tree = styled.img`
 
 const Icons=styled.div`
 display:flex;
-width:50%;
+width:700px;
 justify-content: space-between;
 `
 
@@ -41,9 +41,9 @@ export default function Footer(props) {
                 <Container>
                     <Tree  src={tree} alt=""/>
                     <Icons>
-                    <Icon title={props.project+'개'} text='등록된 프로젝트' img={upload} style={{marginLeft:'0px'}}/>
-                    <Icon  title={props.amount+'원'} text='누적 프로젝트 금액' img={money}/>
-                    <Icon title={props.ing+'개'} text='진행중인 프로젝트 수' img={ing}/>
+                    <Icon plus='개' title={props.project} text='등록된 프로젝트' img={upload} style={{marginLeft:'0px'}}/>
+                    <Icon plus='원'  title={props.amount} text='누적 프로젝트 금액' img={money}/>
+                    <Icon plus='개' title={props.ing} text='진행중인 프로젝트 수' img={ing}/>
                     </Icons>
 
                     <Tree src={treeBan} alt=""/>

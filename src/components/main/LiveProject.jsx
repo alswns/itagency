@@ -17,14 +17,14 @@ font-family: NIXGONB-Vb;
   font-weight:bold;
 `
 const Sub=styled.div`
-margin-top:2.8%;
+margin-top:1.4%;
 font-family: NIXGONM-Vb;
-  font-size: 25px;
+  font-size: 19px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.33;
-  letter-spacing: 0.3px;
+  line-height: 2.06;
+  letter-spacing: 0.34px;
   text-align: center;
   color: #6f6f6f;
 

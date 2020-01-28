@@ -1,22 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { BannerDesign } from '../apis/Style'
-import main_imgae from '../assets/imgs/mainImgae.png'
+import {Link} from 'react-router-dom'
 
 
 const Wrapper = styled.div`
-position:absolute;
+position:fixed;
 display:flex;
-background:linear-gradient(
-            rgba(0, 0, 0, 0.7) ,
-            rgba(0, 0, 0, 0.7) 
-          ), url(${main_imgae});
+background:#ffffff;
 top:0px;
 right:0px;
 left:0px;
-background-color: ${props => props.back};
-z-index:9999;
+background-color: ${props=>props.back};
+z-index:990;
 `
 const Logo = styled.img`
 width:136px;
@@ -33,7 +28,7 @@ justify-content: space-between;
 & a{
   font-family: 'NIXGONM-Vb';
   font-size: 18px;
-  color: ${props => props.color};
+  color: ${props=>props.color};
 }
 `
 const Link_li = styled.li`
@@ -45,7 +40,6 @@ justify-content:center;
 align-items:center;
 display:flex;
 `
-
 const Auth = styled.span`
 cursor:pointer;
 font-family: NIXGONM-Vb;
@@ -57,12 +51,6 @@ font-family: NIXGONM-Vb;
   letter-spacing: normal;
   text-align: left;
 
-`
-const Middle = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
-margin-left:68px;
 `
 const SetMid = styled.div`
 
@@ -81,31 +69,37 @@ const SetMid = styled.div`
   color:${props => props.color};
 
 `
-function Banner(props) {
-
+const Middle=styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+margin-left:68px;
+`
+function FlexBanner(props) {
+    
     return (
         <Wrapper back={props.back}>
             <Middle>
-                <Logo src={props.img} alt="logo_img" onClick={() => window.location.href = '/'} />
+            <Logo src={props.img} alt="logo_img" onClick={()=>window.location.href='/'} />
             </Middle>
             <Link_ul color={props.color}>
                 <Link_li className='banner_li' id='상담하기'  ><Link to='/counsel' style={{ textDecoration: 'none' }} >상담하기</Link></Link_li>
                 <Link_li className='banner_li' id='프로젝트' ><Link to='/project' style={{ textDecoration: 'none' }}>프로젝트</Link></Link_li>
                 <Link_li className='banner_li' id='이용후기' ><Link to='/review' style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
-                <Link_li className='banner_li' id='포트폴리오' ><Link to='/portfolio' style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
+                <Link_li className='banner_li' id='포트폴리오' ><Link to='/portfolio'style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
                 <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }}>서비스 전체보기</Link></Link_li>
             </Link_ul>
 
-            <SetMid color={props.color}>
+
+               <SetMid color={props.color}>
 
                 <Auth onClick={() => { window.location.href = '/login' }}> 로그인</Auth>
                 |
                 <Auth onClick={() => { window.location.href = '/register' }} >회원가입 </Auth>
 
             </SetMid>
-
         </Wrapper>
     )
 }
 
-export default Banner
+export default FlexBanner

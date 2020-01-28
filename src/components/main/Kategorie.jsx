@@ -59,7 +59,7 @@ const Sub=styled.div`
   letter-spacing: 0.3px;
   text-align: center;
   color: #6f6f6f;
-  margin-bottom:163.6px;
+  margin-bottom:106.6px;
 `
 const Wrap=styled.div`
 display:flex;

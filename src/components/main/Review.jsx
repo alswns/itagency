@@ -18,10 +18,9 @@ margin-bottom:15px;
 const Sub = styled.div`
  font-family: NIXGONM-Vb;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.33;
   letter-spacing: 0.3px;
   text-align: center;
   color: #6f6f6f;

@@ -5,7 +5,7 @@ import toke from '../../assets/imgs/Toke.png'
 import money from '../../assets/imgs/money.png'
 const Text =styled.div`
 margin-top:205px;
-  font-family: NIXGONB-Vb;
+font-family: NIXGONM-Vb;
   font-size: 35px;
   font-weight: normal;
   font-stretch: normal;
@@ -22,6 +22,7 @@ font-family: NIXGONB-Vb;
 `
 const Wrap=styled.div`
 display:flex;
+justify-content:center;
 `
 const Line =styled.div`
 

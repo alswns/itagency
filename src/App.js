@@ -1,6 +1,5 @@
 import React from 'react';
 import MainPage from './pages/MainPage';
-import main_image from './assets/imgs/mainImgae.png'
 
 import Logo_white from './assets/imgs/Logo_white.png'
 import Logo_gray from './assets/imgs/Logo_gray.png'
@@ -12,6 +11,8 @@ import RegisterPage from './pages/RegisterPage';
 import CounselPage from './pages/CounselPage';
 import ProjectPage from './pages/ProjectPage';
 import ReviewPage from './pages/ReviewPage';
+import PortfoliPage from './pages/PortfoliPage';
+import Headroom from 'react-headroom';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -59,7 +60,10 @@ function App() {
                     <Banner color='white' back='#212121' img={Logo_white}/>
                     <ReviewPage/>
                 </Route>
-
+                <Route path='/portfolio' exact='exact'>
+                    <Banner color='white' back='#212121' img={Logo_white}/>
+                    <PortfoliPage/>
+                </Route>
             </Router>
         </div>
     );

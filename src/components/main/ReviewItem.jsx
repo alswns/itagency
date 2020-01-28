@@ -12,17 +12,15 @@ width: 530px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
   position:relative;
+  
 `
 const Title=styled.div`
-position:absolute;
-left:20px;
-top:20px;
+
 font-family: NIXGONB-Vb;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.06;
   letter-spacing: normal;
   text-align: left;
   color: #ef4f80;
@@ -54,15 +52,13 @@ font-family: NIXGONM-Vb;
   color: #6f6f6f;
 `
 const Cost=styled.div`
-position:absolute;
-top:20px;
-left:396px;
+
+
 font-family: NIXGONB-Vb;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.06;
   letter-spacing: -0.34px;
   text-align: left;
   color: #212121;
@@ -89,10 +85,7 @@ const Star =styled.img`
   
 `
 const Stars=styled.div`
-position:absolute;
 display:flex;
-left:203px;
-top:28px;
 `
 function numberWithCommas(x) {
     if(x===undefined)
@@ -126,17 +119,44 @@ function numberWithCommas(x) {
     return back
 
   }
+const Div=styled.div`
+position:absolute;
+top:20px;
+display:flex;
+width:490px;
+margin:0px 20px;
+`
+const Align=styled.div`
+display:flex;
 
+`
+const Flex=styled.div`
+  flex:1;
+`
+const Line=styled.div`
+width:0px;
+height:20px;
+border:1px solid #e0e0e0;
+margin: 0px 6px;
+`
 export default function ReviewItem(props) {
     return (
         <Wrapper>
+          <Div>
+          <Align>
+              <Title>{props.project_name}</Title>
+              <Line/>
             <Stars>
             {
                 star(props.starts).map(res=> {return res})
             }
             </Stars>
-            <Title>{props.project_name}</Title>
+            </Align>
+            <Flex  ></Flex>
+            
+
             <Cost>\ {numberWithCommas(props.cost)}원</Cost>
+            </Div>
             <Wrap>
             <Kind>{props.field} |</Kind>                
             <Name> {'\u00A0'}  {props.owner_name} 파트너</Name>

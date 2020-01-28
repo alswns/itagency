@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper=styled.div`
 display:flex;
 flex-direction:column;
-width:33%;
+width:25%;
 justify-content:center;
 text-align:center;
 `
@@ -20,7 +20,7 @@ margin: 0 auto;
   white-space:pre;
   font-family: NIXGONM-Vb;
   font-size: 23px;
-  font-weight: 600  ;
+  font-weight: normal  ;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.22;
@@ -34,7 +34,7 @@ const Text=styled.span`
   margin: 0 auto;
  font-family: NIXGONM-Vb;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.87;

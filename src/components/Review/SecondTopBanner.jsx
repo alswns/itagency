@@ -6,6 +6,10 @@ import bar from '../../assets/imgs/bar.png'
 import hands from '../../assets/imgs/hands.svg'
 import money from '../../assets/imgs/money.svg'
 import ing from '../../assets/imgs/ing.svg'
+import green from '../../assets/imgs/green.svg'
+import green1 from '../../assets/imgs/green1.svg'
+
+
 
 const Wrapper = styled.div`
 width:100%;
@@ -13,6 +17,16 @@ height:300px;
 background-color: rgb(41,148,255);      
 display:flex;
 position:relative;
+`
+
+
+const Leap=styled.img`
+justify-content:end;
+float:inline-end;
+position:absolute;
+bottom: 10px;
+z-index:30;
+
 `
 
 
@@ -163,6 +177,8 @@ export default function SecondTopBanner() {
                 
                 <Margin/>
                 <Circle>
+                <Leap style={{left:'-40px'}} src={green} alt=""/>
+
                         <Mid top='77px'>
                         <CircleIcone src={hands}></CircleIcone>
                         </Mid>
@@ -176,6 +192,7 @@ export default function SecondTopBanner() {
                         <Mid top='153px'>
                         <CircleSub>1,021개</CircleSub>
                         </Mid>
+                        <Leap style={{right:'-40px'}} src={green1} alt=""/>
                     </Circle>
                     
             </Wrapper>

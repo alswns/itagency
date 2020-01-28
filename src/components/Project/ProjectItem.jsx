@@ -6,8 +6,12 @@ const Wrapper=styled.div`
   height: 220px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
+  border: solid 1.5px white;
     position:relative;
     margin-top:10px;
+    &:hover{
+  border: solid 1.5px #ef4f80;
+}
 `
 const Kind=styled.span`
 position:absolute;

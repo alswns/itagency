@@ -5,6 +5,7 @@ import SecondTopBanner from '../components/Review/SecondTopBanner'
 import ReviewContainer from '../components/main/ReviewContainer'
 import Last from '../components/main/Last'
 import { setBanner } from '../apis/Style'
+import Input from '../components/Review/Input'
 
 const Wrapper=styled.div`
 width:100%;
@@ -23,12 +24,18 @@ top:319px;
 left:86.1%;
 display:flex;
 `
+const Wrap=styled.div`
+width:100%;
+background:white;
+height:100px;
+`
 export default class extends Component {
     
     
     state={
         review:[],
-        banner:true
+        banner:true,
+        reload:0
     }
     componentDidMount(){
         setBanner('이용후기')
@@ -47,7 +54,7 @@ export default class extends Component {
         }
         event.target.style.backgroundColor='black'
     }
-
+    
     render() {
         return (
             <div>
@@ -59,8 +66,12 @@ export default class extends Component {
                 <Circle back='#000000' left='87.1%' onClick={(event)=>this.setColor(true,event)}></Circle>
                 </CircleContainer>
                 </Wrapper>
+                <Wrap/>
                 <ReviewContainer />      
+                
+                <Input >리뷰 쓰는 페이지</Input>
                 <Last/>
+
             </div>
         )
     }

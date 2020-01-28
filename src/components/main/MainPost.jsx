@@ -34,8 +34,8 @@ padding-top:20%;
 
 `
 const Sub=styled.div`
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-  font-family: NIXGONL-Vb;
+@font-face { font-family: 'NIXGONL-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+font-family: NIXGONL-Vb;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -52,10 +52,11 @@ const Submit=styled.a`
 text-decoration:none;
 display:flex;
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-  font-family: NIXGONM-Vb; 
+  font-family: ${props=>props.family}; 
   font-size: 15px;
-  font-weight: 700;
+  font-weight: normal;
     border-radius:7px;
+    letter-spacing: -0.3px;
     color:${props=>props.backgroundcolor};
 background-color:${props=>props.color};
 width: 173px;
@@ -87,8 +88,8 @@ export default class MainPost extends Component {
             <Sub>웹 개발, 어플리케이션 개발, 웹 디자인, 일반 소프트웨어 개발, 게임, 쇼핑몰·커머스 등</Sub>
 
             <Submits>
-            <Submit href='www.naver.com'color='#ef4f80'  backgroundcolor='#ffffff' style={{marginRight:"21px"}}>프로젝트 등록</Submit>
-            <Submit color='#212121' backgroundcolor='#ffffff'>파트너신청</Submit>
+            <Submit family='NIXGONM-Vb' href='www.naver.com'color='#ef4f80'  backgroundcolor='#ffffff' style={{marginRight:"21px"}}>무료 프로젝트 등록</Submit>
+            <Submit family='NIXGONB-Vb' color='#212121' backgroundcolor='#ffffff'>파트너신청</Submit>
             {/* <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/&state=&response_type=token">facebook</a>
             <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/analytics.readonly&
 access_type=offline&

@@ -19,6 +19,7 @@ justify-content:center;
     display:-webkit-box;
 }
 
+
 `
 const ProjectItems=styled.div`
     display: flex;
@@ -29,7 +30,7 @@ const ProjectItems=styled.div`
     -ms-overflow-style: none; 
   &::-webkit-scrollbar { 
     display: none !important; 
-  }
+  };
 `
 const Img=styled.img`
 `
@@ -60,7 +61,6 @@ export default function ProjectContainer(props) {
 
         return (
             
-            <>
             <Wrapper translate={(page - 1) * (sliderWidth+295)}>
               <Img src={arrow} alt="" onClick={onClickLeft}/>
               <ProjectItems >
@@ -74,7 +74,7 @@ export default function ProjectContainer(props) {
               <Imgs src={arrow} onClick={onClickRight}  alt=""/>
 
             </Wrapper>
-            </>
+            
         )
     }
 

@@ -17,16 +17,7 @@ margin-top:22px;
 height:28px;
 `
 const Main=styled.span`
-margin-top:10.3px;
-font-family: NIXGONM-Vb;
-  font-size: 17px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 0.94;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
+
 
 `
 const Sub=styled.span`
@@ -52,13 +43,39 @@ display:flex;
 border:0;
 z-index:999;
 `
+const Span=styled.span`
+margin-top:10.3px;
+display:flex;
+height:20px;
+font-family: NIXGONM-Vb;
+  font-size: 17px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.94;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+`
+
+
+
 export default function Icon(props) {
     return (
         <Wrapper>
             <Img src={props.img||tree}></Img>
-            <Main>{props.title}</Main>
+            <Span>
+            <Main className='counter'>{props.title}</Main>
+            {props.plus}
+            </Span>
+            {/* <Main className='counter'>{props.title}</Main> */}
+
             <Line/>
-            <Sub>{props.text}</Sub>
+            <Sub >{props.text}</Sub>
         </Wrapper>
     )
 }
+
+
+
+

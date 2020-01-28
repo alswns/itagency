@@ -11,7 +11,9 @@ import Kategorie from '../components/main/Kategorie'
 import Portfolio from '../components/main/Portfolio'
 import Review from '../components/main/Review'
 import Last from '../components/main/Last'
-
+import FlexBanner from '../components/FlexBanner'
+import Logo_gray from '../assets/imgs/Logo_gray.png'
+import counterUp from'counterup2'
 
 
 function numberWithCommas(x) {
@@ -32,7 +34,7 @@ export default class MainPage extends Component {
     }
     componentDidMount(){
         api.get('/info/project').then(res=>{
-            console.dir()
+            console.dir(res)
             this.setState({
                 projects:res.data.info
             })
@@ -48,13 +50,24 @@ export default class MainPage extends Component {
                 today_finished_project:res.data.today_finished_project
             })
         }).catch(err=>console.dir(err))
-
+        
     }
-
+    
+componentDidUpdate(){
+    const el = document.getElementsByClassName('counter')
+        for(let i of el){
+        console.log(i)
+// Start counting, do this on DOM ready or with Waypoints.
+            counterUp( i, {
+                duration: 1000,
+                delay: 16,
+            } )  
+        }
+}
     render() {
         return (
           <>
-          
+            <FlexBanner color='black' img={Logo_gray}/>
             <MainPost user='320'/>
             <Footer  amount={numberWithCommas(this.state.amount)} project={numberWithCommas(this.state.project)} ing={numberWithCommas(this.state.ing)} /> 
             <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project} ing={numberWithCommas(this.state.ing)} today_finished_project={this.state.today_finished_project} />
