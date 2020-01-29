@@ -16,14 +16,15 @@ export default class ProjectPage extends Component {
         
         this.state={
             project:null,
-            arrange :3
+            max:0,
+            arrange :0
         }
       }
     
     componentDidMount(){
         setBanner('프로젝트')
         api.post('/info/project/all',{arrange:this.state.arrange},{body:{arrange:this.state.arrange}}).then(res=>{console.dir(res)
-        this.setState({project:res.data.info})
+        this.setState({project:res.data.info,max: Math.ceil(res.data.info.length/7)})
         }).catch(err=>console.dir(err))
         console.log(this.state)
         document.getElementById(''+this.state.arrange).style.color='#ef4f80'
@@ -49,7 +50,7 @@ export default class ProjectPage extends Component {
         return (
             <Wrapper>
                 <Top/>
-                <Filter  setArrange={this.setArrange} project={this.state.project}/>
+                <Filter max={this.state.max} setArrange={this.setArrange} project={this.state.project}/>
             <Last/>
             </Wrapper>
         )

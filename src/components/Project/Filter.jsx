@@ -133,11 +133,67 @@ const Align=styled.div`
 display:flex;
 flex-direction:column;
 `
+const SU=styled.div`
+width: 40px;
+  height: 40px;
+  background-color: #ef4f80;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: condensed;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+`
+const SuContainer=styled.div`
+display:flex;
+width:1080px;
+justify-content:center;
+`
+const Noborder=styled.div`
+cursor:pointer;
+width: 40px;
+  height: 40px;
+  background-color: #f3f3f3;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: condensed;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #858585;
+`
+const setInt=(int,fun,max)=>{
+    console.log(max)
+    return <SuContainer>
+        
+    {int===1?'': <Noborder onClick={()=>fun(int-2)}>{int-1}</Noborder>}
+        <SU>{int}</SU>
+        {max>=int+1?<Noborder onClick={()=>fun(int)}>{int+1}</Noborder>:''}
+        {max>=int+2?<Noborder onClick={()=>fun(int)}>{int+2}</Noborder>:''}
+        {max>=int+3?<Noborder onClick={()=>fun(int)}>{int+3}</Noborder>:''}
+    {int===1 && max>=int+4?<Noborder onClick={()=>fun(int+3)}>{int+4}</Noborder>:'' }
+</SuContainer>
+    
+}
+
 export default function Filter(props) {
     const [developer, setDeveloper] = React.useState(false)
     const [desinger, setdesinger] = React.useState(false)
+    const [page,setPage]=React.useState(0)
     return (
-      <AllWrapper>
+        
+      <AllWrapper >
         <Wrapper>
 
             <Top>상세 검색 필터</Top>
@@ -237,11 +293,12 @@ export default function Filter(props) {
         </Wrapper>
                 <Align>
             <Kind setArrange={props.setArrange}></Kind>
-{(props.project||[]).map(res=>{
-    return  <ProjectItem res={res}/>
+{(props.project||[]).slice((page)*7,(page+1)*7).map(res=>{
+    return  <ProjectItem res={res} onClick={()=>window.location.href=`/detailed?#id=${res.project_id}`}/>
 })
 }
            
+            {setInt(page+1,setPage,props.max)}
             </Align>
         </AllWrapper>
     )

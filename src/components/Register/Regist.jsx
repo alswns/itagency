@@ -191,6 +191,7 @@ const LongLine=styled.div`
     margin: 0 5%;
 `
 const Ment=styled.div`
+cursor:pointer;
 font-family: NIXGONM-Vb;
   font-size: 17px;
   font-weight: 600;
@@ -202,6 +203,7 @@ font-family: NIXGONM-Vb;
   color: #212121;
 `
 const LoginButton=styled.div`
+cursor:pointer;
   width: 273px;
   height: 40px;
   border-radius: 5px;
@@ -297,10 +299,7 @@ export default function Regist(props) {
 
             </Container>
             </>}
-            <Container>
-                <Sub>아이디</Sub>
-                <Input value={props.id} onChange={props.change} name='id' placeholder='영문 또는 숫자 4자 이상 입력'></Input>
-            </Container>
+           
             <Container>
                 <Sub>비밀번호</Sub>
                 <Input type='password' onBlur={()=>checkPw(props.pw,props.checkpw,props.checkChange)} value={props.pw} onChange={props.change} name='password' placeholder='영문 숫자 조합, 8자 이상 20자 이하 입력'></Input>
@@ -321,7 +320,7 @@ export default function Regist(props) {
                 <Sub>이메일</Sub>
                 <Small value={props.email} name='email' onChange={props.change} placeholder='이메일 입력'></Small>
                 <Submit  back='#212121'>
-                <SubmintSpan color='white' onClick={props.sameEmail}>중복체크</SubmintSpan>
+                <SubmintSpan color='white' onClick={()=>props.sameEmail(check)}>중복체크</SubmintSpan>
             </Submit>
             </Container>
             <Container>
@@ -338,7 +337,7 @@ export default function Regist(props) {
                     </Container>
                     <Container>
                     <Sub></Sub>
-                    <Button color='#212121' onClick={props.regi}><ButtonText color='#ffffff'>회원가입</ButtonText></Button>
+                    <Button color='#212121' onClick={()=>props.regi(check)}><ButtonText color='#ffffff'>회원가입</ButtonText></Button>
                     </Container>
                     </Form>
                     <LongLine/>
@@ -346,7 +345,7 @@ export default function Regist(props) {
 
                     <Buttons>
                         <Ment>이미 계정이 있으신가요?</Ment>
-                        <LoginButton><ButtonText color='#ef4f80'>로그인</ButtonText></LoginButton>
+                        <LoginButton onClick={()=>window.location.href='/login'}><ButtonText color='#ef4f80'>로그인</ButtonText></LoginButton>
                         <div>
                         <Ment>간편가입</Ment>
                         <OauthContainer>

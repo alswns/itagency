@@ -12,7 +12,6 @@ width:100%;
 const Banner=styled.div`
 width:100%;
 height:95px;
-background-image:url(${main_imgae});
 `
 
 export default class LoginPage extends Component {
@@ -58,9 +57,34 @@ export default class LoginPage extends Component {
         console.log(this.state.password)
 
     }
-    login=()=>{
+    login=(who)=>{
+        if (who){
+            api.post('/partner/auth',{
+                email:this.state.id,
+                password:this.state.password
+            }).then(res=>{
+                alert('로그인 성공')
+                console.log(res.data.access_token)
+                window.localStorage.setItem('token',res.data.access_token)
+                window.location='/'
+    
+            })
+            .catch(err=>{
+                console.dir(err)
+                if(err.response.status===409){
+                    alert('로그인 실패\n아이디 또는 비밀번호가 일치하지 않습니다.')
+                    this.setState({
+                        id:'',
+                        password:''
+                    })
+                }
+            })
+
+        }
+        else{
+
         api.post('/client/auth',{
-            id:this.state.id,
+            email:this.state.id,
             password:this.state.password
         }).then(res=>{
             alert('로그인 성공')
@@ -70,6 +94,7 @@ export default class LoginPage extends Component {
 
         })
         .catch(err=>{
+            console.dir(err)
             if(err.response.status===409){
                 alert('로그인 실패\n아이디 또는 비밀번호가 일치하지 않습니다.')
                 this.setState({
@@ -78,6 +103,7 @@ export default class LoginPage extends Component {
                 })
             }
         })
+    }
     }
     render() {
         return (

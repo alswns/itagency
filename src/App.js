@@ -15,6 +15,7 @@ import PortfoliPage from './pages/PortfoliPage';
 import Headroom from 'react-headroom';
 import Service from './components/Service';
 import MainBanner from './components/MainBanner';
+import DetailedPage from './pages/DetailedPage';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -34,17 +35,18 @@ function App() {
                     <MainPage user='320' back='main_image'/>
                 </Route>
                 <Route path='/main' exact='exact'>
-                    <Banner color='white' img={Logo_white}/>
 
                     <MainPage user='320'/>
                 </Route>
                 <Route path='/login' exact='exact'>
-                    <Banner color='black' img={Logo_gray}/>
+                <Banner color='white'  back='#212121' img={Logo_white}/>
+
 
                     <LoginPage/>
                 </Route>
                 <Route path='/register' exact='exact'>
-                    <Banner color='black' img={Logo_gray}/>
+                <Banner color='white'  back='#212121' img={Logo_white}/>
+
 
                     <RegisterPage/>
                 </Route>
@@ -64,6 +66,14 @@ function App() {
                 <Route path='/portfolio' exact='exact'>
                     <Banner color='white' back='#212121' img={Logo_white}/>
                     <PortfoliPage/>
+                </Route>
+                <Route path='/detailed' exact='exact'>
+                    <Banner color='white' back='#212121' img={Logo_white}/>
+                    <DetailedPage/>
+                </Route>
+                <Route path='/detailed/:id' exact='exact'>
+                    <Banner color='white' back='#212121' img={Logo_white}/>
+                    <DetailedPage/>
                 </Route>
             </Router>
         </div>

@@ -293,6 +293,7 @@ const onBlur=(int)=>{
 }
 
 export default function Login(props) {
+  const [who,setWho]=React.useState(false)
   return (
     <Wrapper>
       <Img src={back} onClick={() => { window.location.href = '/' }}></Img>
@@ -303,12 +304,12 @@ export default function Login(props) {
         <Container>
           <LoginContainer>
             <Group >
-              <Common id='comm' onClick={() => Click(1)}  >일반 회원 로그인</Common>
+              <Common id='comm' onClick={() => {Click(1);setWho(false)}}  >일반 회원 로그인</Common>
               <Line id='left' />
             </Group>
             <Group style={{ marginLeft: '3%' }}>
 
-              <Commons id='part' onClick={() => Click(0)} >파트너 로그인</Commons>
+              <Commons id='part' onClick={() => {Click(0);setWho(true)}} >파트너 로그인</Commons>
               <Lines id='right' />
             </Group>
 
@@ -317,7 +318,8 @@ export default function Login(props) {
             <Wrap>
               <label>
                 <Input onChange={props.changeId} value={props.id} onBlur={()=>onBlur(0)}onFocus={()=>onFocus(0)}></Input>
-                <Inner className='text'>이메일 주소</Inner>
+                {props.id==''?< Inner className='text'>이메일 주소</Inner>: <Inner className='text'></Inner>}
+                
                 </label>
             </Wrap>
 
@@ -325,7 +327,7 @@ export default function Login(props) {
               <label>
                 
                 <Input type='password' onChange={props.changePw} value={props.pw} onBlur={()=>onBlur(1)}onFocus={()=>onFocus(1)} ></Input>
-                <Inner className='text'>비밀번호</Inner>
+                {props.pw===''?< Inner className='text'>비밀번호</Inner>: <Inner className='text'></Inner>}
               </label>
 
             </Wrap>
@@ -338,7 +340,7 @@ export default function Login(props) {
             <Remember>|</Remember>
             <Remember>비밀번호 찾기</Remember>
           </div>
-          <Button color='#212121'> <ButtonText color='#ffffff' onClick={props.login}>로그인</ButtonText></Button>
+          <Button color='#212121'> <ButtonText color='#ffffff' onClick={()=>props.login(who)}>로그인</ButtonText></Button>
           <Button color='#ffffff'><ButtonText color='#212121' onClick={() => { window.location.href = '/register' }}>회원가입</ButtonText> </Button>
         </Container>
 

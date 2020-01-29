@@ -35,19 +35,10 @@ font-family: NIXGONM-Vb;
   color: #212121;
 `
 
-const Onclick=(event)=>{
-    const target=event.target.parentNode.children
-    for(let i of target){
-        i.style.color='#212121'
-        i.style.fontWeight='500'
-    }
-    event.target.style.color='#ef4f80'
-}
-const setColor=(props)=>{}
+
 export default function Kind(props) {
     return (
         <Top>
-        {console.log(props.setArrange)}
                <Link_ul>
                 <Link_li id='0' onClick={props.setArrange}>최신등록순</Link_li>
                 <Link_li id='1' onClick={props.setArrange}>마감임박순</Link_li>

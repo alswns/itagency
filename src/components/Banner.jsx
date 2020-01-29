@@ -79,6 +79,9 @@ const SetMid = styled.div`
   color:${props => props.color};
 
 `
+const My=styled.div`
+
+`
 function Banner(props) {
     const [service,setService]=React.useState(false)
     return (
@@ -92,7 +95,7 @@ function Banner(props) {
                 <Link_li className='banner_li' id='프로젝트' ><Link to='/project' style={{ textDecoration: 'none' }}>프로젝트</Link></Link_li>
                 <Link_li className='banner_li' id='이용후기' ><Link to='/review' style={{ textDecoration: 'none' }}>이용후기</Link></Link_li>
                 <Link_li className='banner_li' id='포트폴리오' ><Link to='/portfolio' style={{ textDecoration: 'none' }}>포트폴리오</Link></Link_li>
-                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }} onClick={props.setService}>{service||'서비스 전체보기'}{service&&'닫기'}</Link></Link_li>
+                <Link_li className='banner_li' id='서비스' ><Link style={{ textDecoration: 'none' }} onClick={()=>setService(!service)}>{service||'서비스 전체보기'}{service&&'닫기'}</Link></Link_li>
             </Link_ul>
 
             <SetMid color={props.color}>

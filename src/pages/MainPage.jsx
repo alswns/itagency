@@ -33,9 +33,17 @@ export default class MainPage extends Component {
         ing:undefined,
         today_registered_project:undefined,
         today_finished_project:undefined,
-        service:false
+        service:false,
+        partners:'',
+        name:''
     }
     componentDidMount(){
+        api.get('/info/account').then(res=>{
+            this.setState({name:res.data.name})
+        })
+        .catch(err=>{
+            console.dir(err)
+        })
         api.get('/info/project').then(res=>{
             console.dir(res)
             this.setState({
@@ -53,19 +61,22 @@ export default class MainPage extends Component {
                 today_finished_project:res.data.today_finished_project
             })
         }).catch(err=>console.dir(err))
-        
+        api.get('/info/partners').then(
+            res=>this.setState({partners:res.data.partners}))
     }
     
 componentDidUpdate(){
     const el = document.getElementsByClassName('counter')
         for(let i of el){
-        console.log(i)
 // Start counting, do this on DOM ready or with Waypoints.
             counterUp( i, {
                 duration: 1000,
                 delay: 16,
             } )  
         }
+      
+
+        
 }
 setService=()=>{
     this.setState({service:!this.state.service})
@@ -73,9 +84,9 @@ setService=()=>{
     render() {
         return (
           <>
-            <MainBanner setService={this.setService} service={this.state.service} color='white' img={Logo_white}/>
-            <FlexBanner setService={this.setService} service={this.state.service} color='black' img={Logo_gray}/>
-            <MainPost user='320'/>
+            <MainBanner name={this.state.name} setService={this.setService} service={this.state.service} color='white' img={Logo_white}/>
+            <FlexBanner name={this.state.name} setService={this.setService} service={this.state.service} color='black' img={Logo_gray}/>
+            <MainPost user={this.state.partners}/>
             <Footer  amount={numberWithCommas(this.state.amount)} project={numberWithCommas(this.state.project)} ing={numberWithCommas(this.state.ing)} /> 
             <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project} ing={numberWithCommas(this.state.ing)} today_finished_project={this.state.today_finished_project} />
             <SecondFooter/>

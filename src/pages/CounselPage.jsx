@@ -66,7 +66,7 @@ export default class CounselPage extends Component {
         console.log(this.state)
         console.log(this.state.planning)
         console.log(formData.get('planning'))
-        api.post('/client/project',formData,{headers:{ "Authorization":'Bearer '+window.localStorage.getItem('token')}}).then(res=>alert('프로젝트 등록 성공'))
+        api.post('/client/project',formData).then(res=>alert('프로젝트 등록 성공'))
         .catch(err=>{alert('입력형식에 맞지 않습니다.다시 입력해 주세요')
     console.dir(err)
     })

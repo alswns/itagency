@@ -64,13 +64,17 @@ const Text=styled.span`
 position:absolute;
 top:80px;
 left:20px;
+height: 61px;
 display:flex;
 width: 831px;
+word-break:break-all;
+overflow:hidden;
   font-family: NIXGONM-Vb;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
+  line-height:2;
   letter-spacing: -0.3px;
   text-align: left;
   color: #6f6f6f;
@@ -159,7 +163,7 @@ width:180px;
 export default function ProjectItem(props) {
     return (
 
-        <Wrapper>
+        <Wrapper onClick={props.onClick}>
 
             <Kind>{props.res.field}</Kind>
             <Img src={progress0}></Img>
