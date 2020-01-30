@@ -24,7 +24,7 @@ font-family: NIXGONB-Vb;
   color: #212121;
 `
 const Text=styled.div`
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

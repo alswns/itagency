@@ -110,9 +110,8 @@ padding:15px 20px;
   left:${props=>props.left};
 `
 const Name=styled.span`
-  font-family: NIXGONB-Vb;
-  font-size: 13px;
-  font-weight: normal;
+  font-family:  'Noto Sans KR';
+  font-size: 16px;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.54;
@@ -125,8 +124,8 @@ const Name=styled.span`
 `
 const Up=styled.span`
 color:#ef4f80;
-font-size:20px;
-font-family:  'Noto Sans KR';
+font-size:23px;
+font-weight:600;
 
 `
 const Lines=styled.div`
@@ -160,11 +159,58 @@ left: 681px;
 position: absolute;
 width:180px;
 `
+const New=styled.div`
+width: 54px;
+  height: 17px;
+  background-color: #ef4f80;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.24px;
+  text-align: left;
+  color: #ffffff;
+  font-family:'Noto Sans KR';
+  display:flex;
+  justify-content:center;
+  align-items:center;
+`
+const 모집=styled.div`
+width: 54px;
+  height: 17px;
+  background-color: #8f4fef;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.24px;
+  text-align: left;
+  color: #ffffff;
+  font-family:'Noto Sans KR';
+  display:flex;
+  justify-content:center;
+  align-items:center;
+`
+const Div=styled.div`
+position:absolute;
+bottom:0px;
+display:flex;
+`
+const thounsond=(int)=>{
+  if(int>1000000)
+  return parseInt(int/10000)+'만'
+  return int
+
+}
+
 export default function ProjectItem(props) {
     return (
 
         <Wrapper onClick={props.onClick}>
-
+          
+          {console.log()}
             <Kind>{props.res.field}</Kind>
             <Img src={progress0}></Img>
             <Title>{props.res.project_name}</Title>
@@ -177,12 +223,12 @@ export default function ProjectItem(props) {
             <Dday>D-{parseInt( (props.res.register_deadline*1000-new Date())/86400553)}</Dday>
             <Text>{props.res.description}</Text>
             <Line></Line>
-            <Container style={{width:'133px'}} left='20px'>희망금액 {props.res.cost}원</Container>
+            <Container style={{width:'133px'}} left='20px'>희망금액 {thounsond(props.res.cost)}원</Container>
             <Container left='206px'>진행기간 {props.res.days}일</Container>
             <Container left='343px'>등록일  {new Date((props.res.register_time)*1000).toLocaleDateString()}</Container>
             <Container left='517px'>모집 마감일 {new Date((props.res.register_deadline)*1000).toLocaleDateString()}</Container>
             <Container left='721px'>지원수 {props.res.num_of_applicants}명</Container>
-            <Name><Up>{props.res.client_name}</Up> 클라이언트님</Name>
+            <Name><Up>{props.res.client_name}</Up> 님</Name>
             <Lines></Lines>
             <SeContainer top='75px'>지역 {props.res.location} </SeContainer>
             <SeContainer top='120px'>사전미팅 
@@ -198,6 +244,10 @@ export default function ProjectItem(props) {
             {props.res.hope_partner==3?'    법인 사업자':''}
             {props.res.hope_partner==4?'    개인 사업자':''}
             </SeContainer>
+          <Div>
+            {new Date().toLocaleDateString()==new Date((props.res.register_time)*1000).toLocaleDateString()?<New>new</New>:''}
+            {props.res.progress==0?<모집>모집중</모집>:''}
+            </Div>
         </Wrapper>
     )
 }

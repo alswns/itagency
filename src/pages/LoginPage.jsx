@@ -20,7 +20,7 @@ export default class LoginPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: ''+window.localStorage.getItem('reid'),
+            id: ''+(window.localStorage.getItem('reid')?window.localStorage.getItem('reid'):''),
             password: '',
             checked:false,
         }

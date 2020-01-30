@@ -13,7 +13,7 @@ const CheckBox=styled.input`
 
 `
 const Label=styled.label`
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;

@@ -4,7 +4,7 @@ import ProjectContainer from './ProjectContainer'
 import Today from './Today'
 const Bold = styled.div`
 margin-top:81px;
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 font-family: NIXGONB-Vb;
   font-size: 35px;
   font-weight: normal;
@@ -18,7 +18,7 @@ font-family: NIXGONB-Vb;
 `
 const Sub=styled.div`
 margin-top:1.4%;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 19px;
   font-weight: 600;
   font-stretch: normal;
@@ -32,7 +32,7 @@ font-family: NIXGONM-Vb;
   
 `
 const Regi = styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

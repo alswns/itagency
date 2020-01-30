@@ -17,7 +17,7 @@ const Kind=styled.span`
 position:absolute;
 top:210px;
 left:20px;
-    font-family: NIXGONM-Vb;
+    font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -78,7 +78,7 @@ right:20px;
 top:270px;
 bottom:10px;
 overflow:hidden;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;

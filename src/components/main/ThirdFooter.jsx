@@ -6,7 +6,7 @@ const Wrapper = styled.div `
 position:relative;
 width:100%;
 height:200px;
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 
 object-fit: contain;
 background:url(${foot});
@@ -20,7 +20,7 @@ height:200px;
 `
 const Text = styled.div `
 text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;

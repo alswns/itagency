@@ -8,7 +8,7 @@ width: 190px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
-  margin-left:5px;
+  margin-left:-4px;
 `
 var cat1_num = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
 
@@ -217,7 +217,7 @@ export default function Selection() {
 
                 <option value='16'>충북</option>
                 </Area>
-            <Area className='시' name="h_area2">
+            <Area style={{marginLeft:'9px'}} className='시' name="h_area2" >
                 <option value="" disabled selected>시·군·구</option>
 
             </Area>

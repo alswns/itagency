@@ -39,7 +39,7 @@ height:85px;
 const Ment = styled.span`
 width:430px;
 display:flex;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 55px;
   font-weight: normal;
   font-stretch: normal;
@@ -93,7 +93,7 @@ const CircleIcone=styled.img`
 
 `
 const CircleText=styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
@@ -105,7 +105,7 @@ font-family: NIXGONM-Vb;
 `
 
 const CircleSub=styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
@@ -140,7 +140,7 @@ justify-content:center;
 flex-direction:column;
 `
 const Return =styled.span`
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
 `
 
 export default function SecondTopBanner(props) {

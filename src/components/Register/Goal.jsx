@@ -10,39 +10,41 @@ const Wrapper=styled.div`
   position:relative;
   margin-left:${props=>props.mar};
   box-sizing:border-box;
+  display:flex;
+  justify-content:center;
 cursor:pointer;
   
 `
 const Title=styled.span`
-width: 62px;
-  height: 15px;
 position:absolute;
-top:14px;
-left:69px;
- font-family: NIXGONM-Vb;
-  font-size: 14px;
-  font-weight: 600;
+top:16px;
+
+ font-family: 'Noto Sans KR';
+  font-size: 17px;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.07;
   letter-spacing: normal;
   text-align: center;
   color: #212121;`
+
 const Text=styled.span`
 position:absolute;
-top:49px;
-left:58px;
-width: 90px;
+top:45px;
+width: 130px;
   height: 26px;
- font-family: NIXGONM-Vb;
-  font-size: 11px;
-  font-weight: 600;
+ font-family: 'Noto Sans KR';
+  font-size: 13px;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.36;
   letter-spacing: -0.22px;
   text-align: center;
-  color: #6f6f6f;`
+  color: rgba(0,0,0,0.9);
+  white-space:pre;
+  `
+  
   
 export default function Goal(props) {
     

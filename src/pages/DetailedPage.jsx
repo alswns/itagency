@@ -17,7 +17,7 @@ margin-left:2px;
 padding-left:18px;
 width:98%;
 height:110px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -34,7 +34,7 @@ cursor:pointer;
 width: 104px;
   height: 40px;
   background-color: #ef4f80;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -51,7 +51,6 @@ display:flex;
 flex-direction:column;
 align-items:center;
 @font-face { font-family: 'NIXGONL-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 `
 const First = styled.div`
@@ -59,14 +58,14 @@ width:83%;
 margin-left:98px;
 `
 const Wrap = styled.div`
-  width: 200px;
+  width: 170px;
   height: 120px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
   position:relative;
 `
 const Titles = styled.span`
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;
@@ -110,11 +109,11 @@ margin-bottom:20px;
 display:flex;
 box-sizing:border-box;
 padding-left:50px;
-width: 1075px;
+width: 870px;
   height: 53px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -139,7 +138,7 @@ const Progress = styled.img`
   background-color: #000000;
 `
 const Status = styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -175,7 +174,7 @@ display:flex;
 justify-content:space-between;
 `
 const Item = styled.div`
-width: 1075px;
+width: 870px;
 display:flex;
 flex-direction:column;
 box-sizing:border-box;
@@ -184,7 +183,7 @@ box-sizing:border-box;
   background-color: #ffffff;
 `
 const Kind = styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -230,7 +229,7 @@ font-family: NIXGONB-Vb;
 const Detail = styled.div`
 width: 708px;
 word-break:break-all;
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -240,10 +239,11 @@ word-break:break-all;
   text-align: left;
   color: #212121;
   white-space:pre-wrap;
+  margin-left:125px;
 `
 const Submit = styled.div`
 margin-top:20px;
-  width: 1075px;
+  width: 870px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;

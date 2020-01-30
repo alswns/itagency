@@ -89,7 +89,7 @@ const Projects=styled.div`
 
 `
 const Pro=styled.span`
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;

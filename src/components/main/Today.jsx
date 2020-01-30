@@ -58,9 +58,9 @@ margin-top:8px;
 margin-bottom:5px;
 `
 const Sub = styled.div`
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 
-font-family: NIXGONM-Vb;
+
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

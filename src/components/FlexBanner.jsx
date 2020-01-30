@@ -20,7 +20,7 @@ height:40.1px;
 margin-left:3.8%;
 `
 const Link_ul = styled.ul`
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 display:flex;
 margin:0px auto;
 width:50%;
@@ -44,7 +44,7 @@ display:flex;
 `
 const Auth = styled.span`
 cursor:pointer;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;
@@ -60,7 +60,7 @@ const SetMid = styled.div`
   align-items:center;
   width:180px;
   justify-content:space-between;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;

@@ -13,7 +13,7 @@ border-radius: 10px;
 position: relative;
 margin-right:28px;
 background:url(${mac});
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 
 
 
@@ -35,7 +35,7 @@ border-radius:18px;
 padding:0px 15px;
 z-index:999;
 background:none;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: 600;
   font-stretch: normal;
@@ -51,7 +51,7 @@ width:210px;
 height:61px;
 left:20px;
 top:75px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 20px;
   font-weight: 800;
   font-stretch: normal;
@@ -66,7 +66,7 @@ position: absolute;
 left:20px;
 top:130px;
   height: 12px;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-weight:600;
   font-size: 16px;
   font-stretch: normal;
@@ -89,7 +89,7 @@ color:white;
 
 const Text=styled.span`
 position:absolute;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: 600;
   font-stretch: normal;
@@ -106,7 +106,7 @@ const Content=styled.span`
 position: absolute;
     left:81.3px;
     top:${props=>props.top};
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: 600;
   font-stretch: normal;
@@ -125,7 +125,7 @@ background-color:${props => props.back};
 width:92px;
 height:36px;
 border-radius:7px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: bold;
   font-stretch: normal;
@@ -161,7 +161,7 @@ z-index:1;
 `
 const Texts=styled.span`
 position:absolute;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

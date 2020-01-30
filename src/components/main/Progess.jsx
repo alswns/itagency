@@ -33,7 +33,7 @@ height:5px;
 margin-bottom:15px;
 `
 const Sub=styled.div`
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 17px;
   font-weight: 600;
   font-stretch: normal;

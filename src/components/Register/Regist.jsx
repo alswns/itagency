@@ -9,7 +9,7 @@ import {checkPasswordPattern,samePw, checkPw, testCheck} from '../../apis/CheckF
 import { Facebook } from '../../apis/Oauth'
 const Title = styled.div`
 width:100%;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;
@@ -21,7 +21,7 @@ width:100%;
 `
 const Text = styled.div`
 margin-top:10px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -38,7 +38,7 @@ margin-bottom:76px;
 const It = styled.div`
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 margin-top:15px;
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 40px;
   font-weight: normal;
   font-stretch: normal;
@@ -64,9 +64,9 @@ display:flex;
 margin-top:15px;
 `
 const Sub=styled.span`
- width: 52px;
+ width: 68px;
  margin-right:5.2%;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 14px;
   font-weight: 600;
   font-stretch: normal;
@@ -113,8 +113,8 @@ const SubmintSpan=styled.div`
 height:100%;
 display:flex;
 flex-direction:column;
-font-family: NIXGONM-Vb;
-  font-size: 14px;
+font-family: 'Noto Sans KR';
+  font-size: 13px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -131,7 +131,7 @@ const Line =styled.div`
     opacity:0.5;
 `
 const Remember = styled.label`
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -192,7 +192,7 @@ const LongLine=styled.div`
 `
 const Ment=styled.div`
 cursor:pointer;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 17px;
   font-weight: 600;
   font-stretch: normal;
@@ -227,7 +227,7 @@ justify-content:center;
 display:flex;
 height:100%;
 flex-direction:column;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -269,9 +269,8 @@ export default function Regist(props) {
                 <Form>
             <Container >
                 <Sub>이용목적</Sub>
-            <Goal a={true} title='클라이언트' text='프로젝트를 진행하는개인 또는 기업' className='goal' onClick={()=>{changeCheck(false);props.Change(0)}}></Goal>
-            <Goal mar='0.5%' title='파트너' text='프로젝트를 의뢰할
-            개인 또는 기업' className='goal' onClick={()=>{changeCheck(true);props.Change(1)}}></Goal>
+            <Goal a={true} title='클라이언트' text={`프로젝트를 의뢰할${'\n'}개인 또는 기업`}  className='goal' onClick={()=>{changeCheck(false);props.Change(0)}}></Goal>
+            <Goal mar='0.5%' title='파트너'text={`프로젝트를 진행하는${`\n`}개인 또는 기업`} className='goal' onClick={()=>{changeCheck(true);props.Change(1)}}></Goal>
             </Container>
             <Container>
                 <Sub >이름</Sub>

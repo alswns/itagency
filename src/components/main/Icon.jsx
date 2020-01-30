@@ -9,7 +9,7 @@ display:flex;
 flex-direction:column;
 height:100%;
 align-items: center;
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 
 `
 const Img=styled.img`
@@ -46,7 +46,7 @@ const Span=styled.span`
 margin-top:10.3px;
 display:flex;
 height:20px;
-font-family: 'NIXGONM-Vb';
+font-family: ''Noto Sans KR'';
   font-size: 17px;
   font-weight: 800;
   font-stretch: normal;

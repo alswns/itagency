@@ -11,7 +11,7 @@ width: 860px;
 const Title = styled.div`
 padding:5px;
 padding-left:10px;
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -26,7 +26,7 @@ padding-left:10px;
 const Sub = styled.div`
 padding:5px;
 padding-left:10px;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
