@@ -56,8 +56,10 @@ export default class ProjectPage extends Component {
     render() {
         return (
             <Wrapper>
+                <div style={{transform:'scale(0.9)'}}>
                 <Top/>
                 <Filter max={this.state.max} setArrange={this.setArrange} project={this.state.project}/>
+                </div>
             <Last/>
             </Wrapper>
         )

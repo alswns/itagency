@@ -9,7 +9,6 @@ background-color: #ffffff;
 `
 const Link_ul = styled.ul`
 margin-left:60px;
-@font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 display:flex;
 width:40%;
 text-align:center;
@@ -24,8 +23,8 @@ text-align:center;
 justify-content:center;
 align-items:center;
 display:flex;
-font-family: NIXGONM-Vb;
-  font-size: 15px;
+font-family: 'Noto Sans KR';
+  font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

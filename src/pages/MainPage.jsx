@@ -98,8 +98,8 @@ setService=()=>{
             <Footer  amount={numberWithCommas(this.state.amount)} project={numberWithCommas(this.state.project)} ing={numberWithCommas(this.state.ing)} /> 
             <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project} ing={numberWithCommas(this.state.ing)} today_finished_project={this.state.today_finished_project} />
             <SecondFooter/>
-            <Example/>
             <Progess/>
+            <Example/>
             <Kategorie/>
             <ThirdFooter/>
             <Portfolio/>

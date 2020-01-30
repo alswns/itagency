@@ -40,13 +40,8 @@ margin: 0 auto;
   border-radius: 23px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
-`
-const Sub = styled.div `
-  width: 100%;
-  height: 16px;
-  font-family: NIXGONB-Vb;
-  font-size: 15px;
-  font-weight: normal;
+  font-family: 'Noto Sans KR';
+  font-weight:600;
   font-stretch: normal;
   font-style: normal;
   line-height: 45px;
@@ -56,6 +51,7 @@ const Sub = styled.div `
   justify-content:center;
   cursor:pointer;
 `
+
 const Wrap = styled.div `
 position:absolute;
 top:121px;
@@ -69,8 +65,8 @@ export default function ThirdFooter() {
             <Image></Image>
             <Text>저렴하고 빠르게 서비스를 만들고 싶으신가요?</Text>
             <Wrap>
-                <Sing>
-                    <Sub onClick={() => window.location.href = '/counsel'}>프로젝트 상담하기</Sub>
+                <Sing onClick={() => window.location.href = '/counsel'}>
+                    프로젝트 상담하기
                 </Sing>
             </Wrap>
         </Wrapper>

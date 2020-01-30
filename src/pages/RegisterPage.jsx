@@ -11,7 +11,7 @@ width:100%;
 `
 const Banner = styled.div`
 width:100%;
-height:95px;
+height:55px;
 `
 
 export default class RegisterPage extends Component {

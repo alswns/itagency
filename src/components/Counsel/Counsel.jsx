@@ -37,9 +37,9 @@ const Category = styled.span `
 display:block;
 width: 147px;
 margin-right:30px;
-font-family: NIXGONB-Vb;
+font-family:'Noto Sans KR';
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
@@ -70,7 +70,7 @@ flex-direction:column;
 `
 const Label = styled.label `
 margin-top:5px;
-font-family: NIXGONM-Vb;
+font-family:'Noto Sans KR';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -86,7 +86,7 @@ width: 200px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
-  font-family: NIXGONM-Vb;
+  font-family:'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -165,7 +165,7 @@ const RightLabel = styled.label `
   width: 35px;
   height: 35px;
   background-color: #212121;
-  font-family: NIXGONM-Vb;
+  font-family:'Noto Sans KR';
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;
@@ -181,7 +181,7 @@ const RightLabel = styled.label `
 const Projectcontent = styled.textarea `
   width: 410px;
     height: 422px;
-    font-family: NIXGONM-Vb;
+    font-family:'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -204,7 +204,7 @@ height: 40px;
   background-color: #ffffff;
   margin-right:10px;
   width:${props => props.width};
-  font-family: NIXGONM-Vb;
+  font-family:'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -222,7 +222,7 @@ height: 40px;
   background-color: #ffffff;
   margin-right:10px;
   width:${props => props.width};
-  font-family: NIXGONM-Vb;
+  font-family:'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -241,7 +241,7 @@ margin-bottom:5px;
 `
 
 const RadioText = styled.span `
- font-family: NIXGONM-Vb;
+ font-family:'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -290,7 +290,7 @@ display:flex;
 
 const Sub = styled.div `
 white-space:pre;
-font-family: NIXGONM-Vb;
+font-family:'Noto Sans KR';
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -515,7 +515,7 @@ export default function Counsel(props) {
                             <option disabled="disabled" selected="selected">선택</option>
                             <option value='0'>카톡 및 전화</option>
                             <option value='1'>오프라인</option>
-                            <option value='2'>미팅</option>
+                            <option value='2'>미팅</option>1
                         </Day>
                     </Container>
                     <Container>
@@ -583,7 +583,8 @@ export default function Counsel(props) {
                     <Regi onClick={()=>{props.setKind('hope_partner',radio(),()=>props.setKind('planning',test(),()=>props.subMit()));}}>프로젝트 정보 작성 완료 및 등록</Regi>
                 </Paper>
 
-                <Explain>진행도 표시
+                <Explain>
+                    {/* 진행도 표시 */}
                     <Line></Line>
                     <Title>
                         <Pink>아이티 에이전시</Pink>의 장점</Title>

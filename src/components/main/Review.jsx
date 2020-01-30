@@ -135,7 +135,7 @@ text-align:center;
 `
 export default function Review(props) {
     return (
-        <div>
+        <div >
             <Title>아이티 에이전시 이용후기</Title>
             <Img src={bar}></Img>
                 <Sub>클라이언트님들이 직접 작성한 후기를 확인하세요.</Sub>

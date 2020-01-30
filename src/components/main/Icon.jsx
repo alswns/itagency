@@ -14,7 +14,7 @@ align-items: center;
 `
 const Img=styled.img`
 margin-top:22px;
-height:28px;
+height:${props=>props.height};
 `
 const Main=styled.span`
 
@@ -22,16 +22,16 @@ const Main=styled.span`
 `
 const Sub=styled.span`
 margin-top:10px;
-font-family: NIXGONM-Vb;
-  font-size: 10px;
-  font-weight: 600;
+font-family: 'Noto Sans KR';
+
+  font-size: 15px;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1;
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  opacity:0.8;
 `
 const Line=styled.hr`
 margin-top:8px;
@@ -46,7 +46,7 @@ const Span=styled.span`
 margin-top:10.3px;
 display:flex;
 height:20px;
-font-family: NIXGONM-Vb;
+font-family: 'NIXGONM-Vb';
   font-size: 17px;
   font-weight: 800;
   font-stretch: normal;
@@ -62,7 +62,7 @@ font-family: NIXGONM-Vb;
 export default function Icon(props) {
     return (
         <Wrapper>
-            <Img src={props.img||tree}></Img>
+            <Img height={props.height} src={props.img||tree}></Img>
 
 
             

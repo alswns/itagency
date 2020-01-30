@@ -21,7 +21,7 @@ box-sizing:border-box;
 
 width:100%;
 background-color: #212121;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -39,9 +39,9 @@ border: solid 1px #e0e0e0;
   flex-direction:column;
 `
 const Title = styled.div `
-font-family: NIXGONB-Vb;
-font-size: 15px;
-font-weight: normal;
+font-family: 'Noto Sans KR';
+font-size: 17px;
+font-weight: 600;
 font-stretch: normal;
 font-style: normal;
 line-height: 1.33;
@@ -53,7 +53,7 @@ letter-spacing: -0.3px;
   margin-left:30px;
 `
 const Label = styled.label `
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -63,7 +63,7 @@ const Label = styled.label `
   text-align: left;
   color: #212121;  
   margin-left:30px;
-
+    margin-top:4px;
 `
 const Line = styled.div `
 width:100%;
@@ -101,7 +101,7 @@ border-radius: 5px;
   background-color: #ffffff;
   width: 200px;
   height: 35px;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -125,7 +125,7 @@ margin-bottom:10px;
 const AllWrapper=styled.div`
 display:flex;
 flex-direction:row;
-width:1341px;
+width:1345px;
 margin:0 auto;
 justify-content:space-between;
 `
@@ -188,8 +188,8 @@ const setInt=(int,fun,max)=>{
 }
 
 export default function Filter(props) {
-    const [developer, setDeveloper] = React.useState(false)
-    const [desinger, setdesinger] = React.useState(false)
+    const [developer, setDeveloper] = React.useState(true)
+    const [desinger, setdesinger] = React.useState(true)
     const [page,setPage]=React.useState(0)
     return (
         
@@ -235,7 +235,7 @@ export default function Filter(props) {
                         for='develope'>개발</Label>
                 </Items>
                 {
-                    developer &&<> <div>
+                    developer &&<> <div style={{marginTop:'-8px'}}>
 
                             <KategoriItems id='web' text='웹'/>
                             <KategoriItems id='app' text='애플리케이션'/>
@@ -268,7 +268,7 @@ export default function Filter(props) {
                         }}for='design'>디자인</Label>
                 </Items>
                 {
-                    desinger &&<> <KategoriItems id='web' text='웹'/>
+                    desinger &&<div style={{marginTop:'-8px'}}> <KategoriItems id='web' text='웹'/>
                         <KategoriItems id='app' text='애플리케이션'/>
                         <KategoriItems id='product' text='제품'/>
                         <KategoriItems id='presentation' text='프레젠테이션'/>
@@ -279,7 +279,7 @@ export default function Filter(props) {
                         <KategoriItems id='move' text='영상'/>
                         <KategoriItems id='game' text='게임'/>
                         <KategoriItems id='other' text='기타'/>
-                    </>
+                    </div>
                 }
             </Kategorie>
             <Location>

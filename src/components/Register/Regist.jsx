@@ -56,7 +56,7 @@ width:25px;
 height:25px;
 margin-left:60px;
 margin-top:80px;
-margin-bottom:110px;
+margin-bottom:60px;
 cursor: pointer;
 `
 const Container=styled.div`

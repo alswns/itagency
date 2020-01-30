@@ -5,7 +5,7 @@ import toke from '../../assets/imgs/Toke.png'
 import money from '../../assets/imgs/money.png'
 const Text =styled.div`
 margin-top:205px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 35px;
   font-weight: normal;
   font-stretch: normal;
@@ -17,7 +17,8 @@ font-family: NIXGONM-Vb;
   margin-bottom:100px;
 `
 const Color=styled.span`
-font-family: NIXGONB-Vb;
+/* font-family: NIXGONB-Vb; */
+font-weight:600;
   color: #ef4f80;
 `
 const Wrap=styled.div`

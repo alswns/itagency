@@ -29,7 +29,7 @@ position:absolute;
 width:100%;
 text-align:center;
 top:157px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;

@@ -33,8 +33,9 @@ width:50%;
 height:85px;
 justify-content: space-between;
 & a{
-  font-family: 'NIXGONM-Vb';
+  font-family: 'Noto Sans KR';
   font-size: 18px;
+  font-weight:500;
   color: ${props => props.color};
 }
 `

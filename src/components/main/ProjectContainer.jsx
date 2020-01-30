@@ -36,6 +36,7 @@ height:420px;
   };
 `
 const Img=styled.img`
+width:24px;
 `
 const Imgs=styled.img`
 transform:rotate(0deg);

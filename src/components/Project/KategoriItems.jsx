@@ -7,7 +7,7 @@ margin-left:64px;
 margin-bottom:6px;
 `
 const Label = styled.label `
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;

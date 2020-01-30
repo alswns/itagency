@@ -16,7 +16,7 @@ position:absolute;
 left:34px;
 top:87px;
 background-color: #ffffff;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -39,15 +39,12 @@ top: 0; bottom:0; margin-top:auto; margin-bottom:auto;
 const Text=styled.div`
 position:absolute;
 top:116px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.65;
   letter-spacing: normal;
   text-align: center;
   color: #212121;
+  opacity:0.9;
   width:110px;
 `
 export default function CircleIcon(props) {

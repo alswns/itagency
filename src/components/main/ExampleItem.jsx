@@ -5,25 +5,22 @@ const Wrapper=styled.div`
 display:flex;
 flex-direction:column;
 width:25%;
-justify-content:center;
-text-align:center;
+align-items:center;
+padding:0px;
 `
 const Img=styled.img`
 width:290px;
 height:198px;
-margin: 0 auto;
-margin-bottom:72px;
+margin-bottom:20px;
 `
 
 const Title=styled.span`
 margin: 0 auto;
   white-space:pre;
-  font-family: NIXGONM-Vb;
+  font-family:'Noto Sans KR';
   font-size: 23px;
-  font-weight: normal  ;
+  font-weight: 600  ;
   font-stretch: normal;
-  font-style: normal;
-  line-height: 1.22;
   letter-spacing: normal;
   text-align: center;
   color: #ef4f80;
@@ -32,16 +29,15 @@ margin: 0 auto;
 const Text=styled.span`
   white-space:pre;
   margin: 0 auto;
- font-family: NIXGONM-Vb;
+ font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.87;
   letter-spacing: normal;
   text-align: center;
   color: #212121;
-
+  white-space:pre-line;
 `
 export default function ExampleItem(props) {
     return (

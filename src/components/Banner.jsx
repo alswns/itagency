@@ -29,7 +29,7 @@ width:50%;
 height:85px;
 justify-content: space-between;
 & a{
-  font-family: 'NIXGONM-Vb';
+  font-family: 'Noto Sans KR';
   font-size: 18px;
   color: ${props => props.color};
 }
@@ -46,7 +46,7 @@ display:flex;
 
 const Auth = styled.span`
 cursor:pointer;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;

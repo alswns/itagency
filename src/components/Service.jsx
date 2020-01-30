@@ -10,9 +10,9 @@ width: 1920px;
   display:flex;
 `
 const Title=styled.span`
-  font-family: NIXGONB-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.06;
@@ -24,7 +24,7 @@ const Title=styled.span`
 `
 const Items=styled.span`
 margin-bottom:10px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;

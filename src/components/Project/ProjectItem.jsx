@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import progress0 from '../../assets/imgs/progress0.png'
+import progress0 from '../../assets/imgs/progress1.png'
 const Wrapper=styled.div`
   width: 1076px;
   height: 220px;
@@ -17,8 +17,8 @@ const Kind=styled.span`
 position:absolute;
 top:15px;
 left:20px;
-font-family: NIXGONM-Vb;
-  font-size: 13px;
+font-family:  'Noto Sans KR';
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -30,9 +30,9 @@ const Title=styled.span`
 position:absolute;
 top: 39px;
 left:20px;
-font-family: NIXGONB-Vb;
-  font-size: 20px;
-  font-weight: normal;
+font-family: 'Noto Sans KR';
+  font-size: 24px;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: -0.4px;
@@ -40,8 +40,8 @@ font-family: NIXGONB-Vb;
   color: #ef4f80;
 `
 const Status=styled.span`
-  font-family: NIXGONM-Vb;
-  font-size: 13px;
+  font-family:  'Noto Sans KR';
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -69,8 +69,8 @@ display:flex;
 width: 831px;
 word-break:break-all;
 overflow:hidden;
-  font-family: NIXGONM-Vb;
-  font-size: 15px;
+  font-family:  'Noto Sans KR';
+  font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -84,7 +84,7 @@ top:15px;
 left:814px;
 position:absolute;
 font-family: NIXGONB-Vb;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -97,14 +97,14 @@ overflow:hidden;
 padding:15px 20px;
  border: solid 1px #e0e0e0;
   background-color: #ffffff;
-  font-family: NIXGONM-Vb;
-  font-size: 14px;
-  font-weight: 600;
+  font-family:  'Noto Sans KR';
+  font-size: 15px;
+  font-weight:600;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
-  text-align: left;
-  color: #212121;
+  text-align: left;  
+  color:rgba(15,15,15,0.9);
   position:absolute;
   top:160px;
   left:${props=>props.left};
@@ -126,7 +126,7 @@ const Name=styled.span`
 const Up=styled.span`
 color:#ef4f80;
 font-size:20px;
-font-family: NIXGONM-Vb;
+font-family:  'Noto Sans KR';
 
 `
 const Lines=styled.div`
@@ -139,7 +139,7 @@ left:893px;
 `
 const SeContainer=styled.span`
 padding:5px 10px;
-font-family: NIXGONM-Vb;
+font-family:  'Noto Sans KR';
   font-size: 14px;
   font-weight: 600;
   font-stretch: normal;

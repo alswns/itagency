@@ -27,9 +27,10 @@ width:50%;
 height:85px;
 justify-content: space-between;
 & a{
-  font-family: 'NIXGONM-Vb';
+    font-family: 'Noto Sans KR';
   font-size: 18px;
-  color: ${props=>props.color};
+  font-weight:500;
+  color: ${props => props.color};
 }
 `
 const Link_li = styled.li`

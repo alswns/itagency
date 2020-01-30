@@ -24,7 +24,7 @@ width:100%;
 text-align:center;
 
   white-space:pre;
-  font-family: NIXGONM-Vb;
+  font-family:'Noto Sans KR';
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -32,6 +32,7 @@ text-align:center;
   line-height: 1.08;
   letter-spacing: normal;
   color: #101010;
+  opacity:0.9;
 `
 const MidDiv=styled.div`
 width:100%;

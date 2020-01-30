@@ -149,7 +149,7 @@ export default function FirstTopBanner(props) {
                     </Ment>
                     <span style={{ marginTop:'-10px' }}>
                     
-                    <Icon color='#212121' title={props.average + '점'} text='아이티 에이전시 평균 만족도' img={whitestar}  />
+                    <Icon height='52px' color='#212121' title={props.average + '점'} text='아이티 에이전시 평균 만족도' img={whitestar}  />
 
                     </span>
                     <Ment align='right' style={{marginTop:'30px'}}>

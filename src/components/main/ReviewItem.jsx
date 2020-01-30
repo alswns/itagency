@@ -17,7 +17,7 @@ width: 530px;
 const Title=styled.div`
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 font-family: NIXGONB-Vb;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -26,29 +26,29 @@ font-family: NIXGONB-Vb;
   color: #ef4f80;
 `
 const Kind=styled.div`
-font-family: NIXGONM-Vb;
-  font-size: 14px;
+font-family: 'Noto Sans KR';
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
   text-align: right;
-  color: #6f6f6f;
+  color: #4f4f4f;
 `
 const Text=styled.div`
 position:absolute;
 left:20px;
 right:20px;
 top:72px;
-font-family: NIXGONM-Vb;
-  font-size: 15px;
+font-family: 'Noto Sans KR';
+  font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
   letter-spacing: -0.3px;
   text-align: left;
-  color: #6f6f6f;
+  color: #4f4f4f;
 `
 const Cost=styled.div`
 
@@ -60,17 +60,17 @@ font-family: NIXGONB-Vb;
   font-style: normal;
   letter-spacing: -0.34px;
   text-align: left;
-  color: #212121;
+  color: #4f4f4f;
 `
 const Name=styled.div`
- font-family: NIXGONM-Vb;
- font-size: 14px;
+ font-family: 'Noto Sans KR';
+ font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
   text-align: left;
-  color: #212121;
+  color: #4f4f4f;
 `
 const Pink=styled.span`
 color:#ef4f80;
@@ -153,7 +153,7 @@ export default function ReviewItem(props) {
             }
             </Stars>
             </Align>
-            <Flex  ></Flex>
+            <Flex></Flex>
             
 
             <Cost>\ {numberWithCommas(props.cost)}원</Cost>

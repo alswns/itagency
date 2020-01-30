@@ -40,23 +40,16 @@ margin: 0 auto;
   border-radius: 23px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
-`
-const Sub =styled.div`
-cursor:pointer;
-
-  width: 100%;
-  height: 16px;
-  font-family: NIXGONB-Vb;
-  font-size: 15px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 45px;
-  letter-spacing: normal;
-  text-align: center;
+  cursor:pointer;
+  font-family: 'Noto Sans KR';
+  font-weight:600;
+  font-size: 16.5px;
   color: #000000;
   justify-content:center;
+  display:flex;
+  align-items:center;
 `
+
 const Wrap=styled.div`
 position:absolute;
 top:121px;
@@ -70,8 +63,8 @@ export default function SecondFooter() {
           <Image></Image>
           <Text>전문분야로만 돈을 벌 수 있는 개발자가 되고 싶은가요?</Text>
           <Wrap>
-          <Sing>
-            <Sub onClick={()=>window.location.href='/register'}>파트너 신청하기</Sub>
+          <Sing onClick={()=>window.location.href='/register'}>
+            파트너 신청하기
           </Sing>
           </Wrap>
         </Wrapper>
