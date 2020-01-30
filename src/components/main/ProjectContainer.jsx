@@ -66,11 +66,10 @@ export default function ProjectContainer(props) {
             <Wrapper translate={(page - 1) * (sliderWidth+295)}>
               <Img src={arrow} alt="" onClick={onClickLeft}/>
               <ProjectItems >
-                <div className='slider'>
+                <div style={{margin:'0'}} className='slider'>
             {(props.projects||[]).map(res =>{
-              console.log(res.project_id)
-            return <div><ProjectItem project_id={res.project_id} project_name={res.project_name} client_name={res.client_name} cost={res.cost} day={res.days} 
-            field={res.field} num_of_applicants={res.num_of_applicants} progress={res.progress}/></div>
+            return <ProjectItem project_id={res.project_id} project_name={res.project_name} client_name={res.client_name} cost={res.cost} day={res.days} 
+            field={res.field} num_of_applicants={res.num_of_applicants} progress={res.progress}/>
             })}
             </div>
             </ProjectItems>
