@@ -9,6 +9,7 @@ const Wrapper= styled.div`
 margin: 0 auto;
 margin-top:36px;
 justify-content:center;
+-ms-flex-pack: center;
 .container{
     
     position:relative;
