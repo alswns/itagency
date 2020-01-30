@@ -44,17 +44,14 @@ export default class MainPage extends Component {
             this.props.setUser(res.data.name)
         })
         .catch(err=>{
-            console.dir(err)
             this.props.setUser('guest')
         })
         api.get('/info/project').then(res=>{
-            console.log(res.data.info)
             this.setState({
                 projects:res.data.info
             })
         })
         api.get('/info/project/status').then(res=>{
-            console.log(res.data)
             this.setState({
                 conclusion:res.data.conclusion,
                 average:res.data.average,
@@ -65,7 +62,7 @@ export default class MainPage extends Component {
                 today_registered_project:res.data.today_registered_project,
                 today_finished_project:res.data.today_finished_project
             })
-        }).catch(err=>console.dir(err))
+        })
         api.get('/info/partners').then(
             res=>this.setState({partners:res.data.partners}))
     }

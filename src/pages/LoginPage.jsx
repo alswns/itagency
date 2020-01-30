@@ -48,6 +48,7 @@ export default class LoginPage extends Component {
     }).then(res=>{
         window.localStorage.setItem('token',res.data.access_token)
         alert('로그인 성공')
+        window.localStorage.setItem('what','client')
         window.location='/'
     }).catch(err=>{
         console.dir(err)
@@ -67,7 +68,6 @@ export default class LoginPage extends Component {
         this.setState({
             password: event.target.value
         })
-        console.log(this.state.password)
 
     }
     login=(who)=>{
@@ -77,7 +77,7 @@ export default class LoginPage extends Component {
                 password:this.state.password
             }).then(res=>{
                 alert('로그인 성공')
-                console.log(res.data.access_token)
+                window.localStorage.setItem('what','partner')
                 window.localStorage.setItem('token',res.data.access_token)
                 if(this.state.checked){
                 window.localStorage.setItem('reid',this.state.id) 
@@ -112,6 +112,7 @@ export default class LoginPage extends Component {
         }).then(res=>{
             alert('로그인 성공')
             console.log(res.data.access_token)
+            window.localStorage.setItem('what','client')
             window.localStorage.setItem('token',res.data.access_token)
             if(this.state.checked){
                 window.localStorage.setItem('reid',this.state.id) 

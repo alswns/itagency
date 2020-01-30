@@ -146,7 +146,6 @@ const Return =styled.span`
 export default function SecondTopBanner(props) {
     return (
         <>
-        {console.log(props)}
             <Banner />
             <Wrapper>
                 <Margin/>

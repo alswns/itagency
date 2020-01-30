@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import api from '../apis/BaseUrl'
-import Requests from '../apis/Request'
 import arrow from '../assets/imgs/icons/ionic-md-arrow-back.svg'
-import progress0 from '../assets/imgs/progress0.png'
-import progress1 from '../assets/imgs/progress1.png'
-import progress2 from '../assets/imgs/progress2.png'
-import Items from '../components/detaile/items'
+import progress0 from '../assets/imgs/progress0.svg'
+import progress1 from '../assets/imgs/progress1.svg'
+import progress2 from '../assets/imgs/progress2.svg'
 import { setBanner } from '../apis/Style'
 import Qna from '../components/Project/Qna'
 import Last from '../components/main/Last'
@@ -362,7 +360,6 @@ export default class DetailedPage extends Component {
 
     getRivew = () => {
         api.post('/partner/project/qna/view', { project_id: '' + this.state.project_id }).then(res => {
-            console.log(res.data.qnas)
             this.setState({ review: res.data.qnas })
         }
         )
@@ -422,8 +419,11 @@ export default class DetailedPage extends Component {
                                                     <Status>신청진행중</Status>
                                                     <Dday>D-{parseInt((this.state.register_deadline * 1000 - new Date()) / 86400553)}</Dday>
                                                 </Garo>
-
-                                                <Progress src={progress0} alt="" />
+                                                {this.state.progress==0&&<Progress src={progress0} alt="" />}
+                                                {this.state.progress==1&&<Progress src={progress1} alt="" />}
+                                                {this.state.progress==2&&<Progress src={progress2} alt="" />}
+                                                
+                                                
                                             </Sero>
                                         </Garo>
                                         <Line></Line>
@@ -495,7 +495,6 @@ export default class DetailedPage extends Component {
                                         {(this.state.review || []).length == 0 || <>
                                             <Sero>
                                                 <Infor style={{ marginBottom: '10px' }}>프로젝트 문의</Infor>
-                                                {console.log(this.state.review)}
                                                 {(this.state.review || []).map(res => {
                                                     return <Qna res={res}></Qna>
                                                 })}

@@ -55,7 +55,6 @@ width: 100%;
 export default function LiveProject(props) {
     return (
         <Wrapper>
-          {console.log(props)}
             <Bold>실시간 프로젝트</Bold>
             <Sub>가장 최근에 아이티에이전트에 등록된 프로젝트가 올라옵니다.</Sub>
             <Regi onClick={()=>window.location.href='/project'}>프로젝트 보러가기</Regi>

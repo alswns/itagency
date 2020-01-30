@@ -41,10 +41,12 @@ export default class ProjectPage extends Component {
             },
             reload: false,
             ing: {
-
+                '0':true,
+                '1':true,
+                '2':true
             },
-            developer:false,
-            desinger:false
+            developer:true,
+            desinger:true
 
         }
     }
@@ -82,6 +84,8 @@ export default class ProjectPage extends Component {
       
     }
     componentDidMount() {
+        this.setDe()
+        this.setDes()
         setBanner('프로젝트')
         api.get('/info/account').then(res => {
             this.props.setUser(res.data.name)
@@ -104,11 +108,9 @@ export default class ProjectPage extends Component {
                 console.dir(res)
                 this.setState({ project: res.data.info })
             }).catch(err => console.dir(err));
-            console.log(event)
 
 
         })
-        console.log(this.state)
         const target = event.target.parentNode.children
         for (let i of target) {
             i.style.color = '#212121'
@@ -130,9 +132,8 @@ export default class ProjectPage extends Component {
         this.setState({ reload: !this.state.reload })
     }
     setStatus = (event) => {
-        this.state.ing[event.target.id] = event.target.checked
+        this.state.ing[event.target.id] = !this.state.ing[event.target.id]
         this.setState({ reload: !this.state.reload })
-        console.log(this.state.ing)
 
     }
     filt = obj => {
@@ -150,7 +151,7 @@ export default class ProjectPage extends Component {
             <Wrapper>
                 <div style={{ transform: 'scale(0.85)', marginTop: '-90px' }}>
                     <Top />
-                    <Filter checckdesinger={this.state.desinger} checkdeveloper={this.state.developer} desinger={()=>this.setState({desinger:!this.state.desinger},this.setDes)} developer={()=>this.setState({developer:!this.state.developer},this.setDe)} On={this.state.fillter} ing={this.filt(this.state.ing)} setStatus={this.setStatus} fillter={this.filt(this.state.fillter)} setData={this.setData} max={this.state.max} setArrange={this.setArrange} project={this.state.project} />
+                    <Filter booling={this.state.ing} checckdesinger={this.state.desinger} checkdeveloper={this.state.developer} desinger={()=>this.setState({desinger:!this.state.desinger},this.setDes)} developer={()=>this.setState({developer:!this.state.developer},this.setDe)} On={this.state.fillter} ing={this.filt(this.state.ing)} setStatus={this.setStatus} fillter={this.filt(this.state.fillter)} setData={this.setData} max={this.state.max} setArrange={this.setArrange} project={this.state.project} />
                 </div>
                 <Last />
             </Wrapper>

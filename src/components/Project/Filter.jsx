@@ -173,14 +173,8 @@ width: 40px;
   text-align: left;
   color: #858585;
 `
-const Data=(data)=>{
-    
-    // for(let i of data){
-    //     console.log(i)
-    // }
-}
+
 const setInt=(int,fun,max)=>{
-    console.log(max)
     return <SuContainer>
         
     {int===1?'': <Noborder onClick={()=>fun(int-2)}>{int-1}</Noborder>}
@@ -197,8 +191,7 @@ export default function Filter(props) {
     const [developer, setDeveloper] = React.useState(true)
     const [desinger, setdesinger] = React.useState(true)
     const [page,setPage]=React.useState(0)
-    const [developerButton, setDeveloperButton] = React.useState(false)
-    const [desingerButton, setdesingerButton] = React.useState(false)
+  
     return (
         
       <AllWrapper >
@@ -210,15 +203,15 @@ export default function Filter(props) {
                     프로젝트 진행현황
                 </Title>
                 <div>
-                    <input onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="0"/>
+                    <input checked={props.booling['0']}  onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="0"/>
                     <Label for='0'>신청진행중</Label>
                 </div>
                 <div>
-                    <input onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="1"/>
+                    <input checked={props.booling['1']} onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="1"/>
                     <Label for='1'>진행중</Label>
                 </div>
                 <div>
-                    <input onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="2"/>
+                    <input checked={props.booling['2']} onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="2"/>
                     <Label for='2'>완료</Label>
                 </div>
 
@@ -302,7 +295,6 @@ export default function Filter(props) {
         </Wrapper>
                 <Align>
             <Kind setArrange={props.setArrange}></Kind>
-            {console.log(props.ing)}
             
 {(props.project||[]).slice((page)*7,(page+1)*7).map(res=>{
     if( (props.fillter.indexOf(res.field)!=-1)&&(props.ing.indexOf(''+res.progress)!=-1)){

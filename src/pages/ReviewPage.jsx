@@ -45,7 +45,6 @@ export default class extends Component {
         setBanner('이용후기')
         window.setInterval(()=>this.setState({banner:!this.state.banner}), 2000)
         api.get('/info/project/semi').then(res=>{
-            console.log(res.data.info)
             this.setState({myProject:res.data.info})
         })
         .catch(err=>{console.dir(err)})

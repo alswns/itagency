@@ -106,8 +106,10 @@ function Banner(props) {
                 |
                 </>
                 :
-                <div style={{textAlign:'right'}}>
-                마이페이지<br/>
+                <div style={{width:'100px',textAlign:'right'}}>
+                <span style={{cursor:'pointer'}}  onClick={()=>{
+                    window.location.href=`/${window.localStorage.getItem('what')}`
+                }}>마이페이지</span><br/>
                 <Pink>{props.user}님</Pink>
                 </div>
                 }

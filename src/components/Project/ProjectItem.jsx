@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import progress0 from '../../assets/imgs/progress1.png'
+import progress0 from '../../assets/imgs/progress0.svg'
+import progress1 from '../../assets/imgs/progress1.svg'
+import progress2 from '../../assets/imgs/progress2.svg'
 const Wrapper=styled.div`
   width: 1076px;
   height: 220px;
@@ -212,7 +214,10 @@ export default function ProjectItem(props) {
           
           {console.log()}
             <Kind>{props.res.field}</Kind>
-            <Img src={progress0}></Img>
+            {props.res.progress==0?<Img src={progress0}></Img>:''}
+            {props.res.progress==1?<Img src={progress1}></Img>:''}
+            {props.res.progress==2?<Img src={progress2}></Img>:''}
+            
             <Title>{props.res.project_name}</Title>
             <Status>
             {props.res.progress==0?'신청진행중':''}

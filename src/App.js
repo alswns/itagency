@@ -14,6 +14,10 @@ import ReviewPage from './pages/ReviewPage';
 import PortfoliPage from './pages/PortfoliPage';
 import DetailedPage from './pages/DetailedPage';
 import FindPwPage from './pages/FindPwPage';
+import ClienPage from './pages/ClienPage';
+import PartnerPage from './pages/PartnerPage';
+import AdminPage from './pages/AdminPage';
+import LookData from './pages/LookData';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -75,9 +79,25 @@ function App() {
                     <Banner user={user} color='white' back='#212121' img={Logo_white}/>
                     <FindPwPage setUser={setUser}/>
                 </Route>
+                <Route path='/client' exact='exact'>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <ClienPage setUser={setUser}/>
+                </Route>
+                <Route path='/partner' exact='exact'>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <PartnerPage setUser={setUser}/>
+                </Route>
+                <Route path='/rladustn' exact='exact'>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <AdminPage setUser={setUser}/>
+                </Route>
+                <Route path='/rladustn/pass' exact='exact'>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <LookData setUser={setUser}/>
+                </Route>
             </Router>
         </div>
     );
 }
-
+// psss36768@gmail.com
 export default App;
