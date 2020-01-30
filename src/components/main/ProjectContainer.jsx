@@ -17,7 +17,8 @@ justify-content:center;
 .slider{
     transform: ${props => `translateX(-${(props.translate)}px)`};
     transition:0.3s;
-    display:-webkit-box;
+    display:flex;
+    
 }
 
 
