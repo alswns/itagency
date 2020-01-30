@@ -79,7 +79,6 @@ function star(x) {
             back.push(<Star src={no_star}></Star>)
         }
     }
-    console.log(back)
     return back
 
 }
@@ -125,10 +124,7 @@ width: 104px;
   display:flex;
   color: #ffffff;
 `
-const Search = styled.input`
-   background-image:url(${big}); 
-    background-position:95% 45%;
-    background-repeat:no-repeat;
+const Search = styled.select`
     padding-left:15px;
     box-sizing:border-box;
     margin-left:1.4%;
@@ -149,12 +145,11 @@ const Search = styled.input`
 `
 export default class Input extends Component {
     setValue = (e) => {
-        console.log(e.target.value)
-        this.setState({ value: e.target.value })
+        this.setState({ stars: e.target.value })
     }
     state = {
         stars: 0,
-        project_id: 0,
+        project_id: 9,
         review_title: '',
         review: ''
     }
@@ -165,8 +160,8 @@ export default class Input extends Component {
     }
     toss = () => {
 
-        api.post('/client/review', this.state).then(res => console.dir(res))
-            .catch(err => console.dir(err))
+        api.post('/client/review', this.state).then(res => {alert('리뷰 등록에 성공했습니다');window.location.reload()})
+            .catch(err => {alert('리뷰 등록에 실패했습니다')})
     }
     render() {
         return (
@@ -180,7 +175,7 @@ export default class Input extends Component {
                         <Rap>
                             <Stars id='asdasd'>
                                 {
-                                    star(this.state.value).map(res => { return res })
+                                    star(this.state.stars).map(res => { return res })
                                 }
 
                             </Stars>
@@ -207,7 +202,15 @@ export default class Input extends Component {
                     </div>
                     <Line />
                     <div style={{alignItems:'center', display: 'flex', flex: '1' ,justifyContent:'space-between'}}>
-                        <Search placeholder='프로젝트를 검색하세요.'></Search>
+                        <Search placeholder='프로젝트를 검색하세요.' onChange={(e)=>this.setState({project_id:e.target.value})} >
+                            <option value="0" disabled selected>프포젝트를 선택하십시오</option>
+                            {
+                            (this.props.myProject||[]).map(res=>{
+                                console.log(res)
+                                return <option value={res.project_id}>{res.project_name}</option>
+                            })
+                            }
+                        </Search>
                         <Toss onClick={this.toss} >후기등록</Toss>
                     </div>
 

@@ -12,10 +12,8 @@ import CounselPage from './pages/CounselPage';
 import ProjectPage from './pages/ProjectPage';
 import ReviewPage from './pages/ReviewPage';
 import PortfoliPage from './pages/PortfoliPage';
-import Headroom from 'react-headroom';
-import Service from './components/Service';
-import MainBanner from './components/MainBanner';
 import DetailedPage from './pages/DetailedPage';
+import FindPwPage from './pages/FindPwPage';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -25,6 +23,7 @@ const GlobalStyle = createGlobalStyle `
 `
 
 function App() {
+    const [user,setUser]=React.useState('')
     return (
         <div className="App">
             <GlobalStyle/>
@@ -32,48 +31,49 @@ function App() {
             <Router >
 
                 <Route path='/' exact='exact'>
-                    <MainPage user='320' back='main_image'/>
+                    <MainPage user={user} setUser={setUser} back='main_image'/>
                 </Route>
-                <Route path='/main' exact='exact'>
-
-                    <MainPage user='320'/>
-                </Route>
+                
                 <Route path='/login' exact='exact'>
-                <Banner color='white'  back='#212121' img={Logo_white}/>
+                <Banner user={user} color='white'  back='#212121' img={Logo_white}/>
 
 
-                    <LoginPage/>
+                    <LoginPage setUser={setUser}/>
                 </Route>
                 <Route path='/register' exact='exact'>
-                <Banner color='white'  back='#212121' img={Logo_white}/>
+                <Banner user={user} color='white'  back='#212121' img={Logo_white}/>
 
 
-                    <RegisterPage/>
+                    <RegisterPage setUser={setUser}/>
                 </Route>
                 <Route path='/counsel' exact='exact'>
-                    <Banner color='white'  back='#212121' img={Logo_white}/>
-                    <CounselPage/>
+                    <Banner user={user} color='white'  back='#212121' img={Logo_white}/>
+                    <CounselPage setUser={setUser}/>
                 </Route>
 
                 <Route path='/project' exact='exact'>
-                    <Banner color='white' back='#212121' img={Logo_white}/>
-                    <ProjectPage/>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <ProjectPage setUser={setUser}/>
                 </Route>
                 <Route path='/review' exact='exact'>
-                    <Banner color='white' back='#212121' img={Logo_white}/>
-                    <ReviewPage/>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <ReviewPage setUser={setUser}/>
                 </Route>
                 <Route path='/portfolio' exact='exact'>
-                    <Banner color='white' back='#212121' img={Logo_white}/>
-                    <PortfoliPage/>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <PortfoliPage setUser={setUser}/>
                 </Route>
                 <Route path='/detailed' exact='exact'>
-                    <Banner color='white' back='#212121' img={Logo_white}/>
-                    <DetailedPage/>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <DetailedPage setUser={setUser}/>
                 </Route>
                 <Route path='/detailed/:id' exact='exact'>
-                    <Banner color='white' back='#212121' img={Logo_white}/>
-                    <DetailedPage/>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <DetailedPage setUser={setUser}/>
+                </Route>
+                <Route path='/findPw' exact='exact'>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <FindPwPage setUser={setUser}/>
                 </Route>
             </Router>
         </div>

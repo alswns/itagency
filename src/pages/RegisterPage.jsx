@@ -120,7 +120,18 @@ export default class RegisterPage extends Component {
 
     }
     componentDidMount() {
+        if(window.localStorage.getItem('token')!=null){
+            alert('로그아웃후 이용해주십시오')
+            window.location.href='/'
+        }
         this.colorChange(0)
+        api.get('/info/account').then(res=>{
+            this.props.setUser(res.data.name)
+        })
+        .catch(err=>{
+            console.dir(err)
+            this.props.setUser('guest')
+        })
     }
     sameEmail = (check) => {
 

@@ -15,7 +15,7 @@ width: 530px;
   
 `
 const Title=styled.div`
-
+@font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 font-family: NIXGONB-Vb;
   font-size: 17px;
   font-weight: normal;
@@ -27,11 +27,10 @@ font-family: NIXGONB-Vb;
 `
 const Kind=styled.div`
 font-family: NIXGONM-Vb;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.92;
   letter-spacing: normal;
   text-align: right;
   color: #6f6f6f;
@@ -65,18 +64,20 @@ font-family: NIXGONB-Vb;
 `
 const Name=styled.div`
  font-family: NIXGONM-Vb;
-  font-size: 12px;
+ font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.92;
   letter-spacing: normal;
   text-align: left;
-  color: #ef4f80;
+  color: #212121;
+`
+const Pink=styled.span`
+color:#ef4f80;
 `
 const Wrap=styled.div`
 position:absolute;
-top:44px;
+top:46px;
 left:20px;
 display:flex;
 `
@@ -159,7 +160,7 @@ export default function ReviewItem(props) {
             </Div>
             <Wrap>
             <Kind>{props.field} |</Kind>                
-            <Name> {'\u00A0'}  {props.owner_name} 파트너</Name>
+            <Name> {'\u00A0'}  <Pink>{props.owner_name}</Pink> 파트너</Name>
             </Wrap>
             <Text>{props.review}</Text>
         </Wrapper>

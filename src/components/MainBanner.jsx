@@ -70,7 +70,7 @@ const SetMid = styled.div`
 
   display:flex;
   align-items:center;
-  width:150px;
+  width:180px;
   justify-content:space-between;
   font-family: NIXGONM-Vb;
   font-size: 18px;
@@ -82,6 +82,9 @@ const SetMid = styled.div`
   margin-right:3.6%;
   color:${props => props.color};
 
+`
+const Pink=styled.span`
+color:#ef4f80;
 `
 function MainBanner(props) {
 
@@ -101,10 +104,24 @@ function MainBanner(props) {
             </Link_ul>
 
             <SetMid color={props.color}>
-
+            {props.name==='guest'?
+            <>
                 <Auth onClick={() => { window.location.href = '/login' }}> 로그인</Auth>
                 |
-                <Auth onClick={() => { window.location.href = '/register' }} >회원가입 </Auth>
+                </>
+                :
+                <div style={{textAlign:'right'}}>
+                마이페이지<br/>
+                <Pink>{props.name}님</Pink>
+                </div>
+                }
+            
+            {props.name==='guest'||props.name===''?
+            <Auth onClick={() => { window.location.href = '/register' }} >회원가입 </Auth>      
+                :
+                <Auth onClick={() => { window.location.reload();window.localStorage.removeItem('token')}} >로그아웃 </Auth>
+
+                }
 
             </SetMid>
         </Wrapper>

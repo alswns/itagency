@@ -35,17 +35,20 @@ export default class MainPage extends Component {
         today_finished_project:undefined,
         service:false,
         partners:'',
-        name:''
+        conclusion:0,
+        average:0,
     }
     componentDidMount(){
+        // /client/account 우저정보 받기
         api.get('/info/account').then(res=>{
-            this.setState({name:res.data.name})
+            this.props.setUser(res.data.name)
         })
         .catch(err=>{
             console.dir(err)
+            this.props.setUser('guest')
         })
         api.get('/info/project').then(res=>{
-            console.dir(res)
+            console.log(res.data.info)
             this.setState({
                 projects:res.data.info
             })
@@ -53,6 +56,8 @@ export default class MainPage extends Component {
         api.get('/info/project/status').then(res=>{
             console.log(res.data)
             this.setState({
+                conclusion:res.data.conclusion,
+                average:res.data.average,
                 datas:res.data,
                 amount:res.data.amount,
                 project:res.data.all_num_of_project,
@@ -66,26 +71,29 @@ export default class MainPage extends Component {
     }
     
 componentDidUpdate(){
+    setTimeout(this.Count,0)
+    
+}
+
+
+Count=()=>{
     const el = document.getElementsByClassName('counter')
         for(let i of el){
-// Start counting, do this on DOM ready or with Waypoints.
             counterUp( i, {
                 duration: 1000,
                 delay: 16,
             } )  
         }
-      
-
-        
 }
+
 setService=()=>{
     this.setState({service:!this.state.service})
 }
     render() {
         return (
           <>
-            <MainBanner name={this.state.name} setService={this.setService} service={this.state.service} color='white' img={Logo_white}/>
-            <FlexBanner name={this.state.name} setService={this.setService} service={this.state.service} color='black' img={Logo_gray}/>
+            <MainBanner name={this.props.user} setService={this.setService} service={this.state.service} color='white' img={Logo_white}/>
+            <FlexBanner name={this.props.user} setService={this.setService} service={this.state.service} color='black' img={Logo_gray}/>
             <MainPost user={this.state.partners}/>
             <Footer  amount={numberWithCommas(this.state.amount)} project={numberWithCommas(this.state.project)} ing={numberWithCommas(this.state.ing)} /> 
             <LiveProject projects={this.state.projects} today_registered_project={this.state.today_registered_project} ing={numberWithCommas(this.state.ing)} today_finished_project={this.state.today_finished_project} />
@@ -95,7 +103,7 @@ setService=()=>{
             <Kategorie/>
             <ThirdFooter/>
             <Portfolio/>
-            <Review/>
+            <Review conclusion={this.state.conclusion} average={this.state.average}/>
             <Last/>
             </>
 

@@ -70,7 +70,6 @@ export default class ReviewContainer extends Component {
             this.setState({
                 review:res.data.info.division(2)
             })
-            console.log(this.state.review.length/3)
         })
 
     }

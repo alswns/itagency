@@ -35,7 +35,6 @@ font-family: NIXGONM-Vb;
 `
 const Line=styled.hr`
 margin-top:8px;
-color:white;
 width:10px;
 height:3px;
 background:white;
@@ -64,14 +63,16 @@ export default function Icon(props) {
     return (
         <Wrapper>
             <Img src={props.img||tree}></Img>
+
+
+            
+            {/* <Main className='counter'>{props.title}</Main> */}
+            <Sub style={{color:props.color}} >{props.text}</Sub>
+            <Line style={{background:props.color,color:props.color}}/>
             <Span>
-            <Main className='counter'>{props.title}</Main>
+            <Main style={{color:props.color}} className='counter'>{props.title}</Main>
             {props.plus}
             </Span>
-            {/* <Main className='counter'>{props.title}</Main> */}
-
-            <Line/>
-            <Sub >{props.text}</Sub>
         </Wrapper>
     )
 }

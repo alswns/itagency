@@ -5,6 +5,7 @@ import progress0 from '../../assets/imgs/progress0.png'
 import progress1 from '../../assets/imgs/progress1.png'
 import progress2 from '../../assets/imgs/progress2.png'
 import back from '../../assets/imgs/back.svg'
+import api from '../../apis/BaseUrl'
 const Wrapper= styled.div`
 width:268px;
 height:418px;
@@ -117,8 +118,9 @@ position: absolute;
 
 `
 const Button = styled.a`
+cursor:pointer;
 display: block;
-
+text-decoration:none;
 background-color:${props => props.back};
 width:92px;
 height:36px;
@@ -171,6 +173,24 @@ font-family: NIXGONM-Vb;
   top:352px;
   left:${props=>props.left};
 `
+const sign=(id)=>{
+  if(window.localStorage.getItem('token')===null){
+      alert('로그인 후 이용해주십시오')
+  }
+  else{
+  api.post('/partner/project/apply',{project_id:id}).then(res=>{
+      alert('신청 성공')
+  })
+  .catch(err=>{
+      if(err.response.status===401){
+          alert('파트너만 신청 가능합니다')
+      }
+      
+  }
+  )
+}
+}
+
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -207,9 +227,9 @@ export default function ProjectItem(props) {
             <Content top='238.9px'>{props.num_of_applicants}명</Content>
 
           <Buttons>
-            {props.progress||<Button back='yellow' left='31px' color='#212121' style={{marginRight:'10px'}}>작업신청</Button>}
+            {props.progress||<Button back='yellow' left='31px' color='#212121' style={{marginRight:'10px'}} onClick={()=>sign(props.project_id)}>작업신청</Button>}
             
-            <Button back='black' left='128px' color='white'>내용보기</Button>
+            <Button back='black' left='128px' color='white' href={`/detailed?#id=${props.project_id}`}>내용보기</Button>
             </Buttons>
             {button}
         </Wrapper>

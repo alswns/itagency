@@ -23,6 +23,13 @@ export default class ProjectPage extends Component {
     
     componentDidMount(){
         setBanner('프로젝트')
+        api.get('/info/account').then(res=>{
+            this.props.setUser(res.data.name)
+        })
+        .catch(err=>{
+            console.dir(err)
+            this.props.setUser('guest')
+        })
         api.post('/info/project/all',{arrange:this.state.arrange},{body:{arrange:this.state.arrange}}).then(res=>{console.dir(res)
         this.setState({project:res.data.info,max: Math.ceil(res.data.info.length/7)})
         }).catch(err=>console.dir(err))

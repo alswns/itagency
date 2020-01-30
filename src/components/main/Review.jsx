@@ -133,7 +133,7 @@ bottom:0px;
 width:100%;
 text-align:center;
 `
-export default function Review() {
+export default function Review(props) {
     return (
         <div>
             <Title>아이티 에이전시 이용후기</Title>
@@ -154,7 +154,7 @@ export default function Review() {
 
                         </Mids>
                         <Mid top='153px'>
-                        <CircleSub>4.5점</CircleSub>
+                        <CircleSub>{props.average}점</CircleSub>
                         </Mid>
                     </Circle>
 
@@ -170,7 +170,7 @@ export default function Review() {
 
                         </Mids>
                         <Mid top='153px'>
-                        <CircleSub>1,021개</CircleSub>
+                        <CircleSub>{props.conclusion}개</CircleSub>
                         </Mid>
                     </Circle>
                     </CircleContainer>

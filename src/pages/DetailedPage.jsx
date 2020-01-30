@@ -9,6 +9,9 @@ import progress2 from '../assets/imgs/progress2.png'
 import Items from '../components/detaile/items'
 import { setBanner } from '../apis/Style'
 import Qna from '../components/Project/Qna'
+import Last from '../components/main/Last'
+import Client from '../components/Project/Client'
+
 const Inputs = styled.input`
 margin-left:2px;
 padding-left:18px;
@@ -244,6 +247,7 @@ margin-top:20px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
+  margin-bottom:25px;
 `
 
 export default class DetailedPage extends Component {
@@ -266,11 +270,22 @@ export default class DetailedPage extends Component {
         review_title: '',
         review_description: '',
         review_secret: false,
-        review:[]
+        review:[],
+        client_num_of_projects: 0,
+        client_num_of_contract: 0,
+        client_num_of_progress: 0,
+        client_num_of_success: 0,
+        client_name:''
     }
     componentDidMount() {
         setBanner('프로젝트')
-        const request = new Requests();
+        api.get('/info/account').then(res=>{
+            this.props.setUser(res.data.name)
+        })
+        .catch(err=>{
+            console.dir(err)
+            this.props.setUser('guest')
+        })
         var nowAddress = unescape(window.location.href);
         var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,
             nowAddress.length)).split('&');
@@ -278,7 +293,13 @@ export default class DetailedPage extends Component {
         this.setState({ id: id })
         api.post('/info/project/detail', { 'project_id': id })
             .then(res => {
+                console.log(res)
                 this.setState({
+                    client_name:res.data.client_name,
+                    client_num_of_projects: res.data.client_num_of_projects,
+                    client_num_of_contract: res.data.client_num_of_contract,
+                    client_num_of_progress: res.data.client_num_of_progress,
+                    client_num_of_success: res.data.client_num_of_success,
                     project_id: res.data.project_id,
                     project_name: res.data.project_name,
                     description: res.data.description,
@@ -300,6 +321,25 @@ export default class DetailedPage extends Component {
 
         
     }
+    
+    sign=()=>{
+        if(window.localStorage.getItem('token')===null){
+            alert('로그인 후 이용해주십시오')
+        }
+        else{
+        api.post('/partner/project/apply',{project_id:this.state.project_id}).then(res=>{
+            alert('신청 성공')
+        })
+        .catch(err=>{
+            if(err.response.status===401){
+                alert('파트너만 신청 가능합니다')
+            }
+            
+        }
+        )
+    }
+    }
+
     getRivew=()=>{
         api.post('/partner/project/qna/view',{project_id:''+this.state.project_id}).then(res =>{ 
             console.log(res.data.qnas)
@@ -324,16 +364,21 @@ export default class DetailedPage extends Component {
         }).then(res=>{alert('등록 성공');window.location.reload()})
         .catch(err=>console.dir(err))
     }
+
+
     render() {
         return (
             <>
             
             {this.state.project_id==undefined?
-            <div style={{marginTop:'100px',fontSize:'200px'}}>존재하지 않는 게시글</div>    
+            <div style={{marginTop:'100px',fontSize:'20px'}}>존재하지 않는 게시글</div>    
         :
+        <div style={{display:"flex",flexDirection:'column',alignItems:'center'}}>
+                <Banner />
+        <div style={{display:'flex'}}>
+                
             <Wrapper>
 
-                <Banner />
                 <List>
                     <Middle><Img src={arrow} onClick={() => { window.location.href = '/project' }}></Img></Middle>
                     <Middle style={{ marginLeft: '20px' }}>목록으로</Middle>
@@ -437,6 +482,20 @@ export default class DetailedPage extends Component {
                     </Left>
                 </Submit>
             </Wrapper>
+            <Client client_num_of_projects={this.state.client_num_of_projects}
+        client_num_of_contract={this.state.client_num_of_contract}
+        client_num_of_progress={this.state.client_num_of_progress}
+        client_num_of_success={this.state.client_num_of_success}
+        client_name={this.state.client_name}
+        sign={this.sign}
+        />
+        
+
+            
+
+            </div>
+                <Last/>
+        </div>
         }
 
             </>

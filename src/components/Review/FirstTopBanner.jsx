@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import Icon from '../main/Icon'
 import upload from '../../assets/imgs/upload.svg'
 import bar from '../../assets/imgs/bar.png'
-import star from '../../assets/imgs/star.svg'
+import whitestar from '../../assets/imgs/whitestar.svg'
 import green from '../../assets/imgs/green.svg'
 import green1 from '../../assets/imgs/green1.svg'
+import teach from '../../assets/imgs/teach.png'
 
 const Wrapper = styled.div`
 width:100%;
@@ -77,16 +78,12 @@ const Title = styled.div`
 
 `
 
-const Circle=styled.div`
-width:237px;
-height:237px;
-border-radius:100%;
-background:#f3f3f3;
+const Circle=styled.img`
+width:331px;
 position:absolute;
-top:140px;
+top:169px;
 left: 50%;
 transform: translateX(-50%);
-
 `
 const CircleIcone=styled.img`
 
@@ -139,7 +136,7 @@ justify-content:center;
 flex-direction:column;
 `
 
-export default function FirstTopBanner() {
+export default function FirstTopBanner(props) {
     return (
         <>
             <Banner />
@@ -152,33 +149,18 @@ export default function FirstTopBanner() {
                     </Ment>
                     <span style={{ marginTop:'-10px' }}>
                     
-                    <Icon title={'15' + '개'} text='등록된 프로젝트' img={upload}  />
+                    <Icon color='#212121' title={props.average + '점'} text='아이티 에이전시 평균 만족도' img={whitestar}  />
 
                     </span>
                     <Ment align='right' style={{marginTop:'30px'}}>
                         <Small>고객님 평균 만족도</Small>
-                        <Small><Bold>4.5</Bold>/5</Small>
+                        <Small><Bold>{props.average}</Bold>/10</Small>
                     </Ment>
                 </WrapperItem>
                 <Margin/>
                     
-                <Circle>
-                <Leap style={{left:'-40px'}} src={green} alt=""/>
-                        <Mid top='77px'>
-                        <CircleIcone src={star}></CircleIcone>
-                        </Mid>
-                        <Mid top='120px'>
-                        <CircleText>아이티 에이전시 평균 만족도</CircleText>
-                        </Mid>
-                        <Mids top='146px' >
-                        <Bar src={bar}></Bar>
-
-                        </Mids>
-                        <Mid top='153px'>
-                        <CircleSub>4.5점</CircleSub>
-                        </Mid>
-                    <Leap style={{right:'-40px'}} src={green1} alt=""/>
-                    </Circle>
+                <Circle src={teach} alt=""/>
+        
             </Wrapper>
         </>
     )

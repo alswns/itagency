@@ -42,6 +42,8 @@ margin: 0 auto;
   background-color: #ffffff;
 `
 const Sub =styled.div`
+cursor:pointer;
+
   width: 100%;
   height: 16px;
   font-family: NIXGONB-Vb;
@@ -69,7 +71,7 @@ export default function SecondFooter() {
           <Text>전문분야로만 돈을 벌 수 있는 개발자가 되고 싶은가요?</Text>
           <Wrap>
           <Sing>
-            <Sub>파트너 신청하기</Sub>
+            <Sub onClick={()=>window.location.href='/register'}>파트너 신청하기</Sub>
           </Sing>
           </Wrap>
         </Wrapper>

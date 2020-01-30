@@ -156,7 +156,10 @@ const SmailInput = styled.input `
   height: 35px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
-  border-radius: 5px;
+  
+  border-bottom-left-radius:5px;
+  border-top-left-radius:5px;
+  box-sizing:border-box;
 `
 const RightLabel = styled.label `
   width: 35px;
@@ -321,7 +324,6 @@ const Title = styled.div `
 `
 const setColor=(event)=>{
     let parent=event.currentTarget.parentNode
-    console.dir(parent)
     for(let i of parent.childNodes){
         i.style.border='solid 1px #ffffff'
     }
@@ -333,8 +335,7 @@ const setKa=(event)=>{
     let text=''
     let su=0
     for(let i of parent){
-        console.dir(i)
-        console.dir(i[i.value].text)
+       
         text=text+i[i.value].text
         if(su==0){
         text=text+'/'
@@ -342,7 +343,6 @@ const setKa=(event)=>{
         }
 
     }
-    console.log(text)
     return text
 }
 const radio=()=>{
@@ -355,7 +355,6 @@ const radio=()=>{
         }
     }
     
-    console.log(returnText)
     return returnText
 }
 const getDay=(event)=>{
@@ -363,20 +362,16 @@ const getDay=(event)=>{
     for(let i of event.target.parentNode.childNodes){
         mil=mil+i.value+','
     }
-    console.log(mil.slice(0,-1))
     let data=new Date(mil.slice(0,-1))
-    console.log(data.getTime())
 return data.getTime()/1000
 }
 const test=()=>{
     const nullfile=new File(['null'],'null.txt')
     const file=document.getElementById('file')
-    console.dir(file.files[0])
     // var formData=new FormData()
     // formData.append('planning',file.files[0],file.files[0].name)
     // console.log(formData.get('planning'))
     if(file.files[0]==undefined){
-        console.log('asdsadsadsadsad')
         return nullfile
     }
     return file.files[0]

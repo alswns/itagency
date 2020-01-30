@@ -40,15 +40,18 @@ export default class CounselPage extends Component {
         let data={}
         data[name]=value
         if(callback!=undefined){
-            console.log(callback)
             this.setState(data,callback)
         }
         else
         this.setState(data)
-        console.log(this.state)
        
     }
     subMit=()=>{
+        if(window.localStorage.getItem('token')===null){
+            alert('로그인 후 이용해주십시오')
+            return
+        }
+        
         let formData=new FormData()
         formData.append('field',this.state.field)
         formData.append('name',this.state.name)
@@ -66,14 +69,33 @@ export default class CounselPage extends Component {
         console.log(this.state)
         console.log(this.state.planning)
         console.log(formData.get('planning'))
-        api.post('/client/project',formData).then(res=>alert('프로젝트 등록 성공'))
-        .catch(err=>{alert('입력형식에 맞지 않습니다.다시 입력해 주세요')
+        
+        api.post('/client/project',formData).then(res=>
+            {
+                console.log(res)
+                alert('프로젝트 등록 성공')
+
+            })
+        .catch(err=>{
+            if(err.response.status==500){
+                alert('로그인이 되어 있지 않습니다.')
+            }
+            else{
+            alert('입력형식에 맞지 않습니다.다시 입력해 주세요')
+            }
     console.dir(err)
     })
     }
     componentDidMount(){
         setDate()
         setBanner('상담하기')
+        api.get('/info/account').then(res=>{
+            this.props.setUser(res.data.name)
+        })
+        .catch(err=>{
+            console.dir(err)
+            this.props.setUser('guest')
+        })
     }
     render() {
         return (

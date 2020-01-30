@@ -158,6 +158,7 @@ font-family: NIXGONM-Vb;
   letter-spacing: normal;
   text-align: left;
   color: #6f6f6f;
+  cursor:pointer;
 `
 const Button = styled.div`
 cursor: pointer;
@@ -333,12 +334,12 @@ export default function Login(props) {
             </Wrap>
           </Inputs>
           <div style={{ marginTop: '10px' }}>
-            <Check type='checkbox' className='red' id='check'></Check>
+            <Check onClick={props.setChecked} type='checkbox' className='red' id='check'></Check>
             <Remember for='check'>내정보 기억하기</Remember>
 
             <Remember style={{ marginLeft: "180px" }}>아이디</Remember>
             <Remember>|</Remember>
-            <Remember>비밀번호 찾기</Remember>
+            <Remember onClick={()=>window.location.href='/findPW'}>비밀번호 찾기</Remember>
           </div>
           <Button color='#212121'> <ButtonText color='#ffffff' onClick={()=>props.login(who)}>로그인</ButtonText></Button>
           <Button color='#ffffff'><ButtonText color='#212121' onClick={() => { window.location.href = '/register' }}>회원가입</ButtonText> </Button>

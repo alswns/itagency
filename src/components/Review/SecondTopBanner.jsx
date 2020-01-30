@@ -1,15 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import Icon from '../main/Icon'
-import upload from '../../assets/imgs/upload.svg'
-import bar from '../../assets/imgs/bar.png'
-import hands from '../../assets/imgs/hands.svg'
+
 import money from '../../assets/imgs/money.svg'
 import ing from '../../assets/imgs/ing.svg'
-import green from '../../assets/imgs/green.svg'
-import green1 from '../../assets/imgs/green1.svg'
-
-
+import up from '../../assets/imgs/up.png'
+import hand from '../../assets/imgs/hand.svg'
 
 const Wrapper = styled.div`
 width:100%;
@@ -86,16 +82,12 @@ const Title = styled.div`
 
 `
 
-const Circle=styled.div`
-width:237px;
-height:237px;
-border-radius:100%;
-background:#f3f3f3;
+const Circle=styled.img`
+width:331px;
 position:absolute;
-top:140px;
+top:169px;
 left: 50%;
 transform: translateX(-50%);
-
 `
 const CircleIcone=styled.img`
 
@@ -151,9 +143,10 @@ const Return =styled.span`
   font-family: NIXGONM-Vb;
 `
 
-export default function SecondTopBanner() {
+export default function SecondTopBanner(props) {
     return (
         <>
+        {console.log(props)}
             <Banner />
             <Wrapper>
                 <Margin/>
@@ -162,12 +155,8 @@ export default function SecondTopBanner() {
                         <div><Bold>안전</Bold><Small>하고</Small> <Bold>신속</Bold><Small>한</Small> </div>
                         <div>아이티에이전시</div>
                     </Ment>
-                    <span style={{display:'flex', marginTop:'-10px' }}>
-                    <Icon title={'15' + '개'} text='누적 프로젝트 금액' img={money}  />
-                    <div style={{marginRight:'20px'}}></div>
-                    <Icon title={'15' + '개'} text='진행중인 프로젝트 수' img={ing}  />
-
-                    </span>
+                    <Icon title={props.conclusion + '개'} text='체결된 계약' img={hand}  />
+                    
                     <Ment align=   'right' style={{marginTop:'30px'}}>
                         <Small> <Return>아이티에이전시</Return> 소속</Small>
                         <Small>파트너수 1,002<Return>명</Return></Small>
@@ -176,24 +165,8 @@ export default function SecondTopBanner() {
 
                 
                 <Margin/>
-                <Circle>
-                <Leap style={{left:'-40px'}} src={green} alt=""/>
-
-                        <Mid top='77px'>
-                        <CircleIcone src={hands}></CircleIcone>
-                        </Mid>
-                        <Mid top='120px'>
-                        <CircleText>체결된 계약</CircleText>
-                        </Mid>
-                        <Mids top='146px' >
-                        <Bar src={bar}></Bar>
-
-                        </Mids>
-                        <Mid top='153px'>
-                        <CircleSub>1,021개</CircleSub>
-                        </Mid>
-                        <Leap style={{right:'-40px'}} src={green1} alt=""/>
-                    </Circle>
+                <Circle src={up}/>
+                
                     
             </Wrapper>
         </>
