@@ -173,6 +173,12 @@ width: 40px;
   text-align: left;
   color: #858585;
 `
+const Data=(data)=>{
+    
+    // for(let i of data){
+    //     console.log(i)
+    // }
+}
 const setInt=(int,fun,max)=>{
     console.log(max)
     return <SuContainer>
@@ -191,6 +197,8 @@ export default function Filter(props) {
     const [developer, setDeveloper] = React.useState(true)
     const [desinger, setdesinger] = React.useState(true)
     const [page,setPage]=React.useState(0)
+    const [developerButton, setDeveloperButton] = React.useState(false)
+    const [desingerButton, setdesingerButton] = React.useState(false)
     return (
         
       <AllWrapper >
@@ -202,16 +210,16 @@ export default function Filter(props) {
                     프로젝트 진행현황
                 </Title>
                 <div>
-                    <input type="checkbox" className='ing' name="ing" id="submit"/>
-                    <Label for='submit'>신청진행중</Label>
+                    <input onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="0"/>
+                    <Label for='0'>신청진행중</Label>
                 </div>
                 <div>
-                    <input type="checkbox" className='ing' name="ing" id="ing"/>
-                    <Label for='ing'>진행중</Label>
+                    <input onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="1"/>
+                    <Label for='1'>진행중</Label>
                 </div>
                 <div>
-                    <input type="checkbox" className='ing' name="ing" id="done"/>
-                    <Label for='done'>완료</Label>
+                    <input onClick={props.setStatus} type="checkbox" className='ing' name="ing" id="2"/>
+                    <Label for='2'>완료</Label>
                 </div>
 
             </Status>
@@ -227,7 +235,7 @@ export default function Filter(props) {
                             setDeveloper(!developer);
                             setShape(developer, event)
                         }}></Img>
-                    <input type="checkbox" className='ing' name="" id="develope"/>
+                    <input onClick={props.developer} checked={props.checkdeveloper} type="checkbox" className='ing' name="" id="develope"/>
                     <Label
                         style={{
                             marginLeft: '8px'
@@ -237,15 +245,15 @@ export default function Filter(props) {
                 {
                     developer &&<> <div style={{marginTop:'-8px'}}>
 
-                            <KategoriItems id='web' text='웹'/>
-                            <KategoriItems id='app' text='애플리케이션'/>
-                            <KategoriItems id='word' text='워드프레스'/>
-                            <KategoriItems id='publishing' text='퍼블리싱'/>
-                            <KategoriItems id='software' text='소프트웨어'/>
-                            <KategoriItems id='shop' text='커머스, 쇼핑몰'/>
-                            <KategoriItems id='game' text='게임'/>
-                            <KategoriItems id='embedded' text='임베디드'/>
-                            <KategoriItems id='other' text='기타'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/웹']}  id='개발/웹' text='웹'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/애플리케이션']}  id='개발/애플리케이션' text='애플리케이션'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/워드프레스']}  id='개발/워드프레스' text='워드프레스'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/퍼블리싱']}  id='개발/퍼블리싱' text='퍼블리싱'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/소프트웨어']}  id='개발/소프트웨어' text='소프트웨어'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/커머스']}  id='개발/커머스' text='커머스, 쇼핑몰'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/게임']}  id='개발/게임' text='게임'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/임베디드']}  id='개발/임베디드' text='임베디드'/>
+                            <KategoriItems onClick={props.setData} On={props.On['개발/기타']}  id='개발/기타' text='기타'/>
 
                         </div>
 
@@ -261,24 +269,25 @@ export default function Filter(props) {
                             setdesinger(!desinger);
                             setShape(desinger, event)
                         }}></Img>
-                    <input type="checkbox" className='ing' name="" id="design"/>
+                    <input onClick={props.desinger} checked={props.checckdesinger} type="checkbox" className='ing' name="" id="design"/>
                     <Label
                         style={{
                             marginLeft: '8px'
                         }}for='design'>디자인</Label>
                 </Items>
                 {
-                    desinger &&<div style={{marginTop:'-8px'}}> <KategoriItems id='web' text='웹'/>
-                        <KategoriItems id='app' text='애플리케이션'/>
-                        <KategoriItems id='product' text='제품'/>
-                        <KategoriItems id='presentation' text='프레젠테이션'/>
-                        <KategoriItems id='printed ' text='인쇄물'/>
-                        <KategoriItems id='shop' text='커머스, 쇼핑몰'/>
-                        <KategoriItems id='logo' text='로고'/>
-                        <KategoriItems id='graphic' text='그래픽'/>
-                        <KategoriItems id='move' text='영상'/>
-                        <KategoriItems id='game' text='게임'/>
-                        <KategoriItems id='other' text='기타'/>
+                    desinger &&<div style={{marginTop:'-8px'}}> 
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/웹']} id='디자인/웹' text='웹'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/애플리케이션']} id='디자인/애플리케이션' text='애플리케이션'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/제품']} id='디자인/제품' text='제품'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/프레젠테이션']} id='디자인/프레젠테이션' text='프레젠테이션'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/인쇄물']} id='디자인/인쇄물' text='인쇄물'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/커머스']} id='디자인/커머스' text='커머스, 쇼핑몰'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/로고']} id='디자인/로고' text='로고'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/그래픽']} id='디자인/그래픽' text='그래픽'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/영상']} id='디자인/영상' text='영상'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/게임']} id='디자인/게임' text='게임'/>
+                        <KategoriItems onClick={props.setData} On={props.On['디자인/기타']} id='디자인/기타' text='기타'/>
                     </div>
                 }
             </Kategorie>
@@ -293,8 +302,13 @@ export default function Filter(props) {
         </Wrapper>
                 <Align>
             <Kind setArrange={props.setArrange}></Kind>
+            {console.log(props.ing)}
+            
 {(props.project||[]).slice((page)*7,(page+1)*7).map(res=>{
+    if( (props.fillter.indexOf(res.field)!=-1)&&(props.ing.indexOf(''+res.progress)!=-1)){
     return  <ProjectItem res={res} onClick={()=>window.location.href=`/detailed?#id=${res.project_id}`}/>
+    }
+    return <></>
 })
 }
            

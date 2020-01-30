@@ -325,7 +325,9 @@ export default function Regist(props) {
             </Container>
             <Container>
                 <Sub>지역</Sub>
+                <div style={{width:'400px',display:'flex',justifyContent:'space-between'}}>
                 <Selection/>
+                </div>
             </Container>
             <Container>
                 <Sub></Sub>

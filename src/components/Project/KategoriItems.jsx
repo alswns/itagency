@@ -21,8 +21,8 @@ const Label = styled.label `
 `
 export default function KategoriItems(props) {
     return (
-        <Wrapper>
-                    <input type="checkbox" className='ing' name="" id={props.id}/>
+        <Wrapper onClick={props.onClick} >
+                    <input checked={props.On}  type="checkbox" className='ing' name="" id={props.id}/>
                     <Label style={{marginLeft:'8px'}} for={props.id}>{props.text}</Label>
             
         </Wrapper>

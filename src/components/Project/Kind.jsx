@@ -42,7 +42,7 @@ export default function Kind(props) {
                 <Link_li id='0' onClick={props.setArrange}>최신등록순</Link_li>
                 <Link_li id='1' onClick={props.setArrange}>마감임박순</Link_li>
                 <Link_li id='2' onClick={props.setArrange}>예산규모순</Link_li>
-                <Link_li id='3' onClick={props.setArrange}>지원적은순</Link_li>
+                <Link_li id='3' onClick={props.setArrange}>진행기간순</Link_li>
             </Link_ul>
         </Top>
     )

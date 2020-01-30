@@ -199,7 +199,7 @@ bottom:0px;
 display:flex;
 `
 const thounsond=(int)=>{
-  if(int>1000000)
+  if(int>=1000000)
   return parseInt(int/10000)+'만'
   return int
 
