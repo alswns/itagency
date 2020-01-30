@@ -22,8 +22,8 @@ justify-content:center;
 
 `
 const ProjectItems=styled.div`
+height:420px;
     display: flex;
-    display: flexbox;
     overflow: auto;
     overflow-y:hidden;
     width:1450px;

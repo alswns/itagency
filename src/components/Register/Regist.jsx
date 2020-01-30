@@ -270,7 +270,8 @@ export default function Regist(props) {
             <Container >
                 <Sub>이용목적</Sub>
             <Goal a={true} title='클라이언트' text='프로젝트를 진행하는개인 또는 기업' className='goal' onClick={()=>{changeCheck(false);props.Change(0)}}></Goal>
-            <Goal mar='0.5%' title='파트너' text='프로젝트를 의뢰할개인 또는 기업' className='goal' onClick={()=>{changeCheck(true);props.Change(1)}}></Goal>
+            <Goal mar='0.5%' title='파트너' text='프로젝트를 의뢰할
+            개인 또는 기업' className='goal' onClick={()=>{changeCheck(true);props.Change(1)}}></Goal>
             </Container>
             <Container>
                 <Sub >이름</Sub>

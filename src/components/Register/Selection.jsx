@@ -8,6 +8,7 @@ width: 190px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
+  margin-left:5px;
 `
 var cat1_num = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
 

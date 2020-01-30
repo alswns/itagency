@@ -77,12 +77,12 @@ export default class CounselPage extends Component {
 
             })
         .catch(err=>{
-            if(err.response.status==500){
-                alert('로그인이 되어 있지 않습니다.')
-            }
-            else{
+            
+            
+                if(err.response.status==401){
+                    alert('클라이언트 계정으로 로그인 하십시오.')
+                }
             alert('입력형식에 맞지 않습니다.다시 입력해 주세요')
-            }
     console.dir(err)
     })
     }
