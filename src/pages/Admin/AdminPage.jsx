@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import api from '../apis/BaseUrl'
+import api from '../../apis/BaseUrl'
 
 const Wrapper=styled.div`
 display:flex;
@@ -46,7 +46,7 @@ export default class AdminPage extends Component {
         api.post('/admin/login',{id:this.state.id,password:this.state.pw}).then(res=>{console.log(res)
             window.localStorage.setItem('token',res.data.access_token)
         this.setState({login:true})
-        window.location.href='/rladustn/pass'
+        window.location.href='/pass'
         })
         .catch(err=>{alert('오류');
     console.dir(err)})

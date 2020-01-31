@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from '../apis/BaseUrl'
+import api from '../../apis/BaseUrl'
 import styled from 'styled-components'
 
 const 
@@ -41,6 +41,7 @@ export default class LookData extends Component {
         reload:false
     }
     componentDidMount(){
+        
         api.get('/admin/partner').then(
             res=>{
                 this.setState({partner:res.data.info})

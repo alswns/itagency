@@ -16,8 +16,9 @@ import DetailedPage from './pages/DetailedPage';
 import FindPwPage from './pages/FindPwPage';
 import ClienPage from './pages/ClienPage';
 import PartnerPage from './pages/PartnerPage';
-import AdminPage from './pages/AdminPage';
-import LookData from './pages/LookData';
+import AdminPage from './pages/Admin/AdminPage';
+import LookData from './pages/Admin/LookData';
+import LookPortfolio from './pages/Admin/LookPortfolio';
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -91,13 +92,16 @@ function App() {
                     <Banner user={user} color='white' back='#212121' img={Logo_white}/>
                     <AdminPage setUser={setUser}/>
                 </Route>
-                <Route path='/rladustn/pass' exact='exact'>
+                <Route path='/pass' exact='exact'>
                     <Banner user={user} color='white' back='#212121' img={Logo_white}/>
                     <LookData setUser={setUser}/>
+                </Route>
+                <Route path='/passs' exact='exact'>
+                    <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <LookPortfolio setUser={setUser}/>
                 </Route>
             </Router>
         </div>
     );
 }
-// psss36768@gmail.com
 export default App;
