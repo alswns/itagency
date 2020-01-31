@@ -216,6 +216,7 @@ border-top:solid 1px #6f6f6f;
 `
 const Infor = styled.span`
 font-family: NIXGONB-Vb;
+width:200px;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -237,7 +238,6 @@ word-break:break-all;
   text-align: left;
   color: #212121;
   white-space:pre-wrap;
-  margin-left:125px;
 `
 const Submit = styled.div`
 margin-top:20px;
@@ -249,7 +249,7 @@ margin-top:20px;
 `
 const FileName = styled.span`
 cursor:pointer;
-margin-left:125px;
+width:751px;
  font-family: NIXGONB-Vb;
   font-size: 15px;
   font-weight: normal;
@@ -486,8 +486,10 @@ export default class DetailedPage extends Component {
                                         <GrayLine />
                                         {(this.state.file_name == 'null.txt'||this.state.file_name == '') ||
                                             <>
-                                                <Infor>상세정보</Infor>
+                                            <Garo>
+                                                 <Infor>상세정보</Infor>
                                                 <FileName onClick={this.fileDown}>{this.state.file_name}</FileName>
+                                                </Garo>
                                                 <GrayLine />
                                             </>
 

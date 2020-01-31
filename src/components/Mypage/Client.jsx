@@ -26,7 +26,9 @@ font-family: NIXGONB-Vb;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding-left:7%;
+  padding:0px 25px;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
 `
 const HowUse = styled.span`
 @font-face { font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -48,24 +50,12 @@ height: 130px;
   align-items:center;
   justify-content:space-around;
 `
-const Profile = styled.div`
+const Profile = styled.img`
 width: 100px;
   height: 100px;
   border: solid 2.5px #e0e0e0;
   border-radius:100%;
-  background-color: #ffffff;
-  font-family: NIXGONB-Vb;
-  font-size: 15px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.07;
-  letter-spacing: normal;
-  text-align: left;
-  color: #e0e0e0;
-  display:flex;
-justify-content:center;
-align-items:center;
+  
 `
 const Name = styled.span`
  font-family: NIXGONB-Vb;
@@ -160,11 +150,11 @@ height: 50px;
   color: #ef4f80;
 `
 const MyprojectInfo=styled.div`
-  height: 230px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
 display:flex;
 flex-direction:column;
+padding-bottom:25px;
 `
 const Kinds=styled.span`
 
@@ -223,12 +213,13 @@ cursor:pointer;
   background-color: #f3f3f3;
 }
 `
+
 export default function Client(props) {
   return (
     <Wrapper>
       <Top> <span>{window.localStorage.getItem('what')=='client'?'클라이언트':'파트너'}</span> <HowUse>{window.localStorage.getItem('what')=='client'?'클라이언트':'파트너'} 이용방법 > </HowUse>  </Top>
       <Information>
-        <Profile>Profile image</Profile>
+        <Profile src={`${props.src}`}></Profile>
         <Wrap>
           <Name>{props.name}</Name>
           <Kind>{props.auth}</Kind>
@@ -249,39 +240,44 @@ export default function Client(props) {
 
       <FlexDiv>
 
-        <IndividualInformation>
-          <Big>{props.data.filed||'알 수 없음'}</Big>
+        <IndividualInformation style={{borderBottomLeftRadius:'15px'}}>
+          <Big>{props.data.field==0?'개인프리랜서':''}
+          {props.data.field==1?'팀프리랜서':''}
+          {props.data.field==2?'개인사업자':''}
+          {props.data.field==3?'법인사업자':''}
+          
+          </Big>
           <Small>분류</Small>
         </IndividualInformation>
 
-        <IndividualInformation>
+        <IndividualInformation style={{borderBottomRightRadius:'15px'}}>
           <Big>{props.location}</Big>
           <Small>지역</Small>
         </IndividualInformation>
       </FlexDiv>
+     
       <Myproject>
         내 프로젝트 현황
       </Myproject>
       <MyprojectInfo>
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>지원</Kinds> <Gun><Pink>6</Pink>건</Gun>
+        <Kinds>지원</Kinds> <Gun><Pink>{props.apply}</Pink>건</Gun>
+      </FlexDiv>
+      
+      <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
+        <Kinds>계약</Kinds> <Gun><Pink>{props.constact}</Pink>건</Gun>
       </FlexDiv>
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>미팅</Kinds> <Gun><Pink>6</Pink>건</Gun>
+        <Kinds>진행중</Kinds> <Gun><Pink>{props.num_of_progress}</Pink>건</Gun>
       </FlexDiv>
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>계약</Kinds> <Gun><Pink>6</Pink>건</Gun>
+        <Kinds>완료</Kinds> <Gun><Pink>{props.num_of_success}</Pink>건</Gun>
       </FlexDiv>
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>진행중</Kinds> <Gun><Pink>6</Pink>건</Gun>
-      </FlexDiv>
-      <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>완료</Kinds> <Gun><Pink>6</Pink>건</Gun>
-      </FlexDiv>
-      <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>누적완료금액</Kinds> <Gun><Pink>6</Pink>건</Gun>
+        <Kinds>누적완료금액</Kinds> <Gun><Pink>{props.all_cost}</Pink>건</Gun>
       </FlexDiv>
       </MyprojectInfo>
+
       <Container>
         <Items className='going' onClick={()=>props.setTurn(0)}>내 프로젝트</Items>
         <Items className='going' onClick={()=>props.setTurn(1)}>포트폴리오</Items>

@@ -74,7 +74,7 @@ margin-left:50px;
 `
 const Subtitle = styled.span`
 margin-left:50px;
-  font-family: NIXGONM-Vb;
+  font-family: 'Noto sans kr';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -141,14 +141,7 @@ width: 151px;
   justify-content:center;
   align-items:center;
 `
-const FlexDiv = styled.div`
-display:flex;
-justify-content:space-between;
-padding:0px 50px;
-width:100%;
-box-sizing:border-box;
-margin-top:15px;
-`
+
 const Space = styled.div`
 height:20px;
 `
@@ -163,45 +156,50 @@ export default function Change(props) {
                 </Ment>
             </IngList>
             <MyProject>
-                기술스택
+            {props.stack == 0 &&'기본정보'}
+            {props.stack == 1 &&'기술스택'}
+            {props.stack == 2 &&'경력정보'}
             </MyProject>
             <MyProject style={{ marginBottom: '10px', paddingLeft: '0px', height: '40px' }}>
                 <Subtitle onClick={() => props.setStack(0)} className='stack'>기본정보</Subtitle>
                 <Subtitle onClick={() => props.setStack(1)} className='stack'>기술스택</Subtitle>
                 <Subtitle onClick={() => props.setStack(2)} className='stack'>경력정보</Subtitle>
             </MyProject>
-
-
-      
-            {props.stack == 0 && <InitInfor/>}
-            {props.stack == 1 && <Thec_Stack/>}
+        
+            {props.stack == 0 && <InitInfor setPhone={props.setPhone} src={props.src} getImgData={props.getImgData} getData={props.getData} phone={props.phone} data={props.data}/>}
+            {props.stack == 1 && <Thec_Stack Infor_Edit={props.Infor_Edit} delTech_stack={props.delTech_stack} addTech_stack={props.addTech_stack} tech_stack={props.tech_stack}/>}
             {props.stack == 2 &&
                 <>
                     <MyProject >
                         근무경력
             </MyProject>
                     <MyProject style={{ height: 'auto', flexDirection: 'column' }}>
-                        <CareerItem></CareerItem>
-                        <CareerItem></CareerItem>
-                        <CareerItem></CareerItem>
-                        <Submit>근무경력 등록</Submit>
+                      
+                       {(props.career||[]).map(res=>{
+                         return <CareerItem res={res} delCarrer={props.delCarrer} name={res.name} location={res.location} rank={res.rank} description={res.description}></CareerItem>
+                       })}
+                        
+                        <Submit onClick={props.submitCareer}>저장</Submit>
                     </MyProject>
                     <Space></Space>
-                    <Input />
+                    <Input plusCareer={props.plusCareer}/>
                     <Space></Space>
 
                     <MyProject >
                         수상경력
+                        
             </MyProject>
                     <MyProject style={{ height: 'auto', flexDirection: 'column' }}>
-                        <Win></Win>
-                        <Win></Win>
-                        <Win></Win>
-                        <Submit>수상경력 등록</Submit>
+                        {(props.award||[]).map(res=>{
+                        return  <Win res={res} delAward={props.delAward} name={res.name} year={res.year} agency={res.agency}></Win>
+
+                        })}
+                        
+                        <Submit onClick={props.submitAward}>저장</Submit>
 
                     </MyProject>
 
-                    <NewInput />
+                    <NewInput plusAward={props.plusAward}/>
                 </>
             }
             <div style={{ height: '100px' }}></div>

@@ -28,6 +28,7 @@ margin-bottom:26px;
 padding-left:50px;
 `
 const Pink=styled.span`
+width:310px;
 margin-bottom:40px;
  font-family: 'Noto Sans KR';
   font-size: 15px;
@@ -55,14 +56,17 @@ width: 190px;
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
+  box-sizing:border-box;
+  padding-left:20px;
+  color:#6f6f6f;
 `
 const BigInput=styled.textarea`
   font-family:'Noto Sans KR';
+  border: solid 1px #6f6f6f;
 
   width: 410px;
   height: 121px;
   border-radius: 5px;
-  border: solid 1px #6f6f6f;
   background-color: #ffffff;
 `
 const Repair=styled.div`
@@ -82,7 +86,6 @@ const Repair=styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-left:223px;
 `
 const Not=styled.div`
   width: 151px;
@@ -121,10 +124,10 @@ const Done=styled.div`
   text-align: left;
   color: #ffffff;
 `
-const ImgContainer=styled.div`
+const ImgContainer=styled.img`
   width: 150px;
   height: 150px;
-  border-radius: 10px;
+  border-radius: 100%;
   border: solid 2px #e0e0e0;
   background-color: #ffffff;
   font-family: NIXGONB-Vb;
@@ -140,7 +143,7 @@ const ImgContainer=styled.div`
   justify-content:center;
   align-items:center;
 `
-const Upload=styled.div`
+const Upload=styled.label`
 width: 150px;
   height: 30px;
   border-radius: 5px;
@@ -158,51 +161,72 @@ width: 150px;
   text-align: left;
   color: #ffffff;
   margin-top:19px;
+  cursor:pointer;
 `
-export default function InitInfor() {
+
+  const PhoneInput=styled.input`
+  width:290px;
+  height:42px;
+  margin-right:20px;
+  margin-bottom:14px;
+  border-radius:5px;
+  font-family:'Noto Sans KR';
+  border: solid 1px #6f6f6f;
+  box-sizing:border-box;
+  padding-left:10px;
+  `
+  
+
+export default function InitInfor(props) {
+  const [phone,setPhone]=React.useState(false)
     return (
         <Wrapper>
+
             <FlexDiv>
             <Title>프로필 이미지</Title>
             <div>
-            <ImgContainer>Imgae</ImgContainer>
-            <Upload>프로필 이미지 업로드</Upload>
+            <ImgContainer id='newimg' src={`${props.src}`} ></ImgContainer>
+            <input onChange={props.getImgData} accept="image/*" style={{display:'none'}} type="file" id="file" name="file" onchange="changeValue(this)"/>
+            <Upload for='file'>프로필 이미지 업로드</Upload>
             </div>
             </FlexDiv>
 
             <FlexDiv>
             <Title>이메일</Title>
-            <Pink>psss36768</Pink>
+            <Pink>{props.data.email}</Pink>
             </FlexDiv>
 
             <FlexDiv>
             <Title>이름</Title>
-            <Pink>강신희</Pink>
+            <Pink>{props.data.name}</Pink>
             </FlexDiv>
 
             <FlexDiv>
-            <Title>현재 비밀번호</Title>
+            <Title id='c_password'>현재 비밀번호</Title>
+            <Input ></Input>
+            </FlexDiv>
+
+            <FlexDiv>
+            <Title id='password'>변경할 비밀번호</Title>
             <Input></Input>
             </FlexDiv>
 
             <FlexDiv>
-            <Title>변경할 비밀번호</Title>
+            <Title id='repassword'>비밀번호 확인</Title>
             <Input></Input>
             </FlexDiv>
 
             <FlexDiv>
-            <Title>비밀번호 확인</Title>
-            <Input></Input>
+            <Title id='phone' >연락처</Title>
+              
+              {phone||<Pink value={props.phone}>{props.phone}</Pink>}
+              {phone&&<PhoneInput onChange={props.setPhone} value={props.phone}></PhoneInput> }
+            <Repair onClick={()=>setPhone(!phone)}>연락처 변경</Repair>
+          
             </FlexDiv>
 
             <FlexDiv>
-            <Title>연락처</Title>
-            <Pink>0104942631</Pink>
-            <Repair>연락처 변경</Repair>
-            </FlexDiv>
-
-            <FlexDiv>
-            <Title>지역</Title>
+            <Title id='location'>지역</Title>
             <div style={{width:'410px',display:'flex',justifyContent:'space-between'}}>
             <Selection/>
             </div>
@@ -210,24 +234,24 @@ export default function InitInfor() {
 
 
             <FlexDiv>
-            <Title>분류</Title>
+            <Title id='field'>분류</Title>
             <Select>
-              <option selected value="개인프리랜서">개인프리랜서</option>
-              <option value="팀프리랜서">팀프리랜서</option>
-              <option value="개인사업자">개인사업자</option>
-              <option value="법인사업자">법인사업자</option>
+              <option selected value="0">개인프리랜서</option>
+              <option value="1">팀프리랜서</option>
+              <option value="2">개인사업자</option>
+              <option value="3">법인사업자</option>
 
 
             </Select>
             </FlexDiv>
 
             <FlexDiv>
-            <Title>소개</Title>
+            <Title id='introduce'>소개</Title>
             <BigInput placeholder='     본인에 대한 소개' style={{resize: 'none'}}/>
             </FlexDiv>
       <div style={{display:'flex',width:'322px',margin:'50px auto'}}>
         <Not style={{marginRight:'20px'}}>취소</Not>
-        <Done>프로필 수정</Done>
+        <Done onClick={props.getData}>프로필 수정</Done>
         </div >
         </Wrapper>
     )

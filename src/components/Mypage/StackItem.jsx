@@ -15,9 +15,9 @@ width: 660px;
   margin-top:10px;
 `
 const Title=styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'noto sans kr';
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
@@ -26,7 +26,7 @@ font-family: NIXGONM-Vb;
   color: #212121;
 `
 const Del=styled.span`
-  font-family: NIXGONM-Vb;
+  font-family: 'noto sans kr';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -41,7 +41,7 @@ export default function StackItem(props) {
         <Wrapper>
             <Title>{props.data}</Title>
             <div style={{flex:'1'}}></div>
-            <Del>삭제</Del>
+            <Del onClick={()=>props.delTech_stack(props.data)}>삭제</Del>
         </Wrapper>
     )
 }

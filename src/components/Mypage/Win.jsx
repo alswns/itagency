@@ -13,9 +13,9 @@ const Wrapper=styled.div`
 `
 
 const Title=styled.span`
-font-family: NIXGONB-Vb;
-  font-size: 15px;
-  font-weight: normal;
+font-family: 'Noto Sans Kr';;
+  font-size: 16px;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.07;
@@ -25,7 +25,7 @@ font-family: NIXGONB-Vb;
   margin-right:7px;
 `
 const Tier=styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans Kr';;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -39,7 +39,7 @@ font-family: NIXGONM-Vb;
 const Content=styled.span`
 top:46px;
 position:absolute;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans Kr';;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -59,7 +59,7 @@ const Del=styled.span`
 position:absolute;
 top:33px;
 right:50px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans Kr';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -68,29 +68,15 @@ font-family: NIXGONM-Vb;
   letter-spacing: -0.3px;
   text-align: right;
   color: #ef4f80;`
-const Insert=styled.span`
-position:absolute;
-top:33px;
-right:86px;
-font-family: NIXGONM-Vb;
-  font-size: 15px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.33;
-  letter-spacing: -0.3px;
-  text-align: right;
-  color: #212121;
-`
-export default function CareerItem() {
+
+export default function CareerItem(props) {
     return (
         <Wrapper>
             <Span>
-            <Title>상이름</Title><Tier>년도</Tier>
+            <Title>{props.name}</Title><Tier>{props.year}</Tier>
             </Span>
-            <Content>수상기구</Content>
-            <Insert>수정</Insert>
-            <Del>삭제</Del>
+            <Content>{props.agency}</Content>
+            <Del onClick={()=>props.delAward(props.res)}>삭제</Del>
         </Wrapper>
     )
 }

@@ -42,6 +42,17 @@ export function samePw(str,str1) {
         return '비밀번호가 일치하지 않습니다'
     }
 }
+export function checkPw_edit(str,str1){
+    if(samePw(str,str1)===''&&checkPasswordPattern(str)===''){
+        
+            return true
+        
+    }
+    else{
+        return false
+    }
+}
+
 export function checkPw(str,str1,callback){
     if(samePw(str,str1)===''&&checkPasswordPattern(str)===''){
         
@@ -234,7 +245,9 @@ const newcat2_name=cat2_name[1].concat(cat2_name[2],cat2_name[3],cat2_name[4],ca
 
 export function returnName(index_1,index_2){
     
-    
+    if(cat1_name[index_1-1]==undefined||newcat2_name[index_2-17]==undefined){
+        return false
+    }
     return cat1_name[index_1-1]+' '+newcat2_name[index_2-17]
 
 }

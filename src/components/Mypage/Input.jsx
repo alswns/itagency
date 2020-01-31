@@ -72,30 +72,30 @@ width: 151px;
   justify-content:center;
   align-items:center;
 `
-export default function Input() {
+export default function Input(props) {
     return (
         <Wrapper>
             <FlexDiv style={{marginTop:'25px'}}>
-                <Name>회사이름</Name>
+                <Name id='name'>회사이름</Name>
                 <Inputs></Inputs>
             </FlexDiv>
             <FlexDiv>
-                <Name>지역</Name>
+                <Name id='location'>지역</Name>
                 <div style={{width:'410px',display:'flex',justifyContent:'space-between'}}>
                 <Selection/>
                 </div>
             </FlexDiv>
             <FlexDiv>
-                <Name>직책</Name>
+                <Name id='rank'>직책</Name>
                 <Inputs></Inputs>
             </FlexDiv>
             <FlexDiv>
-                <Name>업무</Name>
+                <Name id='description'>업무</Name>
                 <Inputs></Inputs>
             </FlexDiv>
             <FlexDiv style={{padding:'0px 211px'}}>
             <Not>취소</Not>
-            <Add>근무 경력 추가</Add>
+            <Add onClick={props.plusCareer}>근무 경력 추가</Add>
             </FlexDiv>
         </Wrapper>
     )

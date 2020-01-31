@@ -14,7 +14,7 @@ const Wrapper=styled.div`
 const Location=styled.span`
 position:absolute;
 top:11px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -25,9 +25,9 @@ font-family: NIXGONM-Vb;
   color: #6f6f6f;
 `
 const Title=styled.span`
-font-family: NIXGONB-Vb;
-  font-size: 15px;
-  font-weight: normal;
+font-family: 'Noto Sans KR';
+  font-size: 16px;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.07;
@@ -37,7 +37,7 @@ font-family: NIXGONB-Vb;
   margin-right:7px;
 `
 const Tier=styled.span`
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -51,7 +51,7 @@ font-family: NIXGONM-Vb;
 const Content=styled.span`
 top:55px;
 position:absolute;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -71,7 +71,7 @@ const Del=styled.span`
 position:absolute;
 top:33px;
 right:50px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -84,7 +84,7 @@ const Insert=styled.span`
 position:absolute;
 top:33px;
 right:86px;
-font-family: NIXGONM-Vb;
+font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -94,16 +94,16 @@ font-family: NIXGONM-Vb;
   text-align: right;
   color: #212121;
 `
-export default function CareerItem() {
+export default function CareerItem(props) {
     return (
         <Wrapper>
-            <Location>특별자지</Location>
+            <Location>{props.location}</Location>
             <Span>
-            <Title>제목</Title><Tier>직책</Tier>
+            <Title>{props.name}</Title><Tier>{props.rank}</Tier>
             </Span>
-            <Content>asdsad</Content>
-            <Insert>수정</Insert>
-            <Del>삭제</Del>
+            <Content>{props.description}</Content>
+            <Del onClick={()=>props.delCarrer(props.res)}>삭제</Del>
+            {console.log()}
         </Wrapper>
     )
 }

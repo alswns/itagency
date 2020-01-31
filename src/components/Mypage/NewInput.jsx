@@ -91,21 +91,21 @@ margin-right:212px;
   padding:0 auto;
   box-sizing:border-box;
 `
-export default function NewInput() {
+export default function NewInput(props) {
     return (
         <Wrapper>
             <FlexDiv style={{marginTop:'25px'}}>
-                <Name>수상 경력</Name>
+                <Name id='name'>수상 경력</Name>
                 <Inputs></Inputs>
             </FlexDiv>
             
             <FlexDiv>
-                <Name>수상기구</Name>
+                <Name id='agency'>수상기구</Name>
                 <Inputs></Inputs>
             </FlexDiv>
 
             <FlexDiv>
-                <Name>취득일</Name>
+                <Name id='year'>취득일</Name>
                 <Year>
                 <option value="2000" selected>2000</option>
                 <option value="2001">2001</option>
@@ -133,8 +133,7 @@ export default function NewInput() {
             </FlexDiv>
 
             <FlexDiv style={{padding:'0px 211px'}}>
-            <Not>취소</Not>
-            <Add>수상 경력 추가</Add>
+            <Add onClick={props.plusAward}>수상 경력 추가</Add>
             </FlexDiv>
         </Wrapper>
     )

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Introduce from './Introduce'
 import Stack from './Stack'
 import Projects from './Projects'
+import IntroCareer from './IntroCareer'
 
 const Wrapper=styled.div`
 width: 760px;
@@ -54,6 +55,14 @@ font-family:'Noto Sans KR';
   align-items:center;
   margin-left:50px;
 `
+const setColor=(event)=>{
+  const previewItem=document.getElementsByClassName('previewItem')
+  for(let i of previewItem){
+    i.style.color='#212121'
+  }
+  event.target.style.color='#ef4f80'
+
+}
 
 export default function Preview(props) {
     const [data,setData]=React.useState('1')
@@ -62,19 +71,17 @@ export default function Preview(props) {
             <Top>{props.name}</Top>
             <Line/>
             <List>
-            <Items  onClick={()=>setData('0')}>포트폴리오</Items>
-            <Items  onClick={()=>setData('1')}>프로젝트</Items>
-            <Items  onClick={()=>setData('2')}>기술스택</Items>
-            <Items  onClick={()=>setData('3')}>경력정보</Items>
-            <Items  onClick={()=>setData('4')}>자기소개</Items>
+            <Items  className='previewItem' onClick={(event)=>{setData('0');setColor(event)}}>포트폴리오</Items>
+            <Items style={{color:'#ef4f80'}} className='previewItem' onClick={(event)=>{setData('1');setColor(event)}}>프로젝트</Items>
+            <Items className='previewItem' onClick={(event)=>{setData('2');setColor(event)}}>기술스택</Items>
+            <Items className='previewItem' onClick={(event)=>{setData('3');setColor(event)}}>경력정보</Items>
+            <Items className='previewItem' onClick={(event)=>{setData('4');setColor(event)}}>자기소개</Items>
             </List>
             {data==0&&''}
             {data==1&&<Projects></Projects>}
             {data==2&&<Stack data={props.data}></Stack>}
-            {data==3&&''}
-            {data==4&&
-            <Introduce data={props.data}/>
-            }
+            {data==3&&<IntroCareer/>}
+            {data==4&&<Introduce data={props.data}/>}
 
         </Wrapper>
     )

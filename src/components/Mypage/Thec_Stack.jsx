@@ -80,22 +80,74 @@ margin-right:85px;
   align-items:center;
   justify-content:center;
   `
-export default function Thec_Stack() {
+// illustator
+// Flash
+// Ruby
+// Flask
+// C
+// object C
+// C++
+// C#
+// MySQL
+// jQuery
+// JAVA
+// PHP
+// Python
+// InDesign
+// Photoshop
+// Kotlin
+// Node.js
+// iOS
+// Linux
+// After effect
+// Premiere Pro
+// JavaScript
+// Fusion 360
+// 3D Max
+export default function Thec_Stack(props) {
     return (
         <Wrapper>
             <Flex_div>
             <Title>기술정보 추가</Title>
-            <Select></Select>
-            <Add>추가</Add>
+            <Select>
+              <option value="" disabled selected>선택</option>
+            <option value="Django">Django</option>
+            <option value="React_native">React_native</option>
+            <option value="React">React</option>
+            <option value="Swift">Swift</option>
+            <option value="Vue">Vue</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Fusion 360">Fusion 360</option>
+            <option value="3D_Max">3D_Max</option>
+            <option value="Flash">Flash</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Flask">Flask</option>
+            <option value="C">C</option>
+            <option value="object_c">object_c</option>
+            <option value="c++">c++</option>
+            <option value="MySql">MySql</option>
+            <option value="jQuery">jQuery</option>
+            <option value="JAVA">JAVA</option>
+            <option value="PHP">PHP</option>
+            <option value="Python">Python</option>
+            <option value="InDesign">InDesign</option>
+            <option value="Photoshop">Photoshop</option>
+            <option value="Kotlin">Kotlin</option>
+            <option value="Node.js">Node.js</option>
+            <option value="Linux">Linux</option>
+            <option value="After effect">After effect</option>
+
+
+            </Select>
+            <Add onClick={props.addTech_stack}>추가</Add>
             </Flex_div>
             <Line/>
-            <StackItem data='C언어'></StackItem>
-            <StackItem data='C언어'></StackItem>
-            <StackItem data='C언어'></StackItem>
-            <StackItem data='C언어'></StackItem>
-            <StackItem data='C언어'></StackItem>
+            {(props.tech_stack||[]).map(res=>{
+                        return  <StackItem delTech_stack={props.delTech_stack} data={res}></StackItem>
+            })}
+           
             <BigLine/>
-            <Button>정보수정</Button>
+            <Button onClick={props.Infor_Edit}>정보수정</Button>
         </Wrapper>
     )
 }
