@@ -83,7 +83,7 @@ const SmallTitle = styled.span`
 const FlexDIv = styled.div`
 display:flex;
 `
-export default function Projects() {
+export default function Projects(props) {
     const [bannerInt,setBannerInt]=React.useState('0')
     return (
         <Wrapper>
@@ -101,8 +101,20 @@ export default function Projects() {
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
                 <>
-
-             <Item title="제목" hope_money='희망금액' time='시간관련' deadLine='마감일정'/>
+                {bannerInt==0?<>
+                {(props.data.success_project||[]).map(res=>{
+                  console.log(res)
+                  return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/></>
+                })}
+                </>
+                :
+                <>
+                {(props.data.progress_project||[]).map(res=>{
+                  console.log(res)
+                  return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/></>
+                })}
+                </>
+              }
              </>
             </Box>
         </Wrapper>

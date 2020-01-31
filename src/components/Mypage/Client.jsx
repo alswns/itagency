@@ -217,6 +217,7 @@ cursor:pointer;
 export default function Client(props) {
   return (
     <Wrapper>
+      {console.log(props.src)}
       <Top> <span>{window.localStorage.getItem('what')=='client'?'클라이언트':'파트너'}</span> <HowUse>{window.localStorage.getItem('what')=='client'?'클라이언트':'파트너'} 이용방법 > </HowUse>  </Top>
       <Information>
         <Profile src={`${props.src}`}></Profile>
@@ -263,9 +264,8 @@ export default function Client(props) {
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
         <Kinds>지원</Kinds> <Gun><Pink>{props.apply}</Pink>건</Gun>
       </FlexDiv>
-      
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
-        <Kinds>계약</Kinds> <Gun><Pink>{props.constact}</Pink>건</Gun>
+        <Kinds>계약</Kinds> <Gun><Pink>{props.contract}</Pink>건</Gun>
       </FlexDiv>
       <FlexDiv style={{marginTop:'14px',justifyContent:'space-between'}}>
         <Kinds>진행중</Kinds> <Gun><Pink>{props.num_of_progress}</Pink>건</Gun>

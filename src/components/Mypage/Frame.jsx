@@ -77,7 +77,6 @@ const Mypeoject = styled.div`
 const Box = styled.div`
 
 width: 100%;
-  height: 250px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
   border-radius:15px;
@@ -132,21 +131,28 @@ font-family: 'Noto Sans KR';
   color: #212121;
   padding:15px 0;
 `
+const Div=styled.div`
+width:100%;
+padding-bottom:70px;
+`
 export default function Frame(props) {
     return (
         <Wrapper>
+            {console.log(props.data.type)}
             <IngList>
                 <Ment>
                     <Title>마이페이지</Title>
-                    <Sub>{props.name}님 안녕하세요
+                    <Sub>{props.data.name}님 안녕하세요
                     </Sub>
                 </Ment>
             </IngList>
             <Mypeoject style={{paddingLeft:'50px'}}>
                 내 프로젝트
             </Mypeoject>
+
             <Box>
                 <Subtitle>지원 내역</Subtitle>
+                <Div>
                 <Line />
                 <FlexDIv>
                     <SmallTitle style={{ marginLeft: '50px' }}>프로젝트 제목</SmallTitle>
@@ -156,31 +162,19 @@ export default function Frame(props) {
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
                 <>
-             <Item title="제목" hope_money='희망금액' time='시간관련' deadLine='마감일정'/>
-             </>
+                {(props.data.apply_projects||[]).map(res=>{
+             return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+             <Line style={{ width: '88%' }}></Line></>
+              
+                })}
+             </></Div>
             </Box>
 
-            <Box>
-                <Subtitle>미팅 예정</Subtitle>
-                <Line />
-                <FlexDIv>
-                    <SmallTitle style={{ marginLeft: '50px' }}>프로젝트 제목</SmallTitle>
-                    <SmallTitle style={{ marginLeft: '233px' }}>희망금액</SmallTitle>
-                    <SmallTitle style={{ marginLeft: '100px' }}>미팅일정</SmallTitle>
-                </FlexDIv>
-                <Line style={{ width: '88%' }}></Line>
-                <>
-                    <FlexDIv>
-                        <Text style={{ marginLeft: '50px', width: '320px' }}>제목</Text>
-                        <Text style={{ width: '157px' }}>희망금액</Text>
-                        <Text style={{ width: '100px' }}>미팅일정</Text>
-                    </FlexDIv>
-                    <Line style={{ width: '88%' }}></Line>
-                </>
-            </Box>
+                
 
             <Box>
                 <Subtitle>계약 협의중</Subtitle>
+                <Div>
                 <Line />
                 <FlexDIv>
                     <SmallTitle style={{ marginLeft: '50px' }}>프로젝트 제목</SmallTitle>
@@ -189,12 +183,18 @@ export default function Frame(props) {
                     <SmallTitle style={{ marginLeft: '50px' }}>마감일정</SmallTitle>
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
-                <Item title="제목" hope_money='희망금액' time='시간관련' deadLine='마감일정'/>
-
+                
+                {(props.data.progress_in_contract_project||[]).map(res=>{
+             return<> <Item title={res.title} hope_money={res.hope_money} time={res.time} deadLine={res.deadLine}/>
+                    <Line style={{ width: '88%' }}></Line></>
+              
+                })}
+</Div>
             </Box>
 
             <Box>
                 <Subtitle>진행중</Subtitle>
+                <Div>
                 <Line />
                 <FlexDIv>
                     <SmallTitle style={{ marginLeft: '50px' }}>프로젝트 제목</SmallTitle>
@@ -204,13 +204,19 @@ export default function Frame(props) {
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
                 <>
-                <Item title="제목" hope_money='희망금액' time='시간관련' deadLine='마감일정'/>
+                {(props.data.progress_project||[]).map(res=>{
+             return <><Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+             <Line style={{ width: '88%' }}></Line></>
+              
+                })}
 
                 </>
+                </Div>
             </Box>
 
             <Box>
             <Subtitle>완료</Subtitle>
+            <Div>
             <Line/>
             <FlexDIv>
                 <SmallTitle style={{marginLeft:'50px'}}>프로젝트 제목</SmallTitle>
@@ -219,11 +225,12 @@ export default function Frame(props) {
                 <SmallTitle style={{marginLeft:'50px'}}>마감일정</SmallTitle>
             </FlexDIv>
             <Line style={{width:'88%'}}></Line>
-            <>
-            <Item title="제목" hope_money='희망금액' time='시간관련' deadLine='마감일정'/>
-
-            </>
-            
+            {(props.data.success_project||[]).map(res=>{
+             return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+             <Line style={{ width: '88%' }}></Line></>
+              
+                })}
+            </Div>
             </Box>
 
 

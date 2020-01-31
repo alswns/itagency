@@ -7,7 +7,7 @@ import Preview from '../components/Mypage/Preview'
 import Change from '../components/Mypage/Change'
 import Last from '../components/main/Last'
 import { returnName, checkPw_edit } from '../apis/CheckForm'
-
+import EditPorfolio from '../components/Mypage/EditPorfolio'
 const Banner = styled.div`
 height:85px;
 `
@@ -23,27 +23,31 @@ background-color: #f3f3f3;
 export default class PartnerPage extends Component {
     constructor(props) {
         super(props)
+        Array.prototype.division = function (n) {
+            var arr = this;
+            var len = arr.length;
+            var cnt = Math.floor(len / n);
+            var tmp = [];
+    
+            for (var i = 0; i <= cnt; i++) {
+                tmp.push(arr.splice(0, n));
+            }
+    
+            return tmp;
+    }
         Object.equals = function (x, y) {
             if (x === y) return true;
-            // if both x and y are null or undefined and exactly the same 
             if (!(x instanceof Object) || !(y instanceof Object)) return false;
-            // if they are not strictly equal, they both need to be Objects 
             if (x.constructor !== y.constructor) return false;
-            // they must have the exact same prototype chain, the closest we can do is 
-            // test there constructor.
             for (var p in x) {
                 if (!x.hasOwnProperty(p)) continue;
-                // other properties were tested using x.constructor === y.constructor 
                 if (!y.hasOwnProperty(p)) return false;
-                // allows to compare x[ p ] and y[ p ] when set to undefined 
                 if (x[p] === y[p]) continue; // if they have the same strict value or identity then they are equal 
                 if (typeof (x[p]) !== "object") return false; // Numbers, Strings, Functions, Booleans must be strictly equal 
                 if (!Object.equals(x[p], y[p])) return false;
-                // Objects and Arrays must be tested recursively 
             }
             for (p in y) {
                 if (y.hasOwnProperty(p) && !x.hasOwnProperty(p)) return false;
-                // allows x[ p ] to be set to undefined 
             }
             return true;
         }
@@ -56,7 +60,7 @@ export default class PartnerPage extends Component {
             data: '',
             phone: '',
             myproject: false,
-            Turn: 2,
+            Turn: 3,
             stack: 0,
             tech_stack: [],
             reload: false,
@@ -74,26 +78,44 @@ export default class PartnerPage extends Component {
             apply:0,
             num_of_progress:0,
             num_of_success:0,
-            all_cost:0
+            all_cost:0,
+            contract:0,
+            portfolioArray:[],
+            max:0,
+            reload:false
         }
     }
-
+    reload=()=>{
+        this.setState({reload:!this.state.reload})
+    }
     componentDidMount() {
 
         api.get('/info/account').then(res => {
+            this.setState({ name: res.data.name, auth: res.data.auth },()=>{ this.getInformation();
+                this.getPotfolio();
+            })
             this.props.setUser(res.data.name)
-            this.setState({ name: res.data.name, auth: res.data.auth }, this.getInformation)
-            console.log(res)
         })
             .catch(err => {
                 console.dir(err)
                 this.props.setUser('guest')
             })
     }
-    
-    getInformation() {
+    getPotfolio=()=>{
+        api.get (`/partner/portfolio/${this.state.auth}`).then(res=>{
+            console.log(res)
+            this.setState({max:Math.ceil(res.data.info.length/6),
+                portfolioArray:res.data.info.division(2)})
+        }).catch(err=>{
+            console.dir(err)
+        })
+
+    }
+    getInformation=()=> {
         api.get(`/info/partner/profile/${this.state.auth}`).then(res => {
+            console.log(res.data)
             this.setState({
+                contract:res.data.contract,
                 apply:res.data.apply,
                 num_of_progress:res.data.num_of_progress,
                 num_of_success:res.data.num_of_success,
@@ -121,9 +143,9 @@ export default class PartnerPage extends Component {
             i.style.backgroundColor = '#ffffff'
         }
         going[this.state.Turn].style.backgroundColor = '#ef4f80'
-
         if (this.state.Turn == 2) {
             const stack = document.getElementsByClassName('stack')
+            if(stack!=undefined){
             for (let i of stack) {
                 i.style.color = '#212121'
                 i.style.fontWeight = '500'
@@ -131,6 +153,7 @@ export default class PartnerPage extends Component {
             }
             stack[this.state.stack].style.color = '#ef4f80'
             stack[this.state.stack].style.fontWeight = '600'
+        }
         }
 
     }
@@ -320,14 +343,15 @@ export default class PartnerPage extends Component {
     render() {
         return (
             <Wrapper>
+                 
                 <Banner></Banner>
                 <div style={{ display: 'flex' }}>
-                    {this.state.Turn == 0 && <Frame name={this.state.name} />}
-                    {this.state.Turn == 1 && '2'}
+                    {this.state.Turn == 0 && <Frame data={this.state.data} />}
+                    {this.state.Turn == 1 && <EditPorfolio reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} name={this.state.name}/>}
                     {this.state.Turn == 2 && <Change setPhone={this.setPhone} src={this.state.imgurl} getImgData={this.getImgData} getData={this.getData} phone={this.state.phone} delAward={this.delAward} plusAward={this.plusAward} submitAward={this.submitAward} award={this.state.award} delCarrer={this.delCarrer} plusCareer={this.plusCareer} submitCareer={this.submitCareer} career={this.state.data.career} Infor_Edit={this.Infor_Edit} delTech_stack={this.delTech_stack} addTech_stack={this.addTech_stack} tech_stack={this.state.tech_stack} data={this.state.data} stack={this.state.stack} setStack={this.setStack} name={this.state.name}></Change>}
-                    {this.state.Turn == 3 && <Preview data={this.state.data} name={this.state.name}></Preview>}
+                    {this.state.Turn == 3 && <Preview data={this.state.data} award={this.state.award} career={this.state.data.career} reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} data={this.state.data} name={this.state.name}></Preview>}
 
-                    <Client num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.imgurl} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />
+                    <Client contract={this.state.contract}num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.imgurl} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />
                 </div>
                 <Last />
             </Wrapper>

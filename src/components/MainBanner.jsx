@@ -33,6 +33,7 @@ width:50%;
 height:85px;
 justify-content: space-between;
 & a{
+    width:120px;
   font-family: 'Noto Sans KR';
   font-size: 18px;
   font-weight:500;
@@ -111,7 +112,7 @@ function MainBanner(props) {
                 |
                 </>
                 :
-                <div style={{textAlign:'right'}}>
+                <div style={{width:'100px',textAlign:'right'}}>
                 <span style={{cursor:'pointer'}}  onClick={()=>{
                     window.location.href=`/${window.localStorage.getItem('what')}`
                 }}>마이페이지</span><br/>

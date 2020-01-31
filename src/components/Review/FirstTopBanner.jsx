@@ -15,14 +15,7 @@ background-color: #ffc629;
 display:flex;
 position:relative;
 `
-const Leap=styled.img`
-justify-content:end;
-float:inline-end;
-position:absolute;
-bottom: 10px;
-z-index:30;
 
-`
 
 const WrapperItem = styled.div`
     display:flex;  
@@ -85,56 +78,10 @@ top:169px;
 left: 50%;
 transform: translateX(-50%);
 `
-const CircleIcone=styled.img`
 
-`
-const CircleText=styled.span`
-font-family: 'Noto Sans KR';
-  font-size: 15px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: center;
-  color: #6f6f6f;
-`
 
-const CircleSub=styled.span`
-font-family: 'Noto Sans KR';
-  font-size: 15px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #212121;
-`
-const Mid=styled.div`
-width:100%;
-margin:0 auto;
-position:absolute;
-top:${props=>props.top};
-text-align:center;
-`
-const Mids=styled.div`
-width:100%;
-margin:0 auto;
-position:absolute;
-top:${props=>props.top};
-text-align:center;
-height:30px;
-`
-const Bar=styled.img`
-margin: auto;
-display:flex;
-width:15px;
-height:3px;
-margin-bottom:15px;
-justify-content:center;
-flex-direction:column;
-`
+
+
 
 export default function FirstTopBanner(props) {
     return (

@@ -6,6 +6,9 @@ width:400px;
     height:320px;
     position:relative;
     background-color: #ffffff;
+    margin:10px 10px;
+    border: solid 1px #e0e0e0;
+  background-color: #ffffff;
 `
 const Img=styled.img`
     position:absolute;
@@ -88,17 +91,17 @@ font-family: 'Noto Sans KR';
   text-align: left;
   color: #212121;
 `
-export default function PortfolioItem() {
+export default function PortfolioItem(props) {
     return (
         <Wrapper>
-            <Img src={data}></Img>
-            <Kind>개발>웹</Kind>
+            <Img src={`http://54.180.122.126:5555/file/portfolio/image/${props.img}`}></Img>
+            <Kind>{props.field}</Kind>
             <Top>
-            <Title>TEXT</Title>
-            <Name><Pink>sadasdas</Pink>클라이언트님</Name>
+            <Title>{props.title}</Title>
+            <Name><Pink>{props.email}</Pink>님</Name>
             </Top>
             <Line/>
-            <Text>이롬플러스 만보기 감사일기 어플리케이션 iOS/Android 2종 구축 이런거 적힌 프로젝트 설명칸 이것도 미리 보기는 두 줄까지 ...</Text>
+            <Text>{props.description}</Text>
         </Wrapper>
     )
 }

@@ -4,10 +4,12 @@ import Introduce from './Introduce'
 import Stack from './Stack'
 import Projects from './Projects'
 import IntroCareer from './IntroCareer'
+import EditPorfolio from './EditPorfolio'
+import PortFolioContainer from './PortFolioContainer'
 
 const Wrapper=styled.div`
 width: 760px;
-
+margin-top:33px;
 `
 const Top=styled.div`
 width:100%;
@@ -64,8 +66,20 @@ const setColor=(event)=>{
 
 }
 
+const StacWrapper=styled.div`
+width:100%;
+margin-top:10px;
+  border: solid 1px #e0e0e0;
+  background-color: #ffffff;
+  padding:20px 50px;
+  box-sizing:border-box;
+  margin-bottom:20px;
+`
+
 export default function Preview(props) {
     const [data,setData]=React.useState('1')
+    const [page,setPage]=React.useState(0)
+// 
     return (
         <Wrapper>
             <Top>{props.name}</Top>
@@ -77,10 +91,10 @@ export default function Preview(props) {
             <Items className='previewItem' onClick={(event)=>{setData('3');setColor(event)}}>경력정보</Items>
             <Items className='previewItem' onClick={(event)=>{setData('4');setColor(event)}}>자기소개</Items>
             </List>
-            {data==0&&''}
-            {data==1&&<Projects></Projects>}
-            {data==2&&<Stack data={props.data}></Stack>}
-            {data==3&&<IntroCareer/>}
+            {data==0&&<PortFolioContainer page={page} setPage={setPage} max={props.max} reload ={props.reload} portfolioArray={props.portfolioArray}/>}
+            {data==1&&<Projects data={props.data}></Projects>}
+            {data==2&&<StacWrapper> <Stack data={props.data}></Stack></StacWrapper>}
+            {data==3&&<IntroCareer award={props.award}career={props.career}/>}
             {data==4&&<Introduce data={props.data}/>}
 
         </Wrapper>

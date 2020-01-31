@@ -11,21 +11,9 @@ const Wrapper=styled.div`
   box-sizing:border-box;
   padding-left:50px;
 `
-const Location=styled.span`
-position:absolute;
-top:11px;
-font-family: 'Noto Sans KR';
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.08;
-  letter-spacing: normal;
-  text-align: left;
-  color: #6f6f6f;
-`
+
 const Title=styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans Kr';;
   font-size: 16px;
   font-weight: 700;
   font-stretch: normal;
@@ -37,7 +25,7 @@ font-family: 'Noto Sans KR';
   margin-right:7px;
 `
 const Tier=styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans Kr';;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -49,9 +37,9 @@ font-family: 'Noto Sans KR';
 
 `
 const Content=styled.span`
-top:55px;
+top:46px;
 position:absolute;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans Kr';;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -64,14 +52,14 @@ font-family: 'Noto Sans KR';
 `
 const Span=styled.span`
 position:absolute;
-top:29px;
+top:18px;
 
 `
 const Del=styled.span`
 position:absolute;
 top:33px;
 right:50px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans Kr';
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -80,31 +68,14 @@ font-family: 'Noto Sans KR';
   letter-spacing: -0.3px;
   text-align: right;
   color: #ef4f80;`
-const Insert=styled.span`
-position:absolute;
-top:33px;
-right:86px;
-font-family: 'Noto Sans KR';
-  font-size: 15px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.33;
-  letter-spacing: -0.3px;
-  text-align: right;
-  color: #212121;
 
-`
-export default function CareerItem(props) {
+export default function PreviewWin(props) {
     return (
         <Wrapper>
-            <Location>{props.location}</Location>
             <Span>
-            <Title>{props.name}</Title><Tier>{props.rank}</Tier>
+            <Title>{props.name}</Title><Tier>{props.year}</Tier>
             </Span>
-            <Content>{props.description}</Content>
-            <Del onClick={()=>props.delCarrer(props.res)}>삭제</Del>
-            {console.log()}
+            <Content>{props.agency}</Content>
         </Wrapper>
     )
 }

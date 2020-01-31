@@ -1,9 +1,10 @@
 import React from 'react'
-import CareerItem from './CareerItem'
 import styled from 'styled-components'
-
+import PreviewCareerItem from './PreviewCareerItem'
+import PreviewWin from './PreviewWin'
 const Wrapper=styled.div`
 width:100%;
+margin-top:30px;
 `
 const MyProject = styled.div`
  width: 95px;
@@ -27,17 +28,32 @@ const MyProject = styled.div`
 display:flex;
 padding-bottom:50px;
 `
-export default function IntroCareer() {
+const Div=styled.div`
+height:20px;
+`
+export default function IntroCareer(props) {
     return (
         <Wrapper>
              <MyProject >
                         근무경력
             </MyProject>
                     <MyProject style={{ height: 'auto', flexDirection: 'column' }}>
-                        <CareerItem></CareerItem>
-                        <CareerItem></CareerItem>
-                        <CareerItem></CareerItem>
+                        {props.career.map(res=>{
+                       return <PreviewCareerItem res={res} delCarrer={props.delCarrer} name={res.name} location={res.location} rank={res.rank} description={res.description}></PreviewCareerItem>
+
+                        })}
+                       
                     </MyProject>
+                    <Div/>
+                    <MyProject >
+                        대회수상
+            </MyProject>
+            <MyProject style={{ height: 'auto', flexDirection: 'column' }}>
+                    {(props.award||[]).map(res=>{
+                        return  <PreviewWin res={res} delAward={props.delAward} name={res.name} year={res.year} agency={res.agency}></PreviewWin>
+
+                        })}
+                        </MyProject>
         </Wrapper>
     )
 }

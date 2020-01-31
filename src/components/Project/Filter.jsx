@@ -132,6 +132,7 @@ justify-content:space-between;
 const Align=styled.div`
 display:flex;
 flex-direction:column;
+height:1600px;
 `
 const SU=styled.div`
 width: 40px;

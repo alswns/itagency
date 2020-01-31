@@ -106,7 +106,7 @@ function FlexBanner(props) {
                 |
                 </>
                 :
-                <div style={{textAlign:'right'}}>
+                <div style={{width:'100px',textAlign:'right'}}>
                 <span style={{cursor:'pointer'}}  onClick={()=>{
                     window.location.href=`/${window.localStorage.getItem('what')}`
                 }}>마이페이지</span><br/>

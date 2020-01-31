@@ -132,7 +132,7 @@ export default function NewInput(props) {
                 </Year>
             </FlexDiv>
 
-            <FlexDiv style={{padding:'0px 211px'}}>
+            <FlexDiv style={{justifyContent:'center',padding:'0px 211px'}}>
             <Add onClick={props.plusAward}>수상 경력 추가</Add>
             </FlexDiv>
         </Wrapper>

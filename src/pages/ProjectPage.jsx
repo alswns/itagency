@@ -46,9 +46,13 @@ export default class ProjectPage extends Component {
                 '2':true
             },
             developer:true,
-            desinger:true
+            desinger:true,
+            searchKey:''
 
         }
+    }
+    setSearchKey=(e)=>{
+        this.setState({searchKey:e.target.value})
     }
  
     setDe = () => {
@@ -146,12 +150,26 @@ export default class ProjectPage extends Component {
         return newArray
     }
    
+    keywordSearch=()=>{
+        
+        let data=(this.state.project||[]).filter(res=>{
+            return res.project_name.match(this.state.searchKey)!=null
+        })
+        console.log(data)
+        return data
+    }
+
     render() {
         return (
             <Wrapper>
                 <div style={{ transform: 'scale(0.85)', marginTop: '-90px' }}>
-                    <Top />
-                    <Filter booling={this.state.ing} checckdesinger={this.state.desinger} checkdeveloper={this.state.developer} desinger={()=>this.setState({desinger:!this.state.desinger},this.setDes)} developer={()=>this.setState({developer:!this.state.developer},this.setDe)} On={this.state.fillter} ing={this.filt(this.state.ing)} setStatus={this.setStatus} fillter={this.filt(this.state.fillter)} setData={this.setData} max={this.state.max} setArrange={this.setArrange} project={this.state.project} />
+                    <Top setSearchKey={this.setSearchKey} />
+                    <Filter keywordSearch={this.keywordSearch()} booling={this.state.ing} checckdesinger={this.state.desinger} checkdeveloper={this.state.developer} desinger={()=>this.setState({desinger:!this.state.desinger},this.setDes)} 
+                    developer={()=>this.setState({developer:!this.state.developer},this.setDe)} 
+                    On={this.state.fillter} ing={this.filt(this.state.ing)} 
+                    setStatus={this.setStatus} fillter={this.filt(this.state.fillter)} 
+                    setData={this.setData} max={this.state.max} 
+                    setArrange={this.setArrange} project={this.keywordSearch()} />
                 </div>
                 <Last />
             </Wrapper>

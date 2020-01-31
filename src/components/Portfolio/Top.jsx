@@ -87,7 +87,7 @@ const Search = styled.input `
     margin:auto 0px;
     margin-right:55px;
 `
-export default function Top() {
+export default function Top(props) {
     return (
         <Wrapper>
             <Banner/>
@@ -100,7 +100,7 @@ export default function Top() {
                     <Sub>아이티 에이전시에 클라이언트님이 의뢰하신 프로젝트 리스트입니다.
                     </Sub>
                 </Ment>
-                <Search placeholder='검색어를 입력하세요'></Search>
+                <Search onChange={props.setSearchKey} placeholder='검색어를 입력하세요'></Search>
             </IngList>
         </Wrapper>
     )

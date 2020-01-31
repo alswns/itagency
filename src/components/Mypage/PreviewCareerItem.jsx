@@ -95,7 +95,7 @@ font-family: 'Noto Sans KR';
   color: #212121;
 
 `
-export default function CareerItem(props) {
+export default function PreviewCareerItem(props) {
     return (
         <Wrapper>
             <Location>{props.location}</Location>
@@ -103,7 +103,6 @@ export default function CareerItem(props) {
             <Title>{props.name}</Title><Tier>{props.rank}</Tier>
             </Span>
             <Content>{props.description}</Content>
-            <Del onClick={()=>props.delCarrer(props.res)}>삭제</Del>
             {console.log()}
         </Wrapper>
     )

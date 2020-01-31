@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const Wrapper=styled.div`
 width:100%;
 margin-top:10px;
+margin-bottom:20px;
 `
 const High=styled.div`
  width: 760px;
@@ -17,12 +18,13 @@ const High=styled.div`
   box-sizing:border-box;
 `
 const Container=styled.div`
+margin-top:20px;
  width: 660px;
   height: 40px;
   border-radius: 5px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
-  font-family: NIXGONM-Vb;
+  font-family: 'noto sans kr';
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -31,6 +33,10 @@ const Container=styled.div`
   letter-spacing: -0.4px;
   text-align: left;
   color: #212121;
+  display:flex;
+  align-items: center;
+  padding:30px;
+  box-sizing:border-box;
 `
 export default function Stack(props) {
     return (

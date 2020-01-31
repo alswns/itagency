@@ -562,19 +562,19 @@ export default function Counsel(props) {
                                 display: 'flex',
                                 flexDirection: 'column'
                             }}>
-                            <RadioContainer className='checks'><input type="radio" name="gender" value="0" id='n'/>
+                            <RadioContainer className='chec'><input type="radio" name="gender" value="0" id='n'/>
                                 <Label for='n'>상관 없음</Label>
                             </RadioContainer>
-                            <RadioContainer className='checks'><input type="radio" name="gender" value="1" id='s'/>
+                            <RadioContainer className='chec'><input type="radio" name="gender" value="1" id='s'/>
                                 <Label for='s'>개인</Label>
                             </RadioContainer>
-                            <RadioContainer className='checks'><input type="radio" name="gender" value="2" id='t'/>
+                            <RadioContainer className='chec'><input type="radio" name="gender" value="2" id='t'/>
                                 <Label for='t'>팀</Label>
                             </RadioContainer>
-                            <RadioContainer className='checks'><input type="radio" name="gender" value="3" id='b'/>
+                            <RadioContainer className='chec'><input type="radio" name="gender" value="3" id='b'/>
                                 <Label for='b'>법인 사업자</Label>
                             </RadioContainer>
-                            <RadioContainer className='checks'><input type="radio" name="gender" value="4" id='g'/>
+                            <RadioContainer className='chec'><input type="radio" name="gender" value="4" id='g'/>
                                 <Label for='g'>개인사업자</Label>
                             </RadioContainer>
                         </div>

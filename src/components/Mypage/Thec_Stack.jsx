@@ -142,6 +142,7 @@ export default function Thec_Stack(props) {
             <Add onClick={props.addTech_stack}>추가</Add>
             </Flex_div>
             <Line/>
+            
             {(props.tech_stack||[]).map(res=>{
                         return  <StackItem delTech_stack={props.delTech_stack} data={res}></StackItem>
             })}
