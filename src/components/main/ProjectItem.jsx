@@ -227,7 +227,7 @@ export default function ProjectItem(props) {
             <Content top='238.9px'>{props.num_of_applicants}명</Content>
 
           <Buttons>
-            {props.progress||<Button back='yellow' left='31px' color='#212121' style={{marginRight:'10px'}} onClick={()=>sign(props.project_id)}>작업신청</Button>}
+            {props.progress||<Button back='#ffffff' left='31px' color='#212121' style={{marginRight:'10px'}} onClick={()=>sign(props.project_id)}>작업신청</Button>}
             
             <Button back='black' left='128px' color='white' href={`/detailed?#id=${props.project_id}`}>내용보기</Button>
             </Buttons>

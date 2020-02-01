@@ -13,9 +13,9 @@ import notebook from '../../assets/imgs/notebook.svg'
 const Title=styled.div`
 
  margin-top:239px;
-  font-family: NIXGONB-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 35px;
-  font-weight: normal;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
@@ -61,10 +61,10 @@ position:relative;
 height:104px;
 `
 const Wra=styled.div`
-width:68%;
+width:80%;
 display:flex;
 margin:0 auto;
-justify-content:space-between;
+justify-content:space-around;
 `
 export default function Progess() {
     return (

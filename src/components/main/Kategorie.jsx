@@ -30,9 +30,9 @@ import web from '../../assets/imgs/icons/web.png'
 const Title=styled.div`
 
  margin-top:250px;
-  font-family: NIXGONB-Vb;
+  font-family: 'Noto Sans KR';
   font-size: 35px;
-  font-weight: normal;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;

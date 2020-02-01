@@ -24,14 +24,14 @@ const Sub = styled.div`
   letter-spacing: 0.3px;
   text-align: center;
   color: #6f6f6f;
-  margin-bottom:29px;
+  margin-bottom:100px;
 `
 const Title = styled.div`
 
  margin-top:250px;
   font-family: NIXGONB-Vb;
   font-size: 35px;
-  font-weight: normal;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;

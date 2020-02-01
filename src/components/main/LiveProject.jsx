@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import ProjectContainer from './ProjectContainer'
-import Today from './Today'
+import bar from '../../assets/imgs/bar.png'
+
 const Bold = styled.div`
 margin-top:81px;
 
-font-family: NIXGONB-Vb;
+font-family: 'Noto sans Kr';
   font-size: 35px;
-  font-weight: normal;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
@@ -39,27 +40,39 @@ font-family: 'Noto Sans KR';
   font-style: normal;
   line-height: 1.07;
   letter-spacing: -0.3px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   text-align: left;
   color: #f3f3f3;
   background-color:#9f4fef;
-  padding:14px 19px;
+  width: 155px;
+  height: 35px;
   border-radius:18px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    margin-left:80.3%;
+    margin-left:75.3%;
     cursor:pointer;
 `
 const Wrapper = styled.div`
 width: 100%;
-
+margin-bottom:300px;
+`
+const Img =styled.img`
+margin: 10px auto;
+margin-top:30px;
+display:flex;
+width:30px;
+height:5px;
+margin-bottom:15px;
 `
 export default function LiveProject(props) {
     return (
         <Wrapper>
-            <Bold>실시간 프로젝트</Bold>
+            <Bold>실시간 프로젝트</Bold>            <Img src={bar}></Img>
+
             <Sub>가장 최근에 아이티에이전트에 등록된 프로젝트가 올라옵니다.</Sub>
             <Regi onClick={()=>window.location.href='/project'}>프로젝트 보러가기</Regi>
             <ProjectContainer projects={props.projects}/>
-            <Today today_registered_project={props.today_registered_project}  ing={props.ing} today_finished_project={props.today_finished_project}></Today>
         </Wrapper>
     )
 }

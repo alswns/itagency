@@ -14,7 +14,7 @@ const Title = styled.div`
  margin-top:250px;
   font-family: NIXGONB-Vb;
   font-size: 35px;
-  font-weight: 500;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
@@ -55,10 +55,14 @@ font-family: 'Noto Sans KR';
   font-style: normal;
   line-height: 1.07;
   letter-spacing: -0.3px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   text-align: left;
   color: #f3f3f3;
   background-color:#9f4fef;
-  padding:14px 19px;
+  width: 155px;
+  height: 35px;
   border-radius:18px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     margin-left:75.3%;
@@ -94,28 +98,6 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 `
-const Circle=styled.div`
-width:237px;
-height:237px;
-border-radius:100%;
-background:#f3f3f3;
-position:relative;
-`
-const CircleIcone=styled.img`
-position:absolute;
-top:77px;
-`
-const CircleText=styled.span`
-position:absolute;
-top:120px;
-
-`
-
-const CircleSub=styled.span`
-position:absolute;
-top:120px;
-`
-
 
 export default function Portfolios() {
     return (
