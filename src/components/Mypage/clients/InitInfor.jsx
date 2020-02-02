@@ -177,7 +177,7 @@ width: 150px;
   `
   
 
-export default function InitInfor(props) {
+export default function  InitInfor(props) {
   const [phone,setPhone]=React.useState(false)
     return (
         <Wrapper>

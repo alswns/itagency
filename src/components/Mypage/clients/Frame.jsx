@@ -138,7 +138,7 @@ padding-bottom:70px;
 export default function Frame(props) {
     return (
         <Wrapper>
-            {console.log(props.data.type)}
+            {console.log(props)}
             <IngList>
                 <Ment>
                     <Title>마이페이지</Title>
@@ -161,8 +161,8 @@ export default function Frame(props) {
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
                 <>
-                {(props.data.apply_projects||[]).map(res=>{
-             return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+                {(props.consulting||[]).map(res=>{
+             return<> <Item title={res.project_title} hope_money={new Date(res.register_time).toLocaleDateString()} time={res.term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}
@@ -182,9 +182,9 @@ export default function Frame(props) {
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
                 
-                {(props.data.progress_in_contract_project||[]).map(res=>{
-             return<> <Item title={res.title} hope_money={res.hope_money} time={res.time} deadLine={res.deadLine}/>
-                    <Line style={{ width: '88%' }}></Line></>
+                {(props.apply_project||[]).map(res=>{
+             return<> <Item title={res.project_title} hope_money={res.num_of_applicants+'명'} time={new Date(res.deadline_time).toLocaleDateString()} deadLine={res.deadLine}/>
+                    </>
               
                 })}
 </Div>
@@ -202,8 +202,8 @@ export default function Frame(props) {
                 </FlexDIv>
                 <Line style={{ width: '88%' }}></Line>
                 <>
-                {(props.data.progress_project||[]).map(res=>{
-             return <><Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+                {(props.progress_project||[]).map(res=>{
+             return <><Item title={res.project_title} hope_money={res.cost} time={res.progress_term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}
@@ -223,8 +223,8 @@ export default function Frame(props) {
                 <SmallTitle style={{marginLeft:'50px'}}>마감일정</SmallTitle>
             </FlexDIv>
             <Line style={{width:'88%'}}></Line>
-            {(props.data.success_project||[]).map(res=>{
-             return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+            {(props.success_project||[]).map(res=>{
+             return<> <Item title={res.project_title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}

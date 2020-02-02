@@ -66,31 +66,21 @@ const setColor=(event)=>{
 
 }
 
-const StacWrapper=styled.div`
-width:100%;
-margin-top:10px;
-  border: solid 1px #e0e0e0;
-  background-color: #ffffff;
-  padding:20px 50px;
-  box-sizing:border-box;
-  margin-bottom:20px;
-`
+
 
 export default function Preview(props) {
-    const [data,setData]=React.useState('1')
-    const [page,setPage]=React.useState(0)
-// 
+    const [data,setData]=React.useState('0')
     return (
         <Wrapper>
             <Top>{props.name}</Top>
             <Line/>
             <List>
-            <Items  className='previewItem' onClick={(event)=>{setData('0');setColor(event)}}>모집중</Items>
-            <Items style={{color:'#ef4f80'}} className='previewItem' onClick={(event)=>{setData('1');setColor(event)}}>진행중</Items>
+            <Items style={{color:'#ef4f80'}} className='previewItem' onClick={(event)=>{setData('0');setColor(event)}}>모집중</Items>
+            <Items  className='previewItem' onClick={(event)=>{setData('1');setColor(event)}}>진행중</Items>
             <Items className='previewItem' onClick={(event)=>{setData('2');setColor(event)}}>완료</Items>
             
             </List>
-            <Projects data={props.data}></Projects>
+            <Projects data={props} int={data}></Projects>
 
         </Wrapper>
     )

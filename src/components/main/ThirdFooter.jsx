@@ -9,12 +9,13 @@ height:200px;
 
 
 object-fit: contain;
-background:url(${foot});
+
 `
 const Image = styled.div `
 position:absolute;
 width:100%;
-background-color: #ff8253;
+background-image: linear-gradient(135deg, rgba(255, 130, 83, 0.7) 31%, rgba(255, 130, 83, 0.7) 97%),url(${foot});
+
 opacity: 75%;
 height:200px;
 `

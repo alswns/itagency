@@ -86,7 +86,6 @@ display:flex;
 export default function Projects(props) {
     return (
         <Wrapper>
-        
             <Box>
                 <FlexDIv>
                     <SmallTitle style={{ marginLeft: '50px' }}>프로젝트 제목</SmallTitle>
@@ -95,11 +94,20 @@ export default function Projects(props) {
                     <SmallTitle style={{ marginLeft: '50px' }}>마감일정</SmallTitle>
                 </FlexDIv>
                 <Line ></Line>
-               
-                {(props.data.progress_project||[]).map(res=>{
-                  console.log(res)
-                  return<> <Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/></>
+                {props.int==0&&(props.data.apply_project||[]).map(res=>{
+                  return<> <Item title={res.project_title} hope_money={res.num_of_applicants} time={new Date(res.deadline_time).toLocaleDateString()} deadLine={res.end_time}/></>
                 })}
+                {props.int==1&&(props.data.data.progress_project||[]).map(res=>{
+                  return<> <Item title={res.project_title} hope_money={res.num_of_applicants} time={new Date(res.deadline_time).toLocaleDateString()} deadLine={res.end_time}/></>
+
+                })}
+                {props.int==2&&(props.data.data.success_project||[]).map(res=>{
+                  return<> <Item title={res.project_title} hope_money={res.num_of_applicants} time={new Date(res.deadline_time).toLocaleDateString()} deadLine={res.end_time}/></>
+
+                })}
+                
+             
+
               
             </Box>
         </Wrapper>

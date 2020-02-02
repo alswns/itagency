@@ -255,5 +255,5 @@ export function returnName(index_1,index_2){
 export function returnLocation(str1){
     let data=str1.split(' ')
     
-    return [cat1_name.indexOf(data[0]),data[1]]
+    return [cat1_name.indexOf(data[0])+1,new Option(data[1],newcat2_name.indexOf(data[1])+17)]
 }

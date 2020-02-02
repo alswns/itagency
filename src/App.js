@@ -20,6 +20,7 @@ import LookPortfolio from './pages/Admin/LookPortfolio';
 import Naver from './pages/Oauth/Naver';
 import Google from './pages/Oauth/Google';
 import Facebook from './pages/Oauth/Facebook';
+import './input.css'
 
 const GlobalStyle = createGlobalStyle `
   *{
