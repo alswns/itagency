@@ -37,24 +37,6 @@ export default class LoginPage extends Component {
             document.getElementById('check').checked='true'
             this.setChecked()
         }
-        const request = new Requests();  
-    if (request.getParameter('#access_token')==''){
-  }
-  else{
-    const token=request.getParameter('#access_token')
-    console.log(token)
-    api.post('/client/account/fb',{
-        fb_token:token
-    }).then(res=>{
-        window.localStorage.setItem('token',res.data.access_token)
-        alert('로그인 성공')
-        window.localStorage.setItem('what','client')
-        window.location='/'
-    }).catch(err=>{
-        console.dir(err)
-        
-    })
-  }
     }
 
     changeId = (event) => {
@@ -141,12 +123,6 @@ export default class LoginPage extends Component {
             <Wrapper>
                 <Banner/>
               <Login setChecked={this.setChecked}id={this.state.id} pw={this.state.password} changeId={this.changeId} changePw={this.changePw} login={this.login}/>
-                {/* id:<input type="text" name='id' value={this.state.id} onChange={this.change}/> <br/>
-                password:<input type="text" name='password' value={this.state.password} onChange={this.change}/>
-                <button onClick={this.login}>로그인</button>
-                {/* "https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/&state=&response_type=token" */}
-                <br/>
-                {/* <a href="https://www.facebook.com/v5.0/dialog/oauth?client_id=483972958983170&redirect_uri=http://localhost:3000/Login&state=&response_type=token">facebook</a>  */}
                 <Last/>
             </Wrapper>
         )

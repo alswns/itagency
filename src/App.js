@@ -1,8 +1,6 @@
 import React from 'react';
 import MainPage from './pages/MainPage';
-
 import Logo_white from './assets/imgs/Logo_white.png'
-import Logo_gray from './assets/imgs/Logo_gray.png'
 import {createGlobalStyle} from 'styled-components'
 import Banner from './components/Banner';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
@@ -19,6 +17,10 @@ import PartnerPage from './pages/PartnerPage';
 import AdminPage from './pages/Admin/AdminPage';
 import LookData from './pages/Admin/LookData';
 import LookPortfolio from './pages/Admin/LookPortfolio';
+import Naver from './pages/Oauth/Naver';
+import Google from './pages/Oauth/Google';
+import Facebook from './pages/Oauth/Facebook';
+
 const GlobalStyle = createGlobalStyle `
   *{
     margin:0;
@@ -99,6 +101,18 @@ function App() {
                 <Route path='/passs' exact='exact'>
                     <Banner user={user} color='white' back='#212121' img={Logo_white}/>
                     <LookPortfolio setUser={setUser}/>
+                </Route>
+
+                <Route path='/naver' exact='exact'>
+                    <Naver setUser={setUser}/>
+                </Route>
+
+                <Route path='/google' exact='exact'>
+                    <Google setUser={setUser}/>
+                </Route>
+
+                <Route path='/facebook' exact='exact'>
+                    <Facebook setUser={setUser}/>
                 </Route>
             </Router>
         </div>
