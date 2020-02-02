@@ -16,10 +16,9 @@ margin-top:30px;
 margin-bottom:25px;
 `
 const All = styled.div `
-width:100%;
+display:flex;
 align-items:center;
 justify-content:center;
-display:flex;
 `
 const IngList = styled.div `
 display:flex;

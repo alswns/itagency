@@ -242,6 +242,7 @@ cat2_num[16] = new Array(249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 
 
 cat2_name[16] = new Array('제천시', '청주시 상당구', '청주시 흥덕구', '충주시', '괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '진천군', '청원군');
 const newcat2_name=cat2_name[1].concat(cat2_name[2],cat2_name[3],cat2_name[4],cat2_name[5],cat2_name[6],cat2_name[7],cat2_name[8],cat2_name[9],cat2_name[10],cat2_name[11],cat2_name[12],cat2_name[13],cat2_name[14],cat2_name[15],cat2_name[16])
+const newcat2_num=cat2_num[1].concat(cat2_num[2],cat2_num[3],cat2_num[4],cat2_num[5],cat2_num[6],cat2_num[7],cat2_num[8],cat2_num[9],cat2_num[10],cat2_num[11],cat2_num[12],cat2_num[13],cat2_num[14],cat2_num[15],cat2_num[16])
 
 export function returnName(index_1,index_2){
     
@@ -250,4 +251,9 @@ export function returnName(index_1,index_2){
     }
     return cat1_name[index_1-1]+' '+newcat2_name[index_2-17]
 
+}
+export function returnLocation(str1){
+    let data=str1.split(' ')
+    
+    return [cat1_name.indexOf(data[0]),data[1]]
 }

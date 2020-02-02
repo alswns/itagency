@@ -9,6 +9,7 @@ width: 100%;
   flex-direction:column;
   padding-left:11.4%;;
   box-sizing:border-box;
+  margin-top:200px;
 `
 const Logo=styled.img`
 margin-top:35px;

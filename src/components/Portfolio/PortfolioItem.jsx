@@ -94,7 +94,7 @@ font-family: 'Noto Sans KR';
 export default function PortfolioItem(props) {
     return (
         <Wrapper>
-            <Img src={`http://54.180.122.126:5555/file/portfolio/image/${props.img}`}></Img>
+            <Img src={`https://54.180.122.126:5555/file/portfolio/image/${props.img}`}></Img>
             <Kind>{props.field}</Kind>
             <Top>
             <Title>{props.title}</Title>

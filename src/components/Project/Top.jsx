@@ -11,14 +11,10 @@ width:100%;
 `
 const Img = styled.img `
 width:1341px;
-margin: 0 auto;
 margin-top:30px;
 margin-bottom:25px;
 `
 const All = styled.div `
-width:100%;
-align-items:center;
-justify-content:center;
 display:flex;
 `
 const IngList = styled.div `
@@ -87,13 +83,17 @@ const Search = styled.input `
     margin:auto 0px;
     margin-right:55px;
 `
+const Center=styled.div`
+display:flex;
+justify-content:center;
+`
 export default function Top(props) {
     return (
         <Wrapper>
             <Banner/>
-            <All>
-                <Img src={topbar}></Img>
-            </All>
+            <Center>
+                <Img src={topbar}></Img></Center>
+
             <IngList>
                 <Ment>
                     <Title >프로젝트 진행 리스트</Title>

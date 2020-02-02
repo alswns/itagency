@@ -77,14 +77,12 @@ export default function PortfolioItem(props) {
 
       <Wrapper onClick={()=>setOn(true)}>
         
-      
-          <Img src={`http://54.180.122.126:5555/file/portfolio/image/${props.src}`}/>
+          <Img src={`https://54.180.122.126:5555/file/portfolio/image/${props.src}`}/>
           <Container>
                 <Title>{props.title}</Title>
                 <Kind>{props.kind}</Kind>
             </Container>
             <Container>
-            {/* props.text|| */}
                 <Text>
                   {(props.text||[]).map(res=>{
                     return<>

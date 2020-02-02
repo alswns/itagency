@@ -63,16 +63,19 @@ const Sub=styled.div`
 `
 const Wrap=styled.div`
 display:flex;
-margin:0 auto;
 `
 const Wrapper=styled.div`
 margin-bottom: 161px;
-`
-const Wraps=styled.div`
-margin: 0 auto;
 display:flex;
 flex-direction:column;
 justify-content:center;
+align-items:center;
+`
+const Wraps=styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
 `
 export default function Kategorie() {

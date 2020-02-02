@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import api from '../apis/BaseUrl'
 import styled from 'styled-components'
-import Client from '../components/Mypage/Client'
-import Frame from '../components/Mypage/Frame'
-import Preview from '../components/Mypage/Preview'
-import Change from '../components/Mypage/Change'
+import Client from '../components/Mypage/partner/Client'
+import Frame from '../components/Mypage/partner/Frame'
+import Preview from '../components/Mypage/partner/Preview'
+import Change from '../components/Mypage/partner/Change'
 import Last from '../components/main/Last'
-import { returnName, checkPw_edit } from '../apis/CheckForm'
-import EditPorfolio from '../components/Mypage/EditPorfolio'
+import { returnName, returnLocation } from '../apis/CheckForm'
+import EditPorfolio from '../components/Mypage/partner/EditPorfolio'
 const Banner = styled.div`
 height:85px;
 `
@@ -60,7 +60,7 @@ export default class PartnerPage extends Component {
             data: '',
             phone: '',
             myproject: false,
-            Turn: 3,
+            Turn: 2,
             stack: 0,
             tech_stack: [],
             reload: false,
@@ -82,7 +82,9 @@ export default class PartnerPage extends Component {
             contract:0,
             portfolioArray:[],
             max:0,
-            reload:false
+            reload:false,
+            field:'',
+            introduce:''
         }
     }
     reload=()=>{
@@ -100,6 +102,8 @@ export default class PartnerPage extends Component {
                 console.dir(err)
                 this.props.setUser('guest')
             })
+
+           
     }
     getPotfolio=()=>{
         api.get (`/partner/portfolio/${this.state.auth}`).then(res=>{
@@ -127,7 +131,10 @@ export default class PartnerPage extends Component {
                 career: res.data.career,
                 award: res.data.award,
                 phone: res.data.phone,
-                imgurl: `http://54.180.122.126:5555/file/profile/image/${res.data.profile_image}`
+                imgurl: `https://54.180.122.126:5555/file/profile/image/${res.data.profile_image}`,
+                location:res.data.location,
+                introduce:res.data.introduce,
+                field:res.data.field
             })
         }).catch(err => {
                 console.dir(err)
@@ -137,6 +144,8 @@ export default class PartnerPage extends Component {
         this.setState({ phone: e.target.value })
     }
     componentDidUpdate() {
+        
+        
 
         const going = document.getElementsByClassName('going')
         for (let i of going) {
@@ -154,9 +163,23 @@ export default class PartnerPage extends Component {
             stack[this.state.stack].style.color = '#ef4f80'
             stack[this.state.stack].style.fontWeight = '600'
         }
+
+        let location = document.getElementsByClassName('시')
+        let field=document.getElementsByClassName('field')[0]
+        let introduce = document.getElementsByClassName('introduce')[0]
+        
+        console.log(location)
+        console.log()
+        field.value=this.state.field
+        introduce.value=this.state.introduce
+        location[0].value=returnLocation(this.state.location)[0]-1
+        location[1].options[0]=new Option(returnLocation(this.state.location)[1],0)
+        
+
         }
 
     }
+
     setTurn = (int) => {
         console.log(int)
         this.setState({ Turn: int })
@@ -166,6 +189,7 @@ export default class PartnerPage extends Component {
         console.log(int)
         this.setState({ stack: int })
     }
+
     addTech_stack = (event) => {
         const value = event.target.parentNode.children[1].value
         console.dir(value)
@@ -177,10 +201,12 @@ export default class PartnerPage extends Component {
             this.setState({ reload: !this.state.reload })
         }
     }
+
     delTech_stack = (str) => {
         this.state.tech_stack.splice(this.state.tech_stack.indexOf(str), 1)
         this.setState({ reload: !this.state.reload })
     }
+
     Infor_Edit = () => {
         api.post('/partner/mypage/techstack', { tech_stack: this.state.tech_stack }).then(res => {
             console.log(res)
@@ -194,6 +220,7 @@ export default class PartnerPage extends Component {
         api.post('/partner/mypage/career', { career: this.state.career }).then(res => alert('등록성공'))
             .catch(err => console.dir(err))
     }
+
     plusCareer = (event) => {
         let data = {}
         console.log(event.target.parentNode.parentNode.children)
@@ -347,8 +374,9 @@ export default class PartnerPage extends Component {
                 <Banner></Banner>
                 <div style={{ display: 'flex' }}>
                     {this.state.Turn == 0 && <Frame data={this.state.data} />}
+                    {console.log(this.state)}
                     {this.state.Turn == 1 && <EditPorfolio reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} name={this.state.name}/>}
-                    {this.state.Turn == 2 && <Change setPhone={this.setPhone} src={this.state.imgurl} getImgData={this.getImgData} getData={this.getData} phone={this.state.phone} delAward={this.delAward} plusAward={this.plusAward} submitAward={this.submitAward} award={this.state.award} delCarrer={this.delCarrer} plusCareer={this.plusCareer} submitCareer={this.submitCareer} career={this.state.data.career} Infor_Edit={this.Infor_Edit} delTech_stack={this.delTech_stack} addTech_stack={this.addTech_stack} tech_stack={this.state.tech_stack} data={this.state.data} stack={this.state.stack} setStack={this.setStack} name={this.state.name}></Change>}
+                    {this.state.Turn == 2 && <Change introduce={this.state.introduce} field={this.state.field} location={this.state.location} setPhone={this.setPhone} src={this.state.imgurl} getImgData={this.getImgData} getData={this.getData} phone={this.state.phone} delAward={this.delAward} plusAward={this.plusAward} submitAward={this.submitAward} award={this.state.award} delCarrer={this.delCarrer} plusCareer={this.plusCareer} submitCareer={this.submitCareer} career={this.state.data.career} Infor_Edit={this.Infor_Edit} delTech_stack={this.delTech_stack} addTech_stack={this.addTech_stack} tech_stack={this.state.tech_stack} data={this.state.data} stack={this.state.stack} setStack={this.setStack} name={this.state.name}></Change>}
                     {this.state.Turn == 3 && <Preview data={this.state.data} award={this.state.award} career={this.state.data.career} reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} data={this.state.data} name={this.state.name}></Preview>}
 
                     <Client contract={this.state.contract}num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.imgurl} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />

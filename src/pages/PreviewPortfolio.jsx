@@ -174,7 +174,7 @@ export default class PreviewPortfolio extends Component {
             <Wrapper>
                 <Center>
                 <Infor>
-                    <My src={`http://54.180.122.126:5555/file/profile/image/${this.state.profile_image}`}/>
+                    <My src={`https://54.180.122.126:5555/file/profile/image/${this.state.profile_image}`}/>
                     <He>
                     <Title>{this.state.title}</Title>
                     <Infor><Client>{this.state.email}</Client>클라이언트님</Infor>
@@ -200,7 +200,7 @@ export default class PreviewPortfolio extends Component {
                     
                     </ButtonContainer>
                 </Ment>
-                <Img src={`http://54.180.122.126:5555/file/portfolio/image/${this.state.img}`}>
+                <Img src={`https://54.180.122.126:5555/file/portfolio/image/${this.state.img}`}>
                 </Img>
 
             </Wrapper>

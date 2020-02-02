@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 const Wrapper=styled.div`
 position:fixed;
-width: 1920px;
+width: 100%;
   height: 242px;
   background-color: #f3f3f3;
   margin-top:85px;
   z-index:999;
   display:flex;
+  justify-content:center;
+  align-items:center;
 `
 const Title=styled.span`
   font-family: 'Noto Sans KR';
@@ -42,7 +44,6 @@ const Wrap=styled.div`
 width:700px;
 display:flex;
 justify-content:space-between;
-margin:0 auto;
 margin-top:40px;
 `
 export default function Service() {
