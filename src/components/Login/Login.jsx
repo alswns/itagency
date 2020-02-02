@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import '../../input.css'
 import back from '../../assets/imgs/arrow_back.svg'
-import { Facebook } from '../../apis/Oauth'
+import { Facebook, Naver } from '../../apis/Oauth'
 
 
 const Title = styled.div`
@@ -348,8 +348,8 @@ export default function Login(props) {
         <MidlLine></MidlLine>
         <OauthContainer>
           <Oauth back='#3b5998' onClick={Facebook}><OauthText>Facebook으로 로그인</OauthText></Oauth>
-          <Oauth back='#f44336'><OauthText>Google으로 로그인</OauthText></Oauth>
-          <Oauth back='#2db400'><OauthText>NAVER으로 로그인</OauthText></Oauth>
+          <Oauth back='#f44336' ><OauthText>Google으로 로그인</OauthText></Oauth>
+          <Oauth back='#2db400' onClick={Naver}><OauthText>NAVER으로 로그인</OauthText></Oauth>
         </OauthContainer>
 
       </Aswemble>
