@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Requests from '../../apis/Request';
+import api from '../../apis/BaseUrl';
 
 export default class Google extends Component {
     componentDidMount(){
