@@ -31,6 +31,7 @@ font-family: 'Noto Sans KR',sans-serif;
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+  margin-top:10px;
 `
 const Line=styled.hr`
 margin-top:8px;

@@ -203,10 +203,16 @@ export default function ProjectItem(props) {
   }
   else if(props.progress==1){
     button=<>
+    <Texts left='120px'>마감</Texts>
+    <Img src={progress0} alt=""/></>
+
+  }
+  else if(props.progress==2){
+    button=<>
     <Texts left='106px'>진행 중</Texts>
      <Img src={progress1} alt=""/></>
   }
-  else if(props.progress==2){
+  else if(props.progress==3){
     button=<> 
     <Texts left='189px'>완료</Texts>
     <Img src={progress2} alt=""/></>

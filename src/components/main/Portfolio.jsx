@@ -81,7 +81,7 @@ const Portfolio = styled.img`
 
 `
 
-const Imgs=styled.img`
+const Imgs = styled.img`
 margin-left:71.3px;
 transform:rotate(0deg);
 -moz-transform: scaleX(-1); 
@@ -89,48 +89,45 @@ transform:rotate(0deg);
 -webkit-transform: scaleX(-1); 
      transform: scaleX(-1);   
 `
-const Container =styled.div`
+const Container = styled.div`
 display:flex;
 justify-content:center;
 `
-const Div=styled.div`
+const Div = styled.div`
 display:flex;
 flex-direction:column;
 justify-content:center;
 `
 
-export default function Portfolios() {
-    return (
-            <Wrapper>
-                <Title>포트폴리오</Title>
-                <Img src={bar}></Img>
-                <Sub>아이티에이전시에서 완성한 프로젝트입니다.</Sub>
-                <Regi>포트폴리오 보러가기</Regi>
-                <Container>
-                    <Div>
-                <img src={arrow} alt="" style={{marginRight:'71.6px'}} />
-                </Div>
+export default function Portfolios(props) {
+  return (
+    <Wrapper>
+      <Title>포트폴리오</Title>
+      <Img src={bar}></Img>
+      <Sub>아이티에이전시에서 완성한 프로젝트입니다.</Sub>
+      <Regi onClick={()=>window.location.href='/portfolio'}>포트폴리오 보러가기</Regi>
+      <Container>
+        <Div>
+          <img src={arrow} alt="" style={{ marginRight: '71.6px' }} />
+        </Div>
 
-                <ImgContainers>
+        <ImgContainers>
+          {props.portfolio.map(re => {
+            return <ImgContainer> {re.map(res => {
+              console.log(res)
+              return <Portfolio src={`https://54.180.122.126:5555/file/portfolio/image/${res.img}`}></Portfolio>
+            }
+            )}
+            </ImgContainer>
+          })}
+         
 
-                    <ImgContainer>
-                        <Portfolio src={one}></Portfolio>
-                        <Portfolio src={two}></Portfolio>
-                        <Portfolio src={three}></Portfolio>
-                    </ImgContainer>
+        </ImgContainers>
+        <Div>
+          <Imgs src={arrow} alt="" />
+        </Div>
+      </Container>
 
-                    <ImgContainer>
-                        <Portfolio src={four}></Portfolio>
-                        <Portfolio src={five}></Portfolio>
-                        <Portfolio src={six}></Portfolio>
-                    </ImgContainer>
-
-                </ImgContainers>
-                <Div>
-                    <Imgs src={arrow} alt="" />
-                    </Div>
-                    </Container>
-                    
-            </Wrapper>
-    )
+    </Wrapper>
+  )
 }

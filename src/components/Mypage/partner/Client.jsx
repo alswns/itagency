@@ -183,7 +183,6 @@ font-family: NIXGONB-Vb;
 const Container=styled.div`
 margin-top:10px;
  width: 100%;
-  height: 185px;
   border-radius: 10px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
@@ -283,6 +282,8 @@ export default function Client(props) {
         <Items className='going' onClick={()=>props.setTurn(1)}>포트폴리오</Items>
         <Items className='going' onClick={()=>props.setTurn(2)}>프로필 수정</Items>
         <Items className='going' onClick={()=>props.setTurn(3)}>내 프로필 미리보기</Items>
+        {props.state==201&&<Items className='going' onClick={()=>props.setTurn(4)}>비밀번호 수정</Items>}
+        
       </Container>
 
 

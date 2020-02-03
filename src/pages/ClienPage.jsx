@@ -6,7 +6,7 @@ import Frame from '../components/Mypage/clients/Frame'
 import Preview from '../components/Mypage/clients/Preview'
 import Change from '../components/Mypage/clients/Change'
 import Last from '../components/main/Last'
-
+import Set from '../components/Mypage/clients/set'
 import { returnName, checkPw_edit, returnLocation } from '../apis/CheckForm'
 const Banner = styled.div`
 height:85px;
@@ -71,15 +71,14 @@ export default class ClienPage extends Component {
             
 
             profile: {
-                c_password:'',
-                password: '',
                 phone: '',
                 location: '',
                 introduce: ''
             },
             imgurl:'',
             profile_image:'',
-            reload:false
+            reload:false,
+            state:0
         }
     }
     reload=()=>{
@@ -87,6 +86,10 @@ export default class ClienPage extends Component {
     }
     // /file/profile/image/
     componentDidMount() {
+        api.post('/token/check').then(res=>{
+            console.log(res)
+            this.setState({state:res.status})
+        }).catch(err=>console.dir(err))
         api.get('/client/mypage/project').then(res=>{
             console.log(res)
             this.setState({
@@ -187,7 +190,6 @@ export default class ClienPage extends Component {
     }
 
     getData = (event) => {
-        let pw = ''
         let item = event.target.parentNode.parentNode.children
         for (let i of item) {
             
@@ -204,9 +206,7 @@ export default class ClienPage extends Component {
                     }
                 }
             }
-            else if (i.children[0].id == 'repassword') {
-                pw = i.children[1].value
-            }
+            
             else if (i.children[0].id) {
                 if (i.children[1].value) {
                     this.state.profile[i.children[0].id] = i.children[1].value
@@ -217,14 +217,8 @@ export default class ClienPage extends Component {
         
     }
         this.state.profile['phone'] = this.state.phone
-        if (this.state.profile['password'] == pw) {
-            this.EditProfile()
-
-        }
-        else {
-            alert('비밀번호가 일치하지않습니다')
-        }
-        console.log(this.state.profile)
+        
+        this.EditProfile()
     }
     getImgData = (event) => {
 
@@ -250,8 +244,8 @@ export default class ClienPage extends Component {
                     {this.state.Turn == 0 && <Frame success_project={this.state.success_project} progress_project={this.state.progress_project} consulting={this.state.consulting} apply_project={this.state.apply_project}  data={this.state.data} />}
                     {this.state.Turn == 1 && <Change setPhone={this.setPhone} src={this.state.profile_image} getImgData={this.getImgData} getData={this.getData} phone={this.state.phone}  Infor_Edit={this.Infor_Edit} delTech_stack={this.delTech_stack} addTech_stack={this.addTech_stack} tech_stack={this.state.tech_stack} data={this.state.data} stack={this.state.stack} setStack={this.setStack} name={this.state.name}></Change>}
                     {this.state.Turn == 2 && <Preview success_project={this.state.success_project} progress_project={this.state.progress_project} apply_project={this.state.apply_project} data={this.state.data} award={this.state.award} career={this.state.data.career} reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} data={this.state.data} name={this.state.name}></Preview>}
-
-                    <Client  contract={this.state.contract}num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.profile_image} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />
+                        {this.state.Turn == 3 && <Set/>}
+                    <Client state={this.state.state}  contract={this.state.contract}num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.profile_image} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />
                 </div>
                 <Last />
             </Wrapper>

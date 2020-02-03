@@ -201,20 +201,7 @@ export default function  InitInfor(props) {
             <Pink>{props.data.name}</Pink>
             </FlexDiv>
 
-            <FlexDiv>
-            <Title id='c_password'>현재 비밀번호</Title>
-            <Input ></Input>
-            </FlexDiv>
-
-            <FlexDiv>
-            <Title id='password'>변경할 비밀번호</Title>
-            <Input></Input>
-            </FlexDiv>
-
-            <FlexDiv>
-            <Title id='repassword'>비밀번호 확인</Title>
-            <Input></Input>
-            </FlexDiv>
+           
 
             <FlexDiv>
             <Title id='phone' >연락처</Title>

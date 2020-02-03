@@ -37,11 +37,25 @@ export default class MainPage extends Component {
         partners:'',
         conclusion:0,
         average:0,
+        portfolio:[]
     }
     componentDidMount(){
+        Array.prototype.division = function (n) {
+            var arr = this;
+            var len = arr.length;
+            var cnt = Math.floor(len / n);
+            var tmp = [];
+    
+            for (var i = 0; i <= cnt; i++) {
+                tmp.push(arr.splice(0, n));
+            }
+    
+            return tmp;
+    }
         // /client/account 우저정보 받기
         api.get('/info/account').then(res=>{
             this.props.setUser(res.data.name)
+
         })
         .catch(err=>{
             this.props.setUser('guest')
@@ -65,6 +79,9 @@ export default class MainPage extends Component {
         })
         api.get('/info/partners').then(
             res=>this.setState({partners:res.data.partners}))
+            api.get('/info/portfolio/main').then(res=>{
+                this.setState({portfolio:res.data.info.division(3)})
+            })
     }
     
 componentDidUpdate(){
@@ -99,7 +116,7 @@ setService=()=>{
             <Progess/>
             <Example/>
             <ThirdFooter/>
-            <Portfolio/>
+            <Portfolio portfolio={this.state.portfolio}/>
             <Review conclusion={this.state.conclusion} average={this.state.average}/>
             <Last/>
             </>

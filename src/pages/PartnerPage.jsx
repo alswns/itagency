@@ -5,6 +5,7 @@ import Client from '../components/Mypage/partner/Client'
 import Frame from '../components/Mypage/partner/Frame'
 import Preview from '../components/Mypage/partner/Preview'
 import Change from '../components/Mypage/partner/Change'
+import Set from '../components/Mypage/partner/set'
 import Last from '../components/main/Last'
 import { returnName, returnLocation } from '../apis/CheckForm'
 import EditPorfolio from '../components/Mypage/partner/EditPorfolio'
@@ -84,14 +85,18 @@ export default class PartnerPage extends Component {
             max:0,
             reload:false,
             field:'',
-            introduce:''
+            introduce:'',
+            state:0
         }
     }
     reload=()=>{
         this.setState({reload:!this.state.reload})
     }
     componentDidMount() {
-
+        api.post('/token/check').then(res=>{
+            console.log(res)
+            this.setState({state:res.status})
+        }).catch(err=>console.dir(err))
         api.get('/info/account').then(res => {
             this.setState({ name: res.data.name, auth: res.data.auth },()=>{ this.getInformation();
                 this.getPotfolio();
@@ -163,18 +168,18 @@ export default class PartnerPage extends Component {
             }
             stack[this.state.stack].style.color = '#ef4f80'
             stack[this.state.stack].style.fontWeight = '600'
+           
+           
+                let location = document.getElementsByClassName('시')
+                let introduce = document.getElementsByClassName('introduce')[0]
+                introduce.value=(this.state.introduce||'')
+                location[0].value=returnLocation(this.state.location)[0]
+                location[1].options[0]=returnLocation(this.state.location)[1]
+                
+                
         }
 
-        let location = document.getElementsByClassName('시')
-        let field=document.getElementsByClassName('field')[0]
-        let introduce = document.getElementsByClassName('introduce')[0]
-        
-        console.log(location)
-        console.log()
-        field.value=this.state.field
-        introduce.value=this.state.introduce
-        location[0].value=returnLocation(this.state.location)[0]-1
-        location[1].options[0]=new Option(returnLocation(this.state.location)[1],0)
+       
         
 
         }
@@ -379,8 +384,9 @@ export default class PartnerPage extends Component {
                     {this.state.Turn == 1 && <EditPorfolio reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} name={this.state.name}/>}
                     {this.state.Turn == 2 && <Change introduce={this.state.introduce} field={this.state.field} location={this.state.location} setPhone={this.setPhone} src={this.state.imgurl} getImgData={this.getImgData} getData={this.getData} phone={this.state.phone} delAward={this.delAward} plusAward={this.plusAward} submitAward={this.submitAward} award={this.state.award} delCarrer={this.delCarrer} plusCareer={this.plusCareer} submitCareer={this.submitCareer} career={this.state.data.career} Infor_Edit={this.Infor_Edit} delTech_stack={this.delTech_stack} addTech_stack={this.addTech_stack} tech_stack={this.state.tech_stack} data={this.state.data} stack={this.state.stack} setStack={this.setStack} name={this.state.name}></Change>}
                     {this.state.Turn == 3 && <Preview data={this.state.data} award={this.state.award} career={this.state.data.career} reload={this.reload}max={this.state.max} portfolioArray={this.state.portfolioArray} data={this.state.data} name={this.state.name}></Preview>}
+                    {this.state.Turn == 4 && <Set/>}
 
-                    <Client contract={this.state.contract}num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.imgurl} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />
+                    <Client state={this.state.state} contract={this.state.contract}num_of_progress={this.state.num_of_progress} num_of_success={this.state.num_of_success} apply={this.state.apply} all_cost={this.state.all_cost} src={this.state.imgurl} setTurn={this.setTurn} data={this.state.data} location={this.state.location} auth={this.state.email} name={this.state.name} />
                 </div>
                 <Last />
             </Wrapper>

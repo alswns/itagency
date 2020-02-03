@@ -4,10 +4,26 @@ const Wrapper=styled.div`
 
 width: 238px;
   height: 238px;
-  
+  cursor:pointer;
   border-radius: 10px;
   background:url(${props=>props.background});
   position:relative;
+  &:hover{
+    #Background{
+
+    opacity:1;
+    }
+  }
+`
+const Background=styled.div`
+position:absolute;
+width: 238px;
+  height: 238px;
+  border-radius: 10px;
+  background:#fefefe;
+  transition:0.2s;
+  opacity:0;
+
 `
 const Img=styled.div`
 position:absolute;
@@ -48,7 +64,8 @@ width:100%;
 `
 export default function KategoriItem(props) {
     return (
-        <Wrapper background={props.background}>
+        <Wrapper onClick={()=>window.location.href='/project'} background={props.background}>
+          <Background id='Background'></Background>
             <Img></Img>
             <Wrap>
             <Logo src={props.img}></Logo>

@@ -335,7 +335,7 @@ export default function Regist(props) {
             </Container>
             <Container style={{justifyContent:'center'}}>
             <input type='checkbox' id='check' className='red' onClick={(e)=>testCheck(e,props.checkChange)}></input>
-                    <Remember for='check'><Pink>이용약관</Pink> 및 <Pink>개인정보취급방침</Pink>에 동의 합니다.</Remember>
+                    <Remember for='check'><Pink onClick={()=>window.location.href='/coffin'}>이용약관</Pink> 및 <Pink onClick={()=>window.location.href='/info'}>개인정보취급방침</Pink>에 동의 합니다.</Remember>
                     </Container>
                     <Container>
                     <Sub></Sub>

@@ -21,6 +21,8 @@ import Naver from './pages/Oauth/Naver';
 import Google from './pages/Oauth/Google';
 import Facebook from './pages/Oauth/Facebook';
 import './input.css'
+import InformationPage from './pages/InformationPage';
+import CoffinPage from './pages/CoffinPage';
 
 const GlobalStyle = createGlobalStyle `
   *{
@@ -115,6 +117,16 @@ function App() {
 
                 <Route path='/facebook' exact='exact'>
                     <Facebook setUser={setUser}/>
+                </Route>
+                <Route path='/info' exact='exact'>
+                <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <InformationPage setUser={setUser}/>
+                    
+                </Route>
+                <Route path='/coffin' exact='exact'>
+                <Banner user={user} color='white' back='#212121' img={Logo_white}/>
+                    <CoffinPage setUser={setUser}/>
+                    
                 </Route>
             </Router>
         </div>
