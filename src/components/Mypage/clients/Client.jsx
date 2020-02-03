@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import logo from '../../../assets/imgs/logo.png'
 const Wrapper = styled.div`
 width: 300px;
 margin-left:15px;
@@ -219,7 +219,7 @@ export default function Client(props) {
       {console.log(props.src)}
       <Top> <span>{window.localStorage.getItem('what')=='client'?'클라이언트':'파트너'}</span> <HowUse>{window.localStorage.getItem('what')=='client'?'클라이언트':'파트너'} 이용방법 > </HowUse>  </Top>
       <Information>
-        <Profile src={`${props.src}`}></Profile>
+        <Profile src={props.src||logo}></Profile>
         <Wrap>
           <Name>{props.name}</Name>
           <Kind>{props.auth}</Kind>

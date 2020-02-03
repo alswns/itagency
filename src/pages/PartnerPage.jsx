@@ -124,6 +124,8 @@ export default class PartnerPage extends Component {
     getInformation=()=> {
         api.get(`/info/partner/profile/${this.state.auth}`).then(res => {
             console.log(res.data)
+            const url=res.data.profile_image==undefined?false:`https://54.180.122.126:5555/file/profile/image/${res.data.profile_image}`
+            console.log(url)
             this.setState({
                 contract:res.data.contract,
                 apply:res.data.apply,
@@ -137,7 +139,7 @@ export default class PartnerPage extends Component {
                 career: res.data.career,
                 award: res.data.award,
                 phone: res.data.phone,
-                imgurl: res.data.profile_image==undefined?'../assets/imgs/logo.png':`https://54.180.122.126:5555/file/profile/image/${res.data.profile_image}`,
+                imgurl: url,
                 location:res.data.location,
                 introduce:res.data.introduce,
                 field:res.data.field
