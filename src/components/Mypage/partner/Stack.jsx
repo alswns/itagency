@@ -5,11 +5,12 @@ const Wrapper=styled.div`
 width:100%;
 margin-top:10px;
 margin-bottom:20px;
-border: solid 1px #e0e0e0;
 
 `
 const High=styled.div`
- 
+ width:100%;
+ border: solid 1px #e0e0e0;
+
   height: 365px;
   background-color: #ffffff;
   font-family: 'Noto Sans KR';
