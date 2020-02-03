@@ -5,7 +5,7 @@ import api from '../../apis/BaseUrl';
 export default class Facebook extends Component {
     componentDidMount(){
         const request = new Requests();  
-
+        console.log(request.getParameter('#access_token'))
         if (request.getParameter('#access_token')==''){
             alert('페이스북 로그인 실패')
             window.location.href='/'

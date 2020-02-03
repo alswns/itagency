@@ -19,7 +19,7 @@ const Kind=styled.span`
 position:absolute;
 top:15px;
 left:20px;
-font-family:  'Noto Sans KR';
+font-family:  'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -32,7 +32,7 @@ const Title=styled.span`
 position:absolute;
 top: 39px;
 left:20px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 24px;
   font-weight: 600;
   font-stretch: normal;
@@ -42,7 +42,7 @@ font-family: 'Noto Sans KR';
   color: #ef4f80;
 `
 const Status=styled.span`
-  font-family:  'Noto Sans KR';
+  font-family:  'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -71,7 +71,7 @@ display:flex;
 width: 831px;
 word-break:break-all;
 overflow:hidden;
-  font-family:  'Noto Sans KR';
+  font-family:  'Noto Sans KR',sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -85,7 +85,7 @@ const Dday=styled.span`
 top:15px;
 left:814px;
 position:absolute;
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
   font-size: 16px;
   font-weight: 600;
   font-stretch: normal;
@@ -99,7 +99,7 @@ overflow:hidden;
 padding:15px 20px;
  border: solid 1px #e0e0e0;
   background-color: #ffffff;
-  font-family:  'Noto Sans KR';
+  font-family:  'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight:600;
   font-stretch: normal;
@@ -112,7 +112,7 @@ padding:15px 20px;
   left:${props=>props.left};
 `
 const Name=styled.span`
-  font-family:  'Noto Sans KR';
+  font-family:  'Noto Sans KR',sans-serif;
   font-size: 16px;
   font-stretch: normal;
   font-style: normal;
@@ -140,7 +140,7 @@ left:893px;
 `
 const SeContainer=styled.span`
 padding:5px 10px;
-font-family:  'Noto Sans KR';
+font-family:  'Noto Sans KR',sans-serif;
   font-size: 14px;
   font-weight: 600;
   font-stretch: normal;
@@ -173,7 +173,7 @@ width: 54px;
   letter-spacing: -0.24px;
   text-align: left;
   color: #ffffff;
-  font-family:'Noto Sans KR';
+  font-family:'Noto Sans KR',sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -190,7 +190,7 @@ width: 54px;
   letter-spacing: -0.24px;
   text-align: left;
   color: #ffffff;
-  font-family:'Noto Sans KR';
+  font-family:'Noto Sans KR',sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;

@@ -6,7 +6,7 @@ import money from '../../assets/imgs/money.png'
 import hand from '../../assets/imgs/Handshake.svg'
 const Text =styled.div`
 margin-top:205px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 35px;
   font-weight: normal;
   font-stretch: normal;

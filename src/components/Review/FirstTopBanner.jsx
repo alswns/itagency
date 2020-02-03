@@ -30,7 +30,7 @@ height:85px;
 const Ment = styled.span`
 width:430px;
 display:flex;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 50px;
   font-weight: normal;
   font-stretch: normal;
@@ -43,11 +43,11 @@ display:flex;
 `
 const Bold = styled.span`
 font-size:69px;
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
 `
 const Small = styled.span`
 @font-face { font-family: 'NIXGONL-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-font-family:NIXGONL-Vb;
+font-family:NIXGONL-Vb,sans-serif;
 `
 const Margin=styled.div`
 display:flex;
@@ -58,7 +58,7 @@ width:200px;
 const Title = styled.div`
 
  margin-top:250px;
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 35px;
   font-weight: normal;
   font-stretch: normal;

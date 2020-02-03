@@ -13,7 +13,7 @@ width:100%;
   background-color: #ffffff;
 `
 const Ment=styled.div`
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -82,7 +82,7 @@ const Input=styled.input`
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -98,7 +98,7 @@ const Kind=styled.select`
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: #ffffff;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -109,7 +109,7 @@ const Kind=styled.select`
   color: #6f6f6f;
 `
 const Label=styled.label`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 13px;
   margin-top:3px;
   font-weight: normal;

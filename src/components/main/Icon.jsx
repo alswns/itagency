@@ -22,7 +22,7 @@ const Main=styled.span`
 `
 const Sub=styled.span`
 margin-top:10px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
 
   font-size: 15px;
   font-weight: normal;

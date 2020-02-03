@@ -11,7 +11,7 @@ width: 860px;
 const Title = styled.div`
 padding:5px;
 padding-left:10px;
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -26,7 +26,7 @@ padding-left:10px;
 const Sub = styled.div`
 padding:5px;
 padding-left:10px;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -41,7 +41,7 @@ const Second = styled.div`
  width: 860px;
   height: 50px;
   background-color: #6f6f6f;
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;

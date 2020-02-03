@@ -19,7 +19,7 @@ font-family: 'Noto sans Kr';
 `
 const Sub=styled.div`
 margin-top:1.4%;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 19px;
   font-weight: 600;
   font-stretch: normal;
@@ -33,7 +33,7 @@ font-family: 'Noto Sans KR';
   
 `
 const Regi = styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

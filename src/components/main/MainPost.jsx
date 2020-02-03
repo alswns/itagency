@@ -52,7 +52,7 @@ const Submit = styled.div`
 text-decoration:none;
 display:flex;
 
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 14px;
   font-weight: 600;
     border-radius:7px;

@@ -7,7 +7,7 @@ import { Facebook, Naver } from '../../apis/Oauth'
 
 const Title = styled.div`
 width:100%;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;
@@ -19,7 +19,7 @@ width:100%;
 `
 const Text = styled.div`
 margin-top:10px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -35,7 +35,7 @@ margin : 0 auto;
 const It = styled.div`
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 margin-top:15px;
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 40px;
   font-weight: normal;
   font-stretch: normal;
@@ -46,7 +46,7 @@ margin-top:15px;
   color: #212121;
 `
 const Common = styled.div`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: 600;
   font-stretch: normal;
@@ -57,7 +57,7 @@ const Common = styled.div`
   color: #212121;
 `
 const Commons = styled.div`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: 600;
   font-stretch: normal;
@@ -121,7 +121,7 @@ const Input = styled.input`
   border-radius: 5px;
   border: solid 1px #6f6f6f;
   background-color: white;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -149,7 +149,7 @@ const Container = styled.div`
 `
 const Remember = styled.label`
 margin-left:10px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -214,7 +214,7 @@ justify-content:center;
 display:flex;
 height:100%;
 flex-direction:column;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -260,7 +260,7 @@ display:flex;
 top:18px;
 left:15px;
 position:absolute;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;

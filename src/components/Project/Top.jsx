@@ -28,7 +28,7 @@ height: 90px;
 `
 const Title = styled.span `
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
- font-family: NIXGONB-Vb;
+ font-family: NIXGONB-Vb,sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -41,7 +41,7 @@ const Title = styled.span `
 `
 const Sub = styled.span `
 
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -69,7 +69,7 @@ const Search = styled.input `
     border-radius: 5px;
     border: solid 1px #6f6f6f;
     background-color: #ffffff;
-    font-family: 'Noto Sans KR';
+    font-family: 'Noto Sans KR',sans-serif;
     font-size: 13px;
     font-weight: normal;
     font-stretch: normal;

@@ -16,7 +16,7 @@ position:absolute;
 left:34px;
 top:87px;
 background-color: #ffffff;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -39,7 +39,7 @@ top: 0; bottom:0; margin-top:auto; margin-bottom:auto;
 const Text=styled.div`
 position:absolute;
 top:116px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   text-align: center;

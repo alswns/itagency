@@ -11,7 +11,7 @@ width:100%;
 height: 53px;
 border: solid 1px #e0e0e0;
 background-color: #ffffff;
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -40,7 +40,7 @@ width: 140px;
   border: solid 2.5px #e0e0e0;
   border-radius:100%;
   background-color: #ffffff;
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -54,7 +54,7 @@ justify-content:center;
 align-items:center;
 `
 const Name=styled.span`
- font-family: NIXGONB-Vb;
+ font-family: NIXGONB-Vb,sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -67,7 +67,7 @@ const Name=styled.span`
 const Cl=styled.span`
     display:flex;
     height: 14px;
-    font-family: NIXGONB-Vb;
+    font-family: NIXGONB-Vb,sans-serif;
     font-size: 13px;
     font-weight: normal;
     font-stretch: normal;
@@ -79,7 +79,7 @@ const Cl=styled.span`
   
 `
 const Pink=styled.span`
- font-family: NIXGONB-Vb;
+ font-family: NIXGONB-Vb,sans-serif;
   color: #ef4f80;
 `
 const Projects=styled.div`
@@ -89,7 +89,7 @@ const Projects=styled.div`
 
 `
 const Pro=styled.span`
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -101,7 +101,7 @@ const Pro=styled.span`
 
 `
 const Gun=styled.span`
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -118,7 +118,7 @@ align-items:center;
 width:100%;
 height: 50px;
   background-color: ${props=>props.backgroundColor};
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;

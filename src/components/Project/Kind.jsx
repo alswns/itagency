@@ -23,7 +23,7 @@ text-align:center;
 justify-content:center;
 align-items:center;
 display:flex;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;

@@ -16,7 +16,7 @@ height:5px;
 margin-bottom:15px;
 `
 const Sub = styled.div`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
@@ -29,7 +29,7 @@ const Sub = styled.div`
 const Title = styled.div`
 
  margin-top:250px;
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 35px;
   font-weight: 900;
   font-stretch: normal;
@@ -54,7 +54,7 @@ const CircleIcone=styled.img`
 
 `
 const CircleText=styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
@@ -66,7 +66,7 @@ font-family: 'Noto Sans KR';
 `
 
 const CircleSub=styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

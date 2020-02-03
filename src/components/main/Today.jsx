@@ -10,7 +10,7 @@ margin-top:31px;
 `
 const Text = styled.div`
 margin-bottom:15px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
 font-weight:bold;
 font-size: 25px;
   font-weight: bold;
@@ -42,7 +42,7 @@ justify-content:center;
 const Su = styled.span`
 margin-top:23px;
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
- font-family: NIXGONB-Vb;
+ font-family: NIXGONB-Vb,sans-serif;
   font-size: 25px;
   font-stretch: normal;
   font-style: normal;
@@ -60,7 +60,7 @@ margin-bottom:5px;
 const Sub = styled.div`
 
 
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

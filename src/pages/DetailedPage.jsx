@@ -15,7 +15,7 @@ margin-left:2px;
 padding-left:18px;
 width:98%;
 height:110px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -32,7 +32,7 @@ cursor:pointer;
 width: 104px;
   height: 40px;
   background-color: #ef4f80;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -63,7 +63,7 @@ const Wrap = styled.div`
   position:relative;
 `
 const Titles = styled.span`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;
@@ -111,7 +111,7 @@ width: 870px;
   height: 53px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -136,7 +136,7 @@ const Progress = styled.img`
   background-color: #000000;
 `
 const Status = styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -181,7 +181,7 @@ box-sizing:border-box;
   background-color: #ffffff;
 `
 const Kind = styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -228,7 +228,7 @@ width:200px;
 const Detail = styled.div`
 width: 708px;
 word-break:break-all;
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;

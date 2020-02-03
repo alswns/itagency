@@ -19,7 +19,7 @@ const Title=styled.span`
 position:absolute;
 top:16px;
 
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: 700;
   font-stretch: normal;
@@ -34,7 +34,7 @@ position:absolute;
 top:45px;
 width: 130px;
   height: 26px;
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 13px;
   font-weight: 500;
   font-stretch: normal;

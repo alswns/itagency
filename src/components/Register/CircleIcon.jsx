@@ -26,7 +26,7 @@ position:absolute;
 width:100%;
 
 top:117px;
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;

@@ -30,7 +30,7 @@ import web from '../../assets/imgs/icons/web.png'
 const Title=styled.div`
 
  margin-top:250px;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 35px;
   font-weight: 900;
   font-stretch: normal;
@@ -50,7 +50,7 @@ height:5px;
 margin-bottom:15px;
 `
 const Sub=styled.div`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

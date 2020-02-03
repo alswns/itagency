@@ -21,7 +21,7 @@ box-sizing:border-box;
 
 width:100%;
 background-color: #212121;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -39,7 +39,7 @@ border: solid 1px #e0e0e0;
   flex-direction:column;
 `
 const Title = styled.div `
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
 font-size: 17px;
 font-weight: 600;
 font-stretch: normal;
@@ -53,7 +53,7 @@ letter-spacing: -0.3px;
   margin-left:30px;
 `
 const Label = styled.label `
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -101,7 +101,7 @@ border-radius: 5px;
   background-color: #ffffff;
   width: 200px;
   height: 35px;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -141,7 +141,7 @@ width: 40px;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family: Roboto;
+  font-family: Roboto,sans-serif;
   font-size: 12px;
   font-weight: bold;
   font-stretch: condensed;
@@ -164,7 +164,7 @@ width: 40px;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family: Roboto;
+  font-family: Roboto,sans-serif;
   font-size: 10px;
   font-weight: bold;
   font-stretch: condensed;

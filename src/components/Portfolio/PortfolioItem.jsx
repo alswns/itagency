@@ -20,7 +20,7 @@ const Kind=styled.span`
 position:absolute;
 top:210px;
 left:20px;
-    font-family: 'Noto Sans KR';
+    font-family: 'Noto Sans KR',sans-serif;
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -31,7 +31,7 @@ left:20px;
 `
 const Title=styled.span`
 
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -47,7 +47,7 @@ color:#ef4f80;
 `
 const Name=styled.span`
 
-  font-family: NIXGONB-Vb;
+  font-family: NIXGONB-Vb,sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -81,7 +81,7 @@ right:20px;
 top:270px;
 bottom:10px;
 overflow:hidden;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;

@@ -39,7 +39,7 @@ height:85px;
 const Ment = styled.span`
 width:430px;
 display:flex;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 55px;
   font-weight: normal;
   font-stretch: normal;
@@ -52,12 +52,12 @@ display:flex;
 `
 const Bold = styled.span`
 font-size:55px;
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
 `
 const Small = styled.span`
 @font-face { font-family: 'NIXGONL-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-font-family:NIXGONL-Vb;
+font-family:NIXGONL-Vb,sans-serif;
 font-size:40px;
 `
 const Margin=styled.div`
@@ -89,56 +89,9 @@ top:169px;
 left: 50%;
 transform: translateX(-50%);
 `
-const CircleIcone=styled.img`
 
-`
-const CircleText=styled.span`
-font-family: 'Noto Sans KR';
-  font-size: 15px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: center;
-  color: #6f6f6f;
-`
 
-const CircleSub=styled.span`
-font-family: 'Noto Sans KR';
-  font-size: 15px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #212121;
-`
-const Mid=styled.div`
-width:100%;
-margin:0 auto;
-position:absolute;
-top:${props=>props.top};
-text-align:center;
-`
-const Mids=styled.div`
-width:100%;
-margin:0 auto;
-position:absolute;
-top:${props=>props.top};
-text-align:center;
-height:30px;
-`
-const Bar=styled.img`
-margin: auto;
-display:flex;
-width:15px;
-height:3px;
-margin-bottom:15px;
-justify-content:center;
-flex-direction:column;
-`
+
 const Return =styled.span`
   font-family: 'Noto Sans KR';
 `

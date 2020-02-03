@@ -34,7 +34,7 @@ height:85px;
 justify-content: space-between;
 & a{
     width:120px;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 18px;
   font-weight:500;
   color: ${props => props.color};
@@ -52,7 +52,7 @@ display:flex;
 
 const Auth = styled.span`
 cursor:pointer;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;
@@ -74,7 +74,7 @@ const SetMid = styled.div`
   align-items:center;
   width:180px;
   justify-content:space-between;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;

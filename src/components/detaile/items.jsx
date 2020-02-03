@@ -9,7 +9,7 @@ const Wrap=styled.div`
   position:relative;
 `
 const Title=styled.span`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;

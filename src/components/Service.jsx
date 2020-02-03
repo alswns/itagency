@@ -12,7 +12,7 @@ width: 100%;
   align-items:center;
 `
 const Title=styled.span`
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 16px;
   font-weight: 600;
   font-stretch: normal;
@@ -26,7 +26,7 @@ const Title=styled.span`
 `
 const Items=styled.span`
 margin-bottom:10px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;

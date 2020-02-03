@@ -21,7 +21,7 @@ height:200px;
 `
 const Text = styled.div `
 text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-size: 25px;
   font-weight: normal;
   font-stretch: normal;
@@ -41,7 +41,7 @@ margin: 0 auto;
   border-radius: 23px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR',sans-serif;
   font-weight:600;
   font-stretch: normal;
   font-style: normal;

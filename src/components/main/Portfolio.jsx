@@ -32,7 +32,7 @@ height:5px;
 margin-bottom:15px;
 `
 const Sub = styled.div`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 margin-bottom: 161px;
 `
 const Regi = styled.span`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;

@@ -16,7 +16,7 @@ width: 530px;
 `
 const Title=styled.div`
 @font-face { font-family: 'NIXGONB-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff') format('woff'); font-weight: normal; font-style: normal; }
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -26,7 +26,7 @@ font-family: NIXGONB-Vb;
   color: #ef4f80;
 `
 const Kind=styled.div`
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -40,7 +40,7 @@ position:absolute;
 left:20px;
 right:20px;
 top:72px;
-font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR',sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -53,7 +53,7 @@ font-family: 'Noto Sans KR';
 const Cost=styled.div`
 
 
-font-family: NIXGONB-Vb;
+font-family: NIXGONB-Vb,sans-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;
@@ -63,7 +63,7 @@ font-family: NIXGONB-Vb;
   color: #4f4f4f;
 `
 const Name=styled.div`
- font-family: 'Noto Sans KR';
+ font-family: 'Noto Sans KR',sans-serif;
  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
