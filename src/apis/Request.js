@@ -2,7 +2,7 @@ var Requests = function() {
     this.getParameter = function(name) {  
         var rtnval = '';  
         var nowAddress = unescape(window.location.href);  
-        var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,  
+        var parameters = (nowAddress.slice(nowAddress.indexOf('#') + 1,  
                 nowAddress.length)).split('&');  
         for (var i = 0; i < parameters.length; i++) {  
             var varName = parameters[i].split('=')[0];  

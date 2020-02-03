@@ -171,13 +171,13 @@ export default class PartnerPage extends Component {
             stack[this.state.stack].style.color = '#ef4f80'
             stack[this.state.stack].style.fontWeight = '600'
            
-           
+           if(this.state.stack==0){
                 let location = document.getElementsByClassName('시')
                 let introduce = document.getElementsByClassName('introduce')[0]
                 introduce.value=(this.state.introduce||'')
                 location[0].value=returnLocation(this.state.location)[0]
                 location[1].options[0]=returnLocation(this.state.location)[1]
-                
+           }
                 
         }
 

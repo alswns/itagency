@@ -6,7 +6,7 @@ export default class Naver extends Component {
  
     componentDidMount(){
         const request = new Requests();  
-        const token=request.getParameter('#access_token')
+        const token=request.getParameter('access_token')
         if (token==''){
             console.log(token)
             alert('네이버 로그인 실패')
