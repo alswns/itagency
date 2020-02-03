@@ -145,8 +145,18 @@ export default function Client(props) {
             <div style={{display:'flex',justifyContent:'space-between',width:'80%',margin:'0 auto',marginTop:'15px'}}><Pro>진행중인프로젝트</Pro><Gun><Pink>{props.client_num_of_progress}</Pink>건</Gun></div>
             <div style={{display:'flex',justifyContent:'space-between',width:'80%',margin:'0 auto',marginTop:'15px'}}><Pro>완료한 프로젝트</Pro><Gun><Pink>{props.client_num_of_success}</Pink>건</Gun></div>
             </Projects>
-            <Submit color='white' backgroundColor='#ef4f80' onClick={props.sign}>프로젝트 지원하기</Submit>
-            <Submit color='#3c1e20' backgroundColor='#fce000'>담당자 카카오톡</Submit>
+            {/* /client/mypage/project/taking */}
+            {console.log(props.progress)}
+            {(props.progress==0&&props.approve==0)&&<Submit color='#6f6f6f' backgroundColor='#e0e0e0' >검토중</Submit>}
+            {(props.progress==0&&props.approve==1)&&<Submit color='white' backgroundColor='#ef4f80' onClick={props.sign}>프로젝트 지원하기</Submit>}
+
+            {props.progress==1&&<Submit color='#6f6f6f' backgroundColor='#e0e0e0' >모집완료</Submit>}
+
+            {(props.progress==2&&props.progress_percent!=100)&&<Submit color='white' backgroundColor='#ef4f80' >진행중</Submit>}
+            {(props.progress==2&&props.progress_percent==100)&&<Submit color='white' backgroundColor='#ef4f80' onClick={props.Done}>완료하기</Submit>}
+            
+            {props.progress==3&&<Submit color='white' backgroundColor='#ef4f80' >작업종료</Submit>}
+            {/* <Submit color='#3c1e20' backgroundColor='#fce000'>담당자 카카오톡</Submit> */}
             <Submit color='white' backgroundColor='#212121'>담당자 연락처</Submit>
         </Wrapper>
     )

@@ -21,7 +21,6 @@ const Main=styled.span`
 
 `
 const Sub=styled.span`
-margin-top:10px;
 font-family: 'Noto Sans KR',sans-serif;
 
   font-size: 15px;
@@ -41,6 +40,7 @@ background:white;
 display:flex;
 border:0;
 z-index:999;
+margin-bottom:0px;
 `
 const Span=styled.span`
 margin-top:10.3px;

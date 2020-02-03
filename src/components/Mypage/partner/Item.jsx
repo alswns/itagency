@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import api from '../../../apis/BaseUrl'
 
 const Line = styled.div`
 width:100%;
@@ -36,10 +37,17 @@ font-family: 'Noto Sans KR';
   color: #212121;
   padding:15px 0;
 `
+const EditPersent=(id)=>{
+  const percent=parseInt(prompt('현재 개발 진행도를 입력하십시오.(0~100)%사이'))
+  if(percent>100 || percent<0){
+    percent=parseInt(prompt('다시입력하십시오.(0~100)%사이'))
+  }
+  api.post('/partner/mypage/project/percent',{percent:percent,project_id:id})
+}
 export default function Item(props) {
     return (
         <>
-                    <FlexDIv>
+                    <FlexDIv onClick={()=>EditPersent(props.id)}>
                         <Text style={{ marginLeft: '50px', width: '320px' }}>{props.title}</Text>
                         <Text style={{ width: '157px' }}>{props.hope_money}</Text>
                         <Text style={{ width: '100px' }}>{props.time}</Text>

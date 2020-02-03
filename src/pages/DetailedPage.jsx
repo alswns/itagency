@@ -170,6 +170,7 @@ flex-direction:column;
 const Garo = styled.div`
 display:flex;
 justify-content:space-between;
+align-items:center;
 `
 const Item = styled.div`
 width: 870px;
@@ -290,7 +291,9 @@ export default class DetailedPage extends Component {
         client_num_of_success: 0,
         client_name: '',
         file_id: '',
-        file_name: ''
+        file_name: '',
+        progress_percent:0,
+        approve:0
     }
     componentDidMount() {
         setBanner('프로젝트')
@@ -328,16 +331,24 @@ export default class DetailedPage extends Component {
                     days: res.data.days,
                     num_of_applicants: res.data.num_of_applicants,
                     progress: res.data.progress,
+                    progress_percent: res.data.progress_percent,
+
                     field: res.data.field,
                     hope_partner: res.data.hope_partner,
                     start_time: res.data.start_time,
                     file_id: res.data.file_id,
-                    file_name: res.data.file_name
+                    file_name: res.data.file_name,
+                    approve:res.data.approve
                 }, this.getRivew)
             })
             .catch(err => console.dir(err))
 
 
+    }
+
+    Done=()=>{
+        api.post('/client/mypage/project/taking',{project_id:this.state.project_id}).then(res=>console.log(res))
+        .catch(err=>console.log(err))
     }
 
     sign = () => {
@@ -415,13 +426,17 @@ export default class DetailedPage extends Component {
                                         <Garo style={{ justifyContent: 'space-between' }}>
                                             <Title>{this.state.project_name}</Title>
                                             <Sero>
-                                                <Garo style={{ justifyContent: 'space-between' }}>
+                                                <Garo style={{ marginBottom:'3px',justifyContent: 'space-between' }}>
                                                     <Status>신청진행중</Status>
                                                     <Dday>D-{parseInt((this.state.register_deadline * 1000 - new Date()) / 86400553)}</Dday>
                                                 </Garo>
-                                                {this.state.progress==0&&<Progress src={progress0} alt="" />}
+                                                <div class="w3-border" style={{width:'150px',borderRadius:'3px',background:'#ccc'}}>
+                                                        <div class="w3-pink" style={{height:'4px',width:`${this.state.progress==0?3:this.state.progress}%`,borderRadius:'3px'}}></div>
+                                                        </div>
+
+                                                {/* {this.state.progress==0&&<Progress src={progress0} alt="" />}
                                                 {this.state.progress==1&&<Progress src={progress1} alt="" />}
-                                                {this.state.progress==2&&<Progress src={progress2} alt="" />}
+                                                {this.state.progress==2&&<Progress src={progress2} alt="" />} */}
                                                 
                                                 
                                             </Sero>
@@ -519,7 +534,10 @@ export default class DetailedPage extends Component {
                                     </Left>
                                 </Submit>
                             </Wrapper>
-                            <Client client_num_of_projects={this.state.client_num_of_projects}
+                            <Client 
+                                progress_percent={this.state.progress_percent}
+                                progress={this.state.progress} Done={this.Done} approve={this.state.approve}
+                                client_num_of_projects={this.state.client_num_of_projects}
                                 client_num_of_contract={this.state.client_num_of_contract}
                                 client_num_of_progress={this.state.client_num_of_progress}
                                 client_num_of_success={this.state.client_num_of_success}

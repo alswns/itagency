@@ -205,7 +205,7 @@ export default function Frame(props) {
                 <Line style={{ width: '88%' }}></Line>
                 <>
                 {(props.data.progress_project||[]).map(res=>{
-             return <><Item title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+             return <><Item id={res.project_id}title={res.title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}

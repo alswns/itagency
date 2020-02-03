@@ -100,6 +100,7 @@ padding:15px 20px;
  border: solid 1px #e0e0e0;
   background-color: #ffffff;
   font-family:  'Noto Sans KR',sans-serif;
+  height:46px;
   font-size: 15px;
   font-weight:600;
   font-stretch: normal;
@@ -110,6 +111,7 @@ padding:15px 20px;
   position:absolute;
   top:160px;
   left:${props=>props.left};
+  display:flex;
 `
 const Name=styled.span`
   font-family:  'Noto Sans KR',sans-serif;
@@ -228,11 +230,11 @@ export default function ProjectItem(props) {
             <Dday>D-{parseInt( (props.res.register_deadline*1000-new Date())/86400553)}</Dday>
             <Text>{props.res.description}</Text>
             <Line></Line>
-            <Container style={{width:'133px'}} left='20px'>희망금액 {thounsond(props.res.cost)}원</Container>
+            <Container style={{width:'173px'}} left='20px'>희망금액 {`${thounsond(props.res.cost)}`}원</Container>
             <Container left='206px'>진행기간 {props.res.days}일</Container>
             <Container left='343px'>등록일  {new Date((props.res.register_time)*1000).toLocaleDateString()}</Container>
-            <Container left='517px'>모집 마감일 {new Date((props.res.register_deadline)*1000).toLocaleDateString()}</Container>
-            <Container left='721px'>지원수 {props.res.num_of_applicants}명</Container>
+            <Container style={{width:'211px'}} left='517px'>모집 마감일 {new Date((props.res.register_deadline)*1000).toLocaleDateString()}</Container>
+            <Container left='741px'>지원수 {props.res.num_of_applicants}명</Container>
             <Name><Up>{props.res.client_name}</Up> 님</Name>
             <Lines></Lines>
             <SeContainer top='75px'>지역 {props.res.location} </SeContainer>
