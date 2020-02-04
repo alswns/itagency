@@ -70,8 +70,9 @@ export default function ProjectContainer(props) {
               <ProjectItems >
                 <div style={{margin:'0'}} className='slider'>
             {(props.projects||[]).map(res =>{
-            return <ProjectItem project_id={res.project_id} project_name={res.project_name} client_name={res.client_name} cost={res.cost} day={res.days} 
-            field={res.field} num_of_applicants={res.num_of_applicants} progress={res.progress}/>
+              
+            return<div> <ProjectItem project_id={res.project_id} project_name={res.project_name} client_name={res.client_name} cost={res.cost} day={res.days} 
+            field={res.field} num_of_applicants={res.num_of_applicants} progress={res.progress}/></div>
             })}
             </div>
             </ProjectItems>

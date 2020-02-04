@@ -170,8 +170,8 @@ export default class Input extends Component {
                 <FlexDiv></FlexDiv>
 
                 <Item>
-                    <div style={{ flex: '1', display: 'flex', justifyContent: 'space-between' }}>
-                        <Inputs value={this.state.review_title} onChange={this.change} name='review_title' placeholder='제목을 입력해주세요'></Inputs>
+                    <div style={{height: '35px', flex: '1', display: 'flex', justifyContent: 'space-between' }}>
+                        <Inputs  value={this.state.review_title} onChange={this.change} name='review_title' placeholder='제목을 입력해주세요'></Inputs>
                         <Rap>
                             <Stars id='asdasd'>
                                 {
@@ -197,13 +197,13 @@ export default class Input extends Component {
 
                     <Line />
 
-                    <div style={{ flex: '10' }}>
+                    <div style={{ flex: '10',height:'104px' }}>
                         <Inputs value={this.state.review} onChange={this.change} name='review' placeholder='진행하신 프로젝트에 후기를 남겨주세요.'></Inputs>
                     </div>
                     <Line />
-                    <div style={{alignItems:'center', display: 'flex', flex: '1' ,justifyContent:'space-between'}}>
+                    <div style={{alignItems:'center', display: 'flex', flex: '1', justifyContent:'space-between',height:'45px' }}>
                         <Search placeholder='프로젝트를 검색하세요.' onChange={(e)=>this.setState({project_id:e.target.value})} >
-                            <option value="0" disabled selected>프포젝트를 선택하십시오</option>
+                            <option value="0" disabled selected>프로젝트를 선택하십시오</option>
                             {
                             (this.props.myProject||[]).map(res=>{
                                 console.log(res)
