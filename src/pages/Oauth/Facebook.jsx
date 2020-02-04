@@ -10,7 +10,6 @@ export default class Facebook extends Component {
         console.log(window.location.protocol)
         if (window.location.protocol == "https:") {
             window.location.protocol = "http:";
-            window.location.reload();
          }
         if (requests.getParameter('access_token')==''){
                 
