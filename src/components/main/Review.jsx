@@ -180,7 +180,7 @@ export default function Review(props) {
                     </MidLogo>
                     </Container>
                     
-                    <ReviewContainer/>
+                    <ReviewContainer user={props.user}/>
         </div>
     )
 }

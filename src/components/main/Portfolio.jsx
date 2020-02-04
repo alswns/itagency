@@ -73,12 +73,13 @@ margin-top:35px;
 `
 const ImgContainer = styled.div`
 margin:0 auto;
+margin-bottom:20px;
 `
 const Portfolio = styled.img`
  width: 433px;
   height: 240px;
   border-radius: 10px;
-
+  margin-left:15px;
 `
 
 const Imgs = styled.img`
@@ -100,6 +101,7 @@ justify-content:center;
 `
 
 export default function Portfolios(props) {
+  const [page,setPage]=React.useState(0)
   return (
     <Wrapper>
       <Title>포트폴리오</Title>
@@ -108,14 +110,14 @@ export default function Portfolios(props) {
       <Regi onClick={()=>window.location.href='/portfolio'}>포트폴리오 보러가기</Regi>
       <Container>
         <Div>
-          <img src={arrow} alt="" style={{ marginRight: '71.6px' }} />
+          <img src={arrow} onClick={()=>{setPage(page-1)}} alt="" style={{ marginRight: '71.6px' }} />
         </Div>
 
         <ImgContainers>
-          {props.portfolio.map(re => {
+          {(props.portfolio||[]).slice(page*6,page*6+5).map(re => {
             return <ImgContainer> {re.map(res => {
               console.log(res)
-              return <Portfolio src={`https://54.180.122.126:5555/file/portfolio/image/${res.img}`}></Portfolio>
+              return <Portfolio src={`http://54.180.122.126:5555/file/portfolio/image/${res.img}`}></Portfolio>
             }
             )}
             </ImgContainer>
@@ -124,7 +126,7 @@ export default function Portfolios(props) {
 
         </ImgContainers>
         <Div>
-          <Imgs src={arrow} alt="" />
+          <Imgs onClick={()=>{setPage(page+1)}} src={arrow} alt="" />
         </Div>
       </Container>
 

@@ -6,7 +6,7 @@ import full_star from '../../assets/imgs/star/star_full.svg'
 const Wrapper= styled.div`
 margin:0;
 width: 530px;
-  height: 160px;
+  height: 150px;
   border-radius: 10px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   border: solid 1px #e0e0e0;

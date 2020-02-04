@@ -120,6 +120,7 @@ export default class RegisterPage extends Component {
 
     }
     componentDidMount() {
+        window.scrollTo(0,0)
         if(window.localStorage.getItem('token')!=null){
             alert('로그아웃후 이용해주십시오')
             window.location.href='/'

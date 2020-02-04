@@ -296,6 +296,7 @@ export default class DetailedPage extends Component {
         approve:0
     }
     componentDidMount() {
+        window.scrollTo(0,0)
         setBanner('프로젝트')
 
         api.get('/info/account').then(res => {
@@ -427,8 +428,9 @@ export default class DetailedPage extends Component {
                                             <Title>{this.state.project_name}</Title>
                                             <Sero>
                                                 <Garo style={{ marginBottom:'3px',justifyContent: 'space-between' }}>
-                                                    <Status>신청진행중</Status>
-                                                    <Dday>D-{parseInt((this.state.register_deadline * 1000 - new Date()) / 86400553)}</Dday>
+                                                    <Status>{this.state.progress_percent+'%'}</Status>
+                                                                <Dday>D{parseInt( (this.state.register_deadline*1000-new Date())/86400553)>0?'-'+parseInt( (this.state.register_deadline*1000-new Date())/86400553):'+'+parseInt( (new Date()-this.state.register_deadline*1000)/86400553)}</Dday>
+
                                                 </Garo>
                                                 <div class="w3-border" style={{width:'150px',borderRadius:'3px',background:'#ccc'}}>
                                                         <div class="w3-pink" style={{height:'4px',width:`${this.state.progress==0?3:this.state.progress}%`,borderRadius:'3px'}}></div>

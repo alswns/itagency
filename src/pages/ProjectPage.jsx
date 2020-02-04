@@ -88,6 +88,7 @@ export default class ProjectPage extends Component {
       
     }
     componentDidMount() {
+        window.scrollTo(0,0)
         this.setDe()
         this.setDes()
         setBanner('프로젝트')

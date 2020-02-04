@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-width: 860px;
+width: 100%;
   height: 100px;
   border: solid 1px ${props => props.color};
   background-color: #ffffff;
@@ -38,7 +38,7 @@ padding-left:10px;
 `
 const Second = styled.div`
   margin-bottom:10px;
- width: 860px;
+ width: 100%;
   height: 50px;
   background-color: #6f6f6f;
   font-family: NIXGONB-Vb,sans-serif;

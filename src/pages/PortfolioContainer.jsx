@@ -12,6 +12,7 @@ height: 1080px;
   box-sizing:border-box;
 `
 const FlexDIv = styled.div`
+width:1200px;
 display:flex;
 justify-content:center ;
 `

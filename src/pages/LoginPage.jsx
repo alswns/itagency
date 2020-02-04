@@ -26,6 +26,7 @@ export default class LoginPage extends Component {
         }
     }
     componentDidMount(){
+        window.scrollTo(0,0)
         api.get('/info/account').then(res=>{
             this.props.setUser(res.data.name)
         })

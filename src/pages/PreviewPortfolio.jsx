@@ -147,6 +147,7 @@ export default class PreviewPortfolio extends Component {
     }
 
     componentDidMount(){
+      window.scrollTo(0,0)
         api.get(`/partner/portfolio/detail/${this.props.id}`).then(res=>{
             console.log(res)
             this.setState({

@@ -7,7 +7,6 @@ import arrow from '../../assets/imgs/arrow.svg'
 
 const Wrapper =styled.div`
 width:1080px;
-height:520px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -17,6 +16,7 @@ padding:45px 0;
 const Container=styled.div`
 display:flex;
 justify-content:space-between;
+margin-bottom:15px;
 `
 const Img=styled.img`
 `

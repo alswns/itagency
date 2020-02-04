@@ -109,7 +109,7 @@ padding:15px 20px;
   text-align: left;  
   color:rgba(15,15,15,0.9);
   position:absolute;
-  top:160px;
+  top:150px;
   left:${props=>props.left};
   display:flex;
 `
@@ -227,7 +227,7 @@ export default function ProjectItem(props) {
 
 
             </Status>
-            <Dday>D-{parseInt( (props.res.register_deadline*1000-new Date())/86400553)}</Dday>
+            <Dday>D{parseInt( (props.res.register_deadline*1000-new Date())/86400553)>0?'-'+parseInt( (props.res.register_deadline*1000-new Date())/86400553):'+'+parseInt( (new Date()-props.res.register_deadline*1000)/86400553)}</Dday>
             <Text>{props.res.description}</Text>
             <Line></Line>
             <Container style={{width:'173px'}} left='20px'>희망금액 {`${thounsond(props.res.cost)}`}원</Container>

@@ -152,7 +152,7 @@ export default class PartnerPage extends Component {
         this.setState({ phone: e.target.value })
     }
     componentDidUpdate() {
-        
+        window.scrollTo(0,0)
         
 
         const going = document.getElementsByClassName('going')

@@ -68,7 +68,7 @@ function App() {
                 </Route>
                 <Route path='/review' exact='exact'>
                     <Banner user={user} color='white' back='#212121' img={Logo_white}/>
-                    <ReviewPage setUser={setUser}/>
+                    <ReviewPage user={user} setUser={setUser}/>
                 </Route>
                 <Route path='/portfolio' exact='exact'>
                     <Banner user={user} color='white' back='#212121' img={Logo_white}/>

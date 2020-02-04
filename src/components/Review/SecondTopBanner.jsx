@@ -111,7 +111,7 @@ export default function SecondTopBanner(props) {
                     
                     <Ment align=   'right' style={{marginTop:'30px'}}>
                         <Small> <Return>아이티에이전시</Return> 소속</Small>
-                        <Small>파트너수 1,002<Return>명</Return></Small>
+                        <Small>파트너수 {props.user}<Return>명</Return></Small>
                     </Ment>
                 </WrapperItem>
 

@@ -39,9 +39,12 @@ export default class extends Component {
         reload:0,
         conclusion:0,
         average:0,
-        myProject:[]
+        myProject:[],
+        partners:'',
+
     }
     componentDidMount(){
+        window.scrollTo(0,0)
         setBanner('이용후기')
         window.setInterval(()=>this.setState({banner:!this.state.banner}), 2000)
         api.get('/info/project/semi').then(res=>{
@@ -62,7 +65,11 @@ export default class extends Component {
                 conclusion:res.data.conclusion,
                 average:res.data.average,})})
 
-
+                api.get('/info/partners').then(
+                    res=>this.setState({partners:res.data.partners}))
+                    api.get('/info/portfolio/main').then(res=>{
+                        this.setState({portfolio:res.data.info.division(3)})
+                    })      
       
     }
 
@@ -84,17 +91,20 @@ export default class extends Component {
         return (
             <div>
                 <Wrapper>
-                {this.state.banner&&<FirstTopBanner conclusion={this.state.conclusion} average={this.state.average}/>}
-                {this.state.banner||<SecondTopBanner conclusion={this.state.conclusion} average={this.state.average}/>}
+                {console.log(this.props.user)}
+
+                {this.state.banner&&<FirstTopBanner  conclusion={this.state.conclusion} average={this.state.average}/>}
+                {this.state.banner||<SecondTopBanner user={this.state.partners} conclusion={this.state.conclusion} average={this.state.average}/>}
                 <CircleContainer>
                 <Circle back='#ffffff' left='86.1%' onClick={(event)=>this.setColor(false,event)}></Circle>
                 <Circle back='#000000' left='87.1%' onClick={(event)=>this.setColor(true,event)}></Circle>
                 </CircleContainer>
                 </Wrapper>
                 <Wrap/>
+                <div style={{background:'rgb(243, 243, 243)'}}>
                 <ReviewContainer />      
-                
                 <Input myProject={this.state.myProject}>리뷰 쓰는 페이지</Input>
+                </div>
                 <Last/>
 
             </div>

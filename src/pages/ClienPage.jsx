@@ -86,6 +86,7 @@ export default class ClienPage extends Component {
     }
     // /file/profile/image/
     componentDidMount() {
+        window.scrollTo(0,0)
         api.post('/token/check').then(res=>{
             console.log(res)
             this.setState({state:res.status})

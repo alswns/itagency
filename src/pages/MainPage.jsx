@@ -40,6 +40,7 @@ export default class MainPage extends Component {
         portfolio:[]
     }
     componentDidMount(){
+        window.scrollTo(0,0)
         Array.prototype.division = function (n) {
             var arr = this;
             var len = arr.length;
@@ -117,7 +118,7 @@ setService=()=>{
             <Example/>
             <ThirdFooter/>
             <Portfolio portfolio={this.state.portfolio}/>
-            <Review conclusion={this.state.conclusion} average={this.state.average}/>
+            <Review  conclusion={this.state.conclusion} average={this.state.average}/>
             <Last/>
             </>
 

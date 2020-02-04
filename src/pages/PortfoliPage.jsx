@@ -23,7 +23,7 @@ export default class PortfoliPage extends Component {
     }
 
     componentDidMount(){
-
+        window.scrollTo(0,0)
         Array.prototype.division = function (n) {
             var arr = this;
             var len = arr.length;
