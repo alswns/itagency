@@ -13,7 +13,7 @@ export default class Google extends Component {
         else{
           const token=request.getParameter('access_token')
           api.post('/client/account/gg',{
-            nv_token:token
+            gg_token:token
           }).then(res=>{
               window.localStorage.setItem('token',res.data.access_token)
               alert('구글 로그인 성공')

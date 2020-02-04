@@ -6,10 +6,8 @@ export default class Facebook extends Component {
     componentDidMount(){
         const requests = new Requests();  
         const token=requests.getParameter('access_token')
-        const request=new Request()
-        const test= request.
-
-        console.log(test)
+        console.log(token)
+        console.log(window.location.protocol)
         if (window.location.protocol == "https:") {
             window.location.protocol = "http:";
             window.location.reload();
@@ -18,7 +16,7 @@ export default class Facebook extends Component {
                 
         }
         else{
-          console.log(token)
+          
           api.post('/client/account/fb',{
               fb_token:token
           }).then(res=>{
