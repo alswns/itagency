@@ -47,9 +47,9 @@ const Span=styled.span`
 margin-top:10.3px;
 display:flex;
 height:20px;
-font-family: ''Noto Sans KR'';
+font-family: 'Noto Sans KR';
   font-size: 17px;
-  font-weight: 800;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.94;

@@ -30,7 +30,7 @@ export default class CounselPage extends Component {
         location:"",
         meeting: 0,
         hope_partner:"",
-        plan:'',
+        plan:0,
         planning:'null.jpg',
         start:0,
         phone:0,

@@ -162,7 +162,8 @@ export default function Frame(props) {
                 <Line style={{ width: '88%' }}></Line>
                 <>
                 {(props.consulting||[]).map(res=>{
-             return<> <Item title={res.project_title} hope_money={new Date(res.register_time).toLocaleDateString()} time={res.term} deadLine={res.end_time}/>
+                    console.log(res)
+             return<> <Item project_id={res.project_id} title={res.project_title} hope_money={new Date(res.register_time).toLocaleDateString()} time={res.term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}
@@ -183,7 +184,7 @@ export default function Frame(props) {
                 <Line style={{ width: '88%' }}></Line>
                 
                 {(props.apply_project||[]).map(res=>{
-             return<> <Item title={res.project_title} hope_money={res.num_of_applicants+'명'} time={new Date(res.deadline_time).toLocaleDateString()} deadLine={res.deadLine}/>
+             return<> <Item project_id={res.project_id} title={res.project_title} hope_money={res.num_of_applicants+'명'} time={new Date(res.deadline_time).toLocaleDateString()} deadLine={res.deadLine}/>
                     </>
               
                 })}
@@ -203,7 +204,7 @@ export default function Frame(props) {
                 <Line style={{ width: '88%' }}></Line>
                 <>
                 {(props.progress_project||[]).map(res=>{
-             return <><Item title={res.project_title} hope_money={res.cost} time={res.progress_term} deadLine={res.end_time}/>
+             return <><Item project_id={res.project_id} title={res.project_title} hope_money={res.cost} time={res.progress_term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}
@@ -224,7 +225,7 @@ export default function Frame(props) {
             </FlexDIv>
             <Line style={{width:'88%'}}></Line>
             {(props.success_project||[]).map(res=>{
-             return<> <Item title={res.project_title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
+             return<> <Item project_id={res.project_id} title={res.project_title} hope_money={res.cost} time={res.term} deadLine={res.end_time}/>
              <Line style={{ width: '88%' }}></Line></>
               
                 })}

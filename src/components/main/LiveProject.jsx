@@ -8,26 +8,26 @@ margin-top:81px;
 
 font-family: 'Noto sans Kr';
   font-size: 35px;
-  font-weight: 900;
+  
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
   letter-spacing: normal;
   text-align: center;
   color: #212121;
-  font-weight:bold;
+  font-weight:500;
 `
 const Sub=styled.div`
 margin-top:1.4%;
 font-family: 'Noto Sans KR',sans-serif;
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 16px;
+  
   font-stretch: normal;
   font-style: normal;
   line-height: 2.06;
   letter-spacing: 0.34px;
   text-align: center;
-  color: #6f6f6f;
+  color: #666666;
 
   margin-bottom:1%;
   
@@ -55,7 +55,7 @@ font-family: 'Noto Sans KR',sans-serif;
 `
 const Wrapper = styled.div`
 width: 100%;
-margin-bottom:300px;
+margin-bottom:190px;
 `
 const Img =styled.img`
 margin: 10px auto;

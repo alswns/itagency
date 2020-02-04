@@ -430,7 +430,7 @@ export default function Counsel(props) {
                         </Category>
 
                         <ItemContainer>
-                            <CounselItem onClick={(event)=>{setColor(event);props.setKind('plan',0)}} img={first} text="아이디어만 있음"/>
+                            <CounselItem style={{border:'solid 1px #ef4f80'}} onClick={(event)=>{setColor(event);props.setKind('plan',0)}} img={first} text="아이디어만 있음"/>
                             <CounselItem onClick={(event)=>{setColor(event);props.setKind('plan',1)}} img={mid} text="대략적인 기획이 있음"/>
                             <CounselItem onClick={(event)=>{setColor(event);props.setKind('plan',2)}} img={last} text={"구체적인 상세한\n기획이 있음"}/>
                         </ItemContainer>

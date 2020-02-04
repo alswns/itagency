@@ -15,13 +15,16 @@ export default class PortfoliPage extends Component {
     state={
         searchKey:'',
         portfolio:[],
-        len:''
+        len:'',
+        reload:false
     }
     setSearchKey=(e)=>{
         this.setState({searchKey:e.target.value})
         console.log(e)
     }
-
+    reload=()=>{
+        this.setState({reload:!this.state.reload})
+    }
     componentDidMount(){
         window.scrollTo(0,0)
         Array.prototype.division = function (n) {
@@ -36,7 +39,7 @@ export default class PortfoliPage extends Component {
     
             return tmp;
     }
-
+   
         setBanner('포트폴리오')
         api.get('/info/account').then(res=>{
             this.props.setUser(res.data.name)
@@ -67,7 +70,7 @@ export default class PortfoliPage extends Component {
             <Wrapper>
                 <Top setSearchKey={this.setSearchKey}/>
                 <Select/>
-                <PortfolioContainer max={this.state.len} portfolio={this.state.portfolio}/>
+                <PortfolioContainer reload={this.reload} max={this.state.len} portfolio={this.state.portfolio}/>
                 
             <Last/>
             </Wrapper>

@@ -59,6 +59,9 @@ width: 100px;
 `
 const Name = styled.span`
  font-family: NIXGONB-Vb;
+ width:170px;
+ height:20px;
+ overflow:hidden;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -72,7 +75,9 @@ const Name = styled.span`
 
 
 const Kind = styled.span`
-width:160px;
+width:170px;
+ height:20px;
+ overflow:hidden;
 font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;

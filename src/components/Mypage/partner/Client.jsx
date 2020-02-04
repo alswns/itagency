@@ -72,7 +72,10 @@ const Name = styled.span`
 
 
 const Kind = styled.span`
-width:160px;
+width:170px;
+ height:20px;
+ overflow:hidden;
+
 font-family: 'Noto Sans KR';
   font-size: 15px;
   font-weight: 600;

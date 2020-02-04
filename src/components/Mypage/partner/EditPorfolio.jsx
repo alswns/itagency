@@ -112,7 +112,6 @@ margin-left:50px;
 
 export default function EditPorfolio(props) {
     const [subMit,SetSubmit]=React.useState(false)
-    const [page,setPage]=React.useState(0)
     return (
         <Wrapper>
             <IngList>
@@ -143,7 +142,7 @@ export default function EditPorfolio(props) {
                     <img src={돋보기} alt="" />
                 </span>
             </MyProject>
-            <PortFolioContainer reload={props.reload} max={props.max} portfolioArray={props.portfolioArray} page={page} setPage={setPage}></PortFolioContainer>
+            <PortFolioContainer reload={props.reload} max={props.max} portfolioArray={props.portfolioArray} ></PortFolioContainer>
            
             </>}
 

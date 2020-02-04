@@ -163,7 +163,7 @@ export default class ProjectPage extends Component {
     render() {
         return (
             <Wrapper>
-                <div style={{ transform: 'scale(0.85)', marginTop: '-90px' }}>
+                <div style={{ transform: 'scale(0.85)', marginTop: '-110px' }}>
                     <Top setSearchKey={this.setSearchKey} />
                     <Filter keywordSearch={this.keywordSearch()} booling={this.state.ing} checckdesinger={this.state.desinger} checkdeveloper={this.state.developer} desinger={()=>this.setState({desinger:!this.state.desinger},this.setDes)} 
                     developer={()=>this.setState({developer:!this.state.developer},this.setDe)} 

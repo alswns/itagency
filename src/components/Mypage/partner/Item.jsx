@@ -42,14 +42,20 @@ const EditPersent=(id)=>{
   if(percent>100 || percent<0){
     percent=parseInt(prompt('다시입력하십시오.(0~100)%사이'))
   }
-  api.post('/partner/mypage/project/percent',{percent:percent,project_id:id})
+  api.post('/partner/mypage/project/percent',{percent:percent,project_id:id}).then(console.log('성공'))
+  .catch(console.log('실패'))
 }
 export default function Item(props) {
     return (
         <>
-                    <FlexDIv onClick={()=>EditPersent(props.id)}>
-                        <Text style={{ marginLeft: '50px', width: '320px' }}>{props.title}</Text>
+                    <FlexDIv >
+                        <Text onClick={()=>window.location.href=`/detailed/?#id=${props.project_id}`} style={{ marginLeft: '50px', width: '320px' }}>{props.title}</Text>
+                        {props.jin!=undefined?
+                        <Text onClick={()=>EditPersent(props.id)} style={{ width: '157px' }}>{props.hope_money}</Text>
+                        :
                         <Text style={{ width: '157px' }}>{props.hope_money}</Text>
+                        
+                        }
                         <Text style={{ width: '100px' }}>{props.time}</Text>
                         <Text style={{ flex: '1' }}>{props.deadLine}</Text>
                     </FlexDIv>

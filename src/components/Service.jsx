@@ -66,8 +66,8 @@ export default function Service() {
             </Flex>
             <Flex>
                 <Title>고객센터</Title>
-                <Items>0000-0000</Items>
-                <Items>(10:00-18:00, 공휴일 제외)</Items>
+                <Items>010-3662-3206</Items>
+                <Items>(24시간, 공휴일 포함)</Items>
             </Flex>
             </Wrap>
         </Wrapper>

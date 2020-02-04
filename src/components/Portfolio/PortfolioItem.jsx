@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import data from '../../assets/imgs/game개발.png'
+import PreviewPortfolio from '../../pages/PreviewPortfolio'
 const Wrapper=styled.div`
 width:400px;
     height:320px;
@@ -30,16 +31,20 @@ left:20px;
   color: #6f6f6f;
 `
 const Title=styled.span`
-
-font-family: NIXGONB-Vb,sans-serif;
+display:flex;
+height:40px;
+font-family:'noto sans kr',sans-serif;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
   letter-spacing: -0.4px;
+  line-height:40px;
   text-align: left;
   color: #212121;
+  width:160px;
+  overflow:hidden;
 `
 const Pink=styled.span`
 color:#ef4f80;
@@ -91,9 +96,19 @@ font-family: 'Noto Sans KR',sans-serif;
   text-align: left;
   color: #212121;
 `
+// const 
 export default function PortfolioItem(props) {
+  const [on,setOn]=React.useState(false)
     return (
-        <Wrapper>
+      <>
+      
+      {on?<> <PreviewPortfolio set={()=>{setOn(!on);props.reload()}} id={props.portfolio_id}>
+      {console.log(on)}
+      </PreviewPortfolio>
+      </>
+        :''}
+        <Wrapper onClick={()=>setOn(true)}>
+          {console.log(props.portfolio_id)}
             <Img src={`http://54.180.122.126:5555/file/portfolio/image/${props.img}`}></Img>
             <Kind>{props.field}</Kind>
             <Top>
@@ -103,5 +118,6 @@ export default function PortfolioItem(props) {
             <Line/>
             <Text>{props.description}</Text>
         </Wrapper>
+        </>
     )
 }

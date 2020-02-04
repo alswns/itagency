@@ -43,7 +43,7 @@ justify-content:center;
 `
 export default function CounselItem(props) {
     return (
-        <Wrapper onClick={props.onClick}>
+        <Wrapper style={props.style} onClick={props.onClick}>
             <MidDiv>
             <Img src={props.img}></Img>
             </MidDiv>

@@ -175,24 +175,46 @@ width: 40px;
   color: #858585;
 `
 
+const Set=(su)=>{
+    console.log(document.getElementsByClassName('bottom_su'))  
+    var a=document.getElementsByClassName('bottom_su')
+    for(let i of a){
+        if(i.id==su){
+            i.style.border='1px solid gray'
+      }
+      else{
+          i.style.border=''
+      }
+    }
+  }
 const setInt=(int,fun,max)=>{
-    return <SuContainer>
-        
-    {int===1?'': <Noborder onClick={()=>fun(int-2)}>{int-1}</Noborder>}
-        <SU>{int}</SU>
-        {max>=int+1?<Noborder onClick={()=>fun(int)}>{int+1}</Noborder>:''}
-        {max>=int+2?<Noborder onClick={()=>fun(int)}>{int+2}</Noborder>:''}
-        {max>=int+3?<Noborder onClick={()=>fun(int)}>{int+3}</Noborder>:''}
-    {int===1 && max>=int+4?<Noborder onClick={()=>fun(int+3)}>{int+4}</Noborder>:'' }
+  return <SuContainer>
+      
+      <Noborder id={int} style={{border:'1px solid gray'}}  className='bottom_su' onClick={()=>{Set(int);fun(int)}}>{int}</Noborder>
+      {max>=int+1?<Noborder id={int+1} className='bottom_su' onClick={()=>{Set(int+1);fun(int+1)}}>{int+1}</Noborder>:''}
+      {max>=int+2?<Noborder id={int+2} className='bottom_su' onClick={()=>{Set(int+2);fun(int+2)}}>{int+2}</Noborder>:''}
+      {max>=int+3?<Noborder id={int+3} className='bottom_su' onClick={()=>{Set(int+3);fun(int+3)}}>{int+3}</Noborder>:''}
+      {max>=int+4?<Noborder id={int+4} className='bottom_su' onClick={()=>{Set(int+4);fun(int+4)}}>{int+4}</Noborder>:''}
+      {max>=int+5?<Noborder id={int+5} className='bottom_su' onClick={()=>{Set(int+5);fun(int+5)}}>{int+5}</Noborder>:''}
+      {max>=int+6?<Noborder id={int+6} className='bottom_su' onClick={()=>{Set(int+6);fun(int+6)}}>{int+6}</Noborder>:''}
+      {max>=int+7?<Noborder id={int+7} className='bottom_su' onClick={()=>{Set(int+7);fun(int+7)}}>{int+7}</Noborder>:''}
+      {max>=int+8?<Noborder id={int+8} className='bottom_su' onClick={()=>{Set(int+8);fun(int+8)}}>{int+8}</Noborder>:''}
+      {max>=int+9?<Noborder id={int+9} className='bottom_su' onClick={()=>{Set(int+9);fun(int+9)}}>{int+9}</Noborder>:''}
+      
+      
+  
 </SuContainer>
-    
 }
+const Flex_div=styled.div`
+display:flex;
+`
 
 export default function Filter(props) {
     const [developer, setDeveloper] = React.useState(true)
     const [desinger, setdesinger] = React.useState(true)
     const [page,setPage]=React.useState(0)
-  
+    const [su,setSu]=React.useState(1)
+
     return (
         
       <AllWrapper >
@@ -297,7 +319,7 @@ export default function Filter(props) {
                 <Align>
             <Kind setArrange={props.setArrange}></Kind>
             
-{(props.project||[]).slice((page)*7,(page+1)*7).map(res=>{
+{(props.project||[]).slice((su-1)*7,(su)*7).map(res=>{
     if( (props.fillter.indexOf(res.field)!=-1)&&(props.ing.indexOf(''+res.progress)!=-1)){
     return  <ProjectItem res={res} onClick={()=>window.location.href=`/detailed?#id=${res.project_id}`}/>
     }
@@ -305,7 +327,14 @@ export default function Filter(props) {
 })
 }
            
-            {setInt(page+1,setPage,props.max)}
+             <Flex_div>
+            {page>0&&
+        <img src={play_arrow} onClick={()=>setPage(page-1)} style={{transform:'rotate(180deg)'}}></img>}
+        {setInt(page*10+1,setSu,props.max,su)}
+        {props.max/10-1>page&&
+        <img src={play_arrow} onClick={()=>setPage(page+1)}></img>
+        }
+        </Flex_div>
             </Align>
         </AllWrapper>
     )

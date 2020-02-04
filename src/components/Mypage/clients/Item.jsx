@@ -36,11 +36,12 @@ font-family: 'Noto Sans KR';
   color: #212121;
   padding:15px 0;
 `
+// project_id={res.project_id}
 export default function Item(props) {
     return (
         <>
                     <FlexDIv>
-                        <Text style={{ marginLeft: '50px', width: '320px' }}>{props.title}</Text>
+                        <Text style={{ marginLeft: '50px', width: '320px' }} onClick={()=>window.location.href=`/detailed/?#id=${props.project_id}`}>{props.title}</Text>
                         <Text style={{ width: '157px' }}>{props.hope_money}</Text>
                         <Text style={{ width: '100px' }}>{props.time}</Text>
                         <Text style={{ flex: '1' }}>{props.deadLine}</Text>

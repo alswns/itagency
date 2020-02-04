@@ -156,8 +156,8 @@ export default function Client(props) {
             {(props.progress==2&&props.progress_percent==100)&&<Submit color='white' backgroundColor='#ef4f80' onClick={props.Done}>완료하기</Submit>}
             
             {props.progress==3&&<Submit color='white' backgroundColor='#ef4f80' >작업종료</Submit>}
-            {/* <Submit color='#3c1e20' backgroundColor='#fce000'>담당자 카카오톡</Submit> */}
-            <Submit color='white' backgroundColor='#212121'>담당자 연락처</Submit>
+            <Submit color='#3c1e20' backgroundColor='#fce000'>담당자 카카오톡</Submit>
+            <Submit color='white' backgroundColor='#212121' onClick={"tel:010-1231-1231"}>담당자 연락처</Submit>
         </Wrapper>
     )
 }
