@@ -87,6 +87,7 @@ export default class CounselPage extends Component {
     })
     }
     componentDidMount(){
+        window.scrollTo(0,0)
         setDate()
         setBanner('상담하기')
         api.get('/info/account').then(res=>{

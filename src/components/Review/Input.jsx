@@ -62,21 +62,21 @@ function star(x) {
 
 
         for (i = 0; i < x / 2; i++) {
-            back.push(<Star src={full_star}></Star>)
+            back.push(<div><Star src={full_star}></Star></div>)
         }
         for (i = x / 2; i < 5; i++) {
-            back.push(<Star src={no_star}></Star>)
+            back.push(<div><Star src={no_star}></Star></div>)
         }
 
 
     } else {
         x = x - 1
         for (i = 0; i < x / 2; i++) {
-            back.push(<Star src={full_star}></Star>)
+            back.push(<div><Star src={full_star}></Star></div>)
         }
-        back.push(<Star src={half_star}></Star>)
+        back.push(<div><Star src={half_star}></Star></div>)
         for (i = x / 2; i < 4; i++) {
-            back.push(<Star src={no_star}></Star>)
+            back.push(<div><Star src={no_star}></Star></div>)
         }
     }
     return back
@@ -170,7 +170,7 @@ export default class Input extends Component {
                 <FlexDiv></FlexDiv>
 
                 <Item>
-                    <div style={{height: '35px', flex: '1', display: 'flex', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Inputs  value={this.state.review_title} onChange={this.change} name='review_title' placeholder='제목을 입력해주세요'></Inputs>
                         <Rap>
                             <Stars id='asdasd'>
@@ -197,11 +197,11 @@ export default class Input extends Component {
 
                     <Line />
 
-                    <div style={{ flex: '10',height:'104px' }}>
+                    <div style={{ height:'105px' }}>
                         <Inputs value={this.state.review} onChange={this.change} name='review' placeholder='진행하신 프로젝트에 후기를 남겨주세요.'></Inputs>
                     </div>
                     <Line />
-                    <div style={{alignItems:'center', display: 'flex', flex: '1', justifyContent:'space-between',height:'45px' }}>
+                    <div style={{alignItems:'center', display: 'flex', justifyContent:'space-between' }}>
                         <Search placeholder='프로젝트를 검색하세요.' onChange={(e)=>this.setState({project_id:e.target.value})} >
                             <option value="0" disabled selected>프로젝트를 선택하십시오</option>
                             {

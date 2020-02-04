@@ -6,7 +6,5 @@ export function Naver(){
 }
 
 export function Google(){
-    window.location.href='https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/analytics.readonly&redirect_uri=http://itagency119.com/google&response_type=token&client_id=603470131847-q2b0oeamh51fa34eakd1gsv3kv9412t6.apps.googleusercontent.com'
+    window.location.href='https://www.googleapis.com/oauth2/v4/token?redirect_uri=http://itagency119.com/google&response_type=code&grant_type=authorization_code&client_id=603470131847-q2b0oeamh51fa34eakd1gsv3kv9412t6.apps.googleusercontent.com&client_secret=Wdy0WguV8tAt5HgmODh99LQ-&code=code'
 }
-
-// http://itagency119.com/google

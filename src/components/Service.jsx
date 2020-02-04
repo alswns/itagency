@@ -53,16 +53,16 @@ export default function Service() {
             <Flex>
                 <Title>아이티에이전시</Title>
                 <Items>회사 소개</Items>
-                <Items>이용약관</Items>
-                <Items>개인정보취급방침</Items>
+                <Items onClick={()=>window.location.href='/coffin'}>이용약관</Items>
+                <Items onClick={()=>window.location.href='/info'}>개인정보취급방침</Items>
             </Flex>
             <Flex>
                 <Title>이용방법</Title>
                 <Items>서비스 소개</Items>
                 <Items>클라이언트 이용방법</Items>
                 <Items>파트너 이용방법</Items>
-                <Items>프로젝트 등록하기</Items>
-                <Items>이용후기</Items>
+                <Items onClick={()=>window.location.href='/counsel'}>프로젝트 등록하기</Items>
+                <Items onClick={()=>window.location.href='/review'}>이용후기</Items>
             </Flex>
             <Flex>
                 <Title>고객센터</Title>

@@ -349,12 +349,7 @@ export default function Regist(props) {
                         <Ment>이미 계정이 있으신가요?</Ment>
                         <LoginButton onClick={()=>window.location.href='/login'}><ButtonText color='#ef4f80'>로그인</ButtonText></LoginButton>
                         <div>
-                        <Ment>간편가입</Ment>
-                        <OauthContainer>
-            <Oauth back='#3b5998' onClick={Facebook}><OauthText>Facebook으로 로그인</OauthText></Oauth>
-            <Oauth back='#f44336' onClick={Google}><OauthText>Google으로 로그인</OauthText></Oauth>
-            <Oauth back='#2db400' onClick={Naver}><OauthText>NAVER으로 로그인</OauthText></Oauth>
-            </OauthContainer>
+                        
             </div>
             <CircleIcon img={rocket} text='WELCOME'></CircleIcon>
                     <Explane>ITAgency는 <b>실물보장 프로젝트</b>만 취급합니다.<br/>

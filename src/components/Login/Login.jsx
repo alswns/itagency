@@ -345,12 +345,7 @@ export default function Login(props) {
           <Button color='#ffffff'><ButtonText color='#212121' onClick={() => { window.location.href = '/register' }}>회원가입</ButtonText> </Button>
         </Container>
 
-        <MidlLine></MidlLine>
-        <OauthContainer>
-          <Oauth back='#3b5998' onClick={Facebook}><OauthText>Facebook으로 로그인</OauthText></Oauth>
-          <Oauth back='#f44336'onClick={Google} ><OauthText>Google으로 로그인</OauthText></Oauth>
-          <Oauth back='#2db400' onClick={Naver}><OauthText>NAVER으로 로그인</OauthText></Oauth>
-        </OauthContainer>
+      
 
       </Aswemble>
       <Copy>Copyright ⓒ 2019 ITAGENCY Inc. All rights reserved</Copy>
