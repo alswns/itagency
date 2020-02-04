@@ -49,16 +49,7 @@ export default class LookPortfolio extends Component {
         return (
             <div>
                 <Banner/>
-                {this.state.portfolio.map(res=>
-                <Item>
-                     <PortfolioItem reload={()=>this.setState({load:!this.state.load})} id={res.portfolio_id}src={res.img[0]} title={res.title} kind={res.field} text={res.in_field} />
-                     <Buttons>{res.main==0?'승인안됨':'승인됨'}</Buttons>
-                     <div style={{display:'flex'}}>
-                     <Button onClick={()=>this.sign(res.portfolio_id,0)}>승인하기</Button>
-                     <Button onClick={()=>this.sign(res.portfolio_id,1)}>승인해제하기</Button>
-                     </div>
-                     </Item>
-                )}
+                
             </div>
         )
     }
