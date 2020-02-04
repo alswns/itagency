@@ -42,7 +42,7 @@ margin-top:20px;
 export default function Stack(props) {
     return (
         <Wrapper>
-            {(props.data.tech_stack.length||[])==0?<High>사용 하실 수 있는 기술을 입력해 주십시오.</High>:props.data.tech_stack.map(res=>{
+            {(props.data.tech_stack||[]).length==0?<High>사용 하실 수 있는 기술을 입력해 주십시오.</High>:props.data.tech_stack.map(res=>{
                 return <Container>{res}</Container>
             })}
         </Wrapper>

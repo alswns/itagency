@@ -6,12 +6,12 @@ export default class Google extends Component {
     componentDidMount(){
         const request = new Requests();  
 
-        if (request.getParameter('#access_token')==''){
+        if (request.getParameter('access_token')==''){
             alert('구글 로그인 실패')
             window.location.href='/'
         }
         else{
-          const token=request.getParameter('#access_token')
+          const token=request.getParameter('access_token')
           alert(token)
           api.post('/client/account/nv',{
             nv_token:token

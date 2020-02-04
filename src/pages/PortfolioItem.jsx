@@ -77,7 +77,7 @@ export default function PortfolioItem(props) {
 
       <Wrapper onClick={()=>setOn(true)}>
         
-          <Img src={`https://54.180.122.126:5555/file/portfolio/image/${props.src}`}/>
+          <Img src={`http://54.180.122.126:5555/file/portfolio/image/${props.src}`}/>
           <Container>
                 <Title>{props.title}</Title>
                 <Kind>{props.kind}</Kind>

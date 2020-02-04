@@ -5,13 +5,14 @@ import api from '../../apis/BaseUrl';
 export default class Facebook extends Component {
     componentDidMount(){
         const request = new Requests();  
-        console.log(request.getParameter('access_token'))
-        if (request.getParameter('#access_token')==''){
-            alert('페이스북 로그인 실패')
-            window.location.href='/'
+        const token=request.getParameter('access_token')
+        const test= request.isSecure()
+        if(test)
+            window.location.hreftoken=`http://itagency119.com/facebook#access_token=${token}`
+        if (request.getParameter('access_token')==''){
+                
         }
         else{
-          const token=request.getParameter('#access_token')
           console.log(token)
           api.post('/client/account/fb',{
               fb_token:token

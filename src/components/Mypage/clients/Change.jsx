@@ -56,6 +56,7 @@ const MyProject = styled.div`
   height: 50px;
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
+  
   box-sizing:border-box;
   padding:0 50px;
   padding-top:10px;

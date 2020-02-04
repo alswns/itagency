@@ -91,7 +91,7 @@ export default class ClienPage extends Component {
             this.setState({state:res.status})
         }).catch(err=>console.dir(err))
         api.get('/client/mypage/project').then(res=>{
-            const url=res.data.profile_image==undefined?false:`https://54.180.122.126:5555/file/profile/image/${res.data.profile_image}`
+            const url=res.data.profile_image==undefined?false:`http://54.180.122.126:5555/file/profile/image/${res.data.profile_image}`
             console.log(url)
             this.setState({
                 data:res.data,

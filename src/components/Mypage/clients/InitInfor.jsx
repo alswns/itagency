@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Selection from '../../Register/Selection'
-
+import logo from '../../../assets/imgs/logo.png'
 const Wrapper=styled.div`
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
@@ -185,7 +185,7 @@ export default function  InitInfor(props) {
             <FlexDiv>
             <Title>프로필 이미지</Title>
             <div>
-            <ImgContainer id='newimg' src={`${props.src}`} ></ImgContainer>
+            <ImgContainer id='newimg' src={props.src||logo} ></ImgContainer>
             <input onChange={props.getImgData} accept="image/*" style={{display:'none'}} type="file" id="file" name="file" onchange="changeValue(this)"/>
             <Upload for='file'>프로필 이미지 업로드</Upload>
             </div>
