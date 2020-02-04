@@ -4,12 +4,17 @@ import api from '../../apis/BaseUrl';
 
 export default class Facebook extends Component {
     componentDidMount(){
-        const request = new Requests();  
-        const token=request.getParameter('access_token')
-        const test= request.isSecure()
-        if(test)
-            window.location.hreftoken=`http://itagency119.com/facebook#access_token=${token}`
-        if (request.getParameter('access_token')==''){
+        const requests = new Requests();  
+        const token=requests.getParameter('access_token')
+        const request=new Request()
+        const test= request.
+
+        console.log(test)
+        if (window.location.protocol == "https:") {
+            window.location.protocol = "http:";
+            window.location.reload();
+         }
+        if (requests.getParameter('access_token')==''){
                 
         }
         else{

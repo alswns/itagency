@@ -13,7 +13,6 @@ export default class Naver extends Component {
         }
         else{
          
-          alert(token)
           api.post('/client/account/nv',{
             nv_token:token
           }).then(res=>{

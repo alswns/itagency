@@ -12,8 +12,7 @@ export default class Google extends Component {
         }
         else{
           const token=request.getParameter('access_token')
-          alert(token)
-          api.post('/client/account/nv',{
+          api.post('/client/account/gg',{
             nv_token:token
           }).then(res=>{
               window.localStorage.setItem('token',res.data.access_token)
